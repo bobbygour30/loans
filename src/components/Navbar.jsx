@@ -8,16 +8,16 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
-    { href: "#about", label: "About" },
-    { href: "#why", label: "Why Fyntegra" },
-    { href: "#platform", label: "Platform" },
-    { href: "#loans", label: "Loans" },
-    { href: "#solutions", label: "Solutions" },
-    { href: "#eligibility", label: "Eligibility" },
-    { href: "#emi", label: "EMI Calculator" },
-    { href: "#support", label: "Support" },
-    { href: "#careers", label: "Careers" },
-    { href: "#contact", label: "Contact" },
+    { href: "/about", label: "About" },
+    { href: "/why-fyntegra", label: "Why Fyntegra" },
+    { href: "/platform", label: "Platform" },
+    { href: "/loans", label: "Loans" },
+    { href: "/solutions", label: "Solutions" },
+    { href: "/eligibility", label: "Eligibility" },
+    { href: "/emi-calculator", label: "EMI Calculator" },
+    { href: "/support", label: "Support" },
+    { href: "/careers", label: "Careers" },
+    { href: "/contact", label: "Contact" },
   ];
 
   return (
