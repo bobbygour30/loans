@@ -88,7 +88,7 @@ const Navbar = () => {
               </li>
             ))}
             <li>
-              <button className="w-full px-4 py-2 bg-yellow-400 text-gray-900 rounded-full hover:bg-yellow-500 transition-transform duration-300 hover:scale-105">
+              <button className="w-full px-4 py-2 bg-[#deeea5] text-gray-900 rounded-full hover:bg-yellow-500 transition-transform duration-300 hover:scale-105">
                 Apply Now
               </button>
             </li>
