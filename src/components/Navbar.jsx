@@ -34,13 +34,13 @@ const Navbar = () => {
         <ul className="hidden md:flex space-x-8 items-center font-medium text-gray-700">
           {navLinks.map((link, i) => (
             <li key={i}>
-              <a
-                href={link.href}
+              <Link
+                to={link.href}
                 className="relative group transition-colors duration-300"
               >
                 {link.label}
                 <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#d60000] transition-all duration-300 group-hover:w-full"></span>
-              </a>
+              </Link>
             </li>
           ))}
           <li>
@@ -80,13 +80,13 @@ const Navbar = () => {
           >
             {navLinks.map((link, i) => (
               <li key={i}>
-                <a
-                  href={link.href}
+                <Link
+                  to={link.href}
                   onClick={() => setIsOpen(false)}
                   className="block hover:text-blue-500 transition-colors duration-200"
                 >
                   {link.label}
-                </a>
+                </Link>
               </li>
             ))}
             <li>
