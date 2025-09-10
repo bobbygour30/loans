@@ -1,14 +1,6 @@
-// Homepage.jsx
 import React, { useEffect, useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import assets from "../assets/assets";
-
-/**
- * Full enhanced Homepage component with animations, counters, FAQ, testimonials,
- * and all sections restored + improved.
- *
- * Depends: framer-motion and TailwindCSS
- */
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -27,7 +19,6 @@ function StatCounter({ end, suffix = "", label, duration = 1400 }) {
     function step(timestamp) {
       if (!start) start = timestamp;
       const progress = Math.min((timestamp - start) / duration, 1);
-      // easeOutCubic
       const eased = 1 - Math.pow(1 - progress, 3);
       const current = Math.floor(startVal + change * eased);
       setValue(current);
@@ -54,24 +45,21 @@ export default function Homepage() {
   const [emiAmount, setEmiAmount] = useState(500000);
   const [emiInterest, setEmiInterest] = useState(12);
   const [emiTenure, setEmiTenure] = useState(24);
+  const [selectedLoan, setSelectedLoan] = useState(null);
 
-  // Simple testimonial carousel
   const testimonials = [
     {
-      quote:
-        "Fyntegra helped us ship LSP workflows in weeks—reducing handling time and improving NPS.",
+      quote: "Fyntegra helped us ship LSP workflows in weeks—reducing handling time and improving NPS.",
       author: "Director of CX, National Bank",
       role: "Director of CX",
     },
     {
-      quote:
-        "Their compliance-first tooling shortened onboarding and made audits painless.",
+      quote: "Their compliance-first tooling shortened onboarding and made audits painless.",
       author: "Head - Risk & Compliance, Fintech Co.",
       role: "Head - Risk & Compliance",
     },
     {
-      quote:
-        "Partnering with Fyntegra scaled our collections efficiency while keeping customer experience high.",
+      quote: "Partnering with Fyntegra scaled our collections efficiency while keeping customer experience high.",
       author: "VP Collections, NBFC",
       role: "VP Collections",
     },
@@ -85,7 +73,6 @@ export default function Homepage() {
     return () => clearInterval(t);
   }, []);
 
-  // EMI calculation (safe numerics)
   function calculateEMI() {
     const P = Number(emiAmount) || 0;
     const annualRate = Number(emiInterest) || 0;
@@ -106,7 +93,6 @@ export default function Homepage() {
 
   const emiResult = calculateEMI();
 
-  // FAQ toggle state
   const faqs = [
     {
       q: "How does Fyntegra work with banks & NBFCs?",
@@ -123,11 +109,75 @@ export default function Homepage() {
   ];
   const [openFaq, setOpenFaq] = useState(null);
 
+  const loanTypes = [
+    {
+      title: "Personal Loan",
+      desc: "Access flexible financing for personal needs such as medical emergencies, travel, or debt consolidation. Enjoy quick approvals, competitive interest rates, and customizable repayment tenures tailored to your financial situation.",
+      icon: (
+        <svg className="w-8 h-8 text-[#0f9d58]" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
+          <path d="M12 8c-2.2 0-4 1.8-4 4s1.8 4 4 4 4-1.8 4-4-1.8-4-4-4zm0-6v2m0 16v2m10-10h2M0 12h2m15.07 7.07l1.41 1.41M4.51 4.51l1.41 1.41m12.73 0l1.41-1.41M4.51 19.49l1.41-1.41" />
+        </svg>
+      ),
+    },
+    {
+      title: "Business Loan",
+      desc: "Fuel your business growth with tailored working capital solutions. Whether it’s expanding operations, purchasing inventory, or investing in equipment, our loans offer flexible terms and fast disbursals to support your entrepreneurial journey.",
+      icon: (
+        <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
+          <path d="M3 21h18M3 10h18M6 6h.01M6 14h.01M6 18h.01M18 6h.01M18 14h.01M18 18h.01" />
+        </svg>
+      ),
+    },
+    {
+      title: "Gold Loan",
+      desc: "Unlock quick liquidity by pledging your gold assets. Benefit from low interest rates, minimal documentation, and instant disbursal, all while retaining ownership of your gold with our secure and transparent process.",
+      icon: (
+        <svg className="w-8 h-8 text-yellow-500" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
+          <path d="M12 2l9 5-9 5-9-5 9-5z" />
+          <path d="M3 7v10l9 5 9-5V7" />
+        </svg>
+      ),
+    },
+    {
+      title: "Home Loan",
+      desc: "Make your dream home a reality with our competitive home loan rates. Enjoy long repayment tenures, easy documentation, and personalized support to finance your home purchase or construction effortlessly.",
+      icon: (
+        <svg className="w-8 h-8 text-red-500" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
+          <path d="M3 12l9-9 9 9M9 21V9h6v12" />
+        </svg>
+      ),
+    },
+    {
+      title: "LAMF",
+      desc: "Access liquidity against mutual funds without redeeming your investments. Our Loan Against Mutual Funds (LAMF) offers low rates and flexible terms, allowing you to retain your portfolio’s growth potential.",
+      icon: (
+        <svg className="w-8 h-8 text-purple-500" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="10" />
+          <path d="M12 6v6l4 2" />
+        </svg>
+      ),
+    },
+    {
+      title: "Vehicle Loans",
+      desc: "Drive your dream car or bike with our vehicle loans, offering affordable EMIs, quick approvals, and financing for both new and used vehicles. Get on the road with minimal hassle and tailored repayment plans.",
+      icon: (
+        <svg className="w-8 h-8 text-orange-500" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
+          <path d="M3 13l2-5h14l2 5v6a1 1 0 0 1-1 1h-1a3 3 0 0 1-6 0H10a3 3 0 0 1-6 0H3a1 1 0 0 1-1-1v-6z" />
+        </svg>
+      ),
+    },
+  ];
+
+  const handleOverlayClick = (e) => {
+    if (e.target === e.currentTarget) {
+      setSelectedLoan(null);
+    }
+  };
+
   return (
     <div className="bg-white text-gray-900 min-h-screen mt-20">
-      {/* HERO */}
       <header className="relative overflow-hidden">
-        <div className="bg-gradient-to-br from-[#0f9d58] to-[#bfe59a] text-white py-28 px-6 md:px-12">
+        <div className="bg-gradient-to-r from-[#2e2e2e] to-[#d60000] text-white py-28 px-6 md:px-12">
           <div className="max-w-6xl mx-auto relative z-10">
             <motion.div
               initial={{ opacity: 0, y: 18 }}
@@ -136,36 +186,22 @@ export default function Homepage() {
               className="flex flex-col md:flex-row items-center md:items-start gap-8"
             >
               <div className="flex-1 text-center md:text-left">
-                <img
-                  src={assets.logo}
-                  alt="logo"
-                  className="h-16 md:h-20 inline-block mb-4"
-                />
+                <img src={assets.logo} alt="logo" className="h-16 md:h-20 inline-block mb-4" />
                 <h1 className="text-3xl md:text-5xl font-extrabold leading-tight drop-shadow-sm">
                   Reimagining Lending & CX with <span className="underline decoration-white/60">AI + Human Expertise</span>
                 </h1>
                 <p className="mt-4 text-gray-100 max-w-2xl">
                   Empowering borrowers and lenders with seamless, compliant, and efficient financial solutions tailored to your needs.
                 </p>
-
                 <div className="mt-6 flex justify-center md:justify-start gap-3 flex-wrap">
-                  <motion.a
-                    whileHover={{ scale: 1.03 }}
-                    href="#solutions"
-                    className="px-6 py-3 bg-white text-[#0f9d58] rounded-full font-semibold shadow"
-                  >
+                  <motion.a whileHover={{ scale: 1.03 }} href="#solutions" className="px-6 py-3 bg-white text-[#d60000] rounded-full font-semibold shadow">
                     Explore Solutions
                   </motion.a>
-                  <motion.a
-                    whileHover={{ scale: 1.03 }}
-                    href="#partner"
-                    className="px-6 py-3 bg-white/20 border border-white/30 text-white rounded-full font-semibold"
-                  >
+                  <motion.a whileHover={{ scale: 1.03 }} href="#partner" className="px-6 py-3 bg-white/20 border border-white/30 text-white rounded-full font-semibold">
                     Partner with Us
                   </motion.a>
                 </div>
               </div>
-
               <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -191,7 +227,6 @@ export default function Homepage() {
                         className="w-full"
                       />
                     </div>
-
                     <div className="mt-3 flex gap-3">
                       <div className="flex-1">
                         <div className="text-sm text-white/90">Interest %</div>
@@ -220,14 +255,9 @@ export default function Homepage() {
                         <div className="text-white font-semibold">{emiTenure} months</div>
                       </div>
                     </div>
-
                     <div className="mt-4 bg-white/10 p-3 rounded-md">
-                      <div className="text-white font-bold text-lg">
-                        EMI: ₹{emiResult.emi.toLocaleString()}
-                      </div>
-                      <div className="text-white/90 text-sm mt-1">
-                        Total payment: ₹{emiResult.totalPayment.toLocaleString()}
-                      </div>
+                      <div className="text-white font-bold text-lg">EMI: ₹{emiResult.emi.toLocaleString()}</div>
+                      <div className="text-white/90 text-sm mt-1">Total payment: ₹{emiResult.totalPayment.toLocaleString()}</div>
                     </div>
                   </div>
                 </div>
@@ -237,29 +267,17 @@ export default function Homepage() {
         </div>
       </header>
 
-      {/* CAPABILITY + STATS (Large enough to deliver...) */}
-      <motion.section
-        variants={fadeUp}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true }}
-        className="py-16 px-6 -mt-10"
-      >
+      <motion.section variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} className="py-16 px-6 -mt-10">
         <div className="max-w-6xl mx-auto bg-white rounded-2xl shadow-2xl overflow-hidden grid grid-cols-1 md:grid-cols-3">
-          {/* left: tagline + features */}
           <div className="p-8 md:p-10 bg-gradient-to-br from-white to-white/90">
             <h3 className="text-xl font-semibold text-gray-700">Large enough to Deliver</h3>
-            <h2 className="text-2xl md:text-3xl font-extrabold text-gray-900 mt-2">
-              Agile enough to Care
-            </h2>
+            <h2 className="text-2xl md:text-3xl font-extrabold text-gray-900 mt-2">Agile enough to Care</h2>
             <p className="mt-4 text-gray-600">
               We combine enterprise-grade operations, RBI-compliant tooling and local delivery expertise to run lending programs across India — fast, secure and with high-quality CX.
             </p>
-
             <div className="mt-6 grid grid-cols-1 gap-3">
               <div className="flex items-start gap-3">
                 <div className="flex-shrink-0 bg-green-100 p-3 rounded-lg">
-                  {/* shield icon */}
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
                     <path d="M12 2l7 4v5c0 5-3.5 9.5-7 11-3.5-1.5-7-6-7-11V6l7-4z" stroke="#0f9d58" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
@@ -269,7 +287,6 @@ export default function Homepage() {
                   <div className="text-sm text-gray-600">Audit trails, KYC workflows & governance baked in.</div>
                 </div>
               </div>
-
               <div className="flex items-start gap-3">
                 <div className="flex-shrink-0 bg-blue-100 p-3 rounded-lg">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
@@ -283,7 +300,6 @@ export default function Homepage() {
                   <div className="text-sm text-gray-600">Run 10 to 1000+ seats with consistent SLAs.</div>
                 </div>
               </div>
-
               <div className="flex items-start gap-3">
                 <div className="flex-shrink-0 bg-yellow-100 p-3 rounded-lg">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
@@ -297,13 +313,10 @@ export default function Homepage() {
                 </div>
               </div>
             </div>
-
             <div className="mt-6">
-              <a href="#platform" className="inline-block px-5 py-2 bg-[#0f9d58] text-white rounded-full shadow hover:opacity-95">Explore Platform →</a>
+              <a href="#platform" className="inline-block px-5 py-2 bg-[#d60000] text-white rounded-full shadow hover:opacity-95">Explore Platform →</a>
             </div>
           </div>
-
-          {/* center: stats */}
           <div className="p-6 md:p-10 bg-gray-50 flex flex-col gap-6 justify-center">
             <div className="grid grid-cols-2 gap-6">
               <div className="bg-white p-4 rounded-xl shadow">
@@ -319,13 +332,10 @@ export default function Homepage() {
                 <StatCounter end={24} suffix="h" label="Avg Disbursal Time" />
               </div>
             </div>
-
             <div className="mt-4 text-sm text-gray-600">
               Stats are representative — many enterprise programs vary by product type & verification requirements.
             </div>
           </div>
-
-          {/* right: quick highlights */}
           <div className="p-8 md:p-10 bg-white/95">
             <h4 className="font-semibold text-gray-700">What we deliver</h4>
             <ul className="mt-4 space-y-3">
@@ -367,21 +377,13 @@ export default function Homepage() {
         </div>
       </motion.section>
 
-      {/* PARTNERS */}
-      <motion.section
-        variants={fadeUp}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true }}
-        className="py-12 px-6"
-      >
+      <motion.section variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} className="py-12 px-6">
         <div className="max-w-6xl mx-auto text-center">
           <h3 className="text-lg text-gray-600 uppercase tracking-wider">Trusted by</h3>
           <h2 className="text-2xl md:text-3xl font-extrabold mt-2">Banks, NBFCs & Fintechs</h2>
           <p className="mt-4 text-gray-600 max-w-3xl mx-auto">
             We partner with a wide ecosystem of financial institutions and fintechs
           </p>
-
           <div className="mt-8 grid grid-cols-3 sm:grid-cols-6 gap-4 items-center justify-center">
             {[...Array(6)].map((_, i) => (
               <div key={i} className="p-4 bg-white/60 rounded-lg flex items-center justify-center shadow-sm">
@@ -392,40 +394,27 @@ export default function Homepage() {
         </div>
       </motion.section>
 
-      {/* LOANS */}
-      <motion.section
-        variants={fadeUp}
-        initial="hidden"
-        whileInView="show"
-        className="py-12 px-6 bg-gray-50"
-        viewport={{ once: true }}
-      >
-        <div className="max-w-6xl mx-auto">
+      <motion.section variants={fadeUp} initial="hidden" whileInView="show" className="py-12 px-6 bg-gray-50" viewport={{ once: true }}>
+        <div className="max-w-6xl mx-auto ">
           <h2 className="text-2xl md:text-3xl font-bold text-center mb-4">Loans to match your goals</h2>
           <p className="text-center text-gray-600 mb-8">
             A variety of products supported by partner lenders — consumer, secured & business financing.
           </p>
-
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              { title: "Personal Loan", desc: "Flexible repayment for personal needs." },
-              { title: "Business Loan", desc: "Working capital & growth financing." },
-              { title: "Gold Loan", desc: "Quick liquidity against gold." },
-              { title: "Home Loan", desc: "Competitive rates for your dream home." },
-              { title: "LAMF", desc: "Liquidity without redemption." },
-              { title: "Vehicle Loans", desc: "Purchase vehicles on easy EMIs." },
-            ].map((loan, i) => (
-              <motion.div
-                key={i}
-                whileHover={{ scale: 1.02 }}
-                className="bg-white p-6 rounded-xl shadow hover:shadow-2xl transition"
-              >
-                <div className="flex items-center justify-between">
+            {loanTypes.map((loan, i) => (
+              <motion.div key={i} whileHover={{ y: -5 }} className="bg-white p-6 rounded-xl shadow hover:shadow-2xl transition flex flex-col items-center">
+                <div className="flex items-center gap-3">
+                  {loan.icon}
                   <h3 className="text-lg font-semibold">{loan.title}</h3>
                 </div>
-                <p className="text-gray-600 mt-3">{loan.desc}</p>
+                <p className="text-gray-600 mt-3 text-center">{loan.desc}</p>
                 <div className="mt-4">
-                  <a href="#apply" className="inline-block px-4 py-2 rounded-full bg-[#0f9d58] text-white">Apply</a>
+                  <button
+                    onClick={() => setSelectedLoan(loan.title)}
+                    className="inline-block px-4 py-2 rounded-full bg-[#d60000] text-white"
+                  >
+                    Apply
+                  </button>
                 </div>
               </motion.div>
             ))}
@@ -433,18 +422,59 @@ export default function Homepage() {
         </div>
       </motion.section>
 
-      {/* EMI Calculator (full) */}
-      <motion.section
-        variants={fadeUp}
-        initial="hidden"
-        whileInView="show"
-        className="py-12 px-6"
-        viewport={{ once: true }}
-      >
+      <AnimatePresence>
+        {selectedLoan && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="fixed inset-0 bg-black/50 flex items-center justify-center z-50"
+            onClick={handleOverlayClick}
+          >
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              transition={{ duration: 0.3 }}
+              className="bg-gray-50 p-8 rounded-xl shadow-2xl w-full max-w-md mx-4"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <h3 className="text-xl font-semibold mb-2">Apply for {selectedLoan}</h3>
+              <p className="text-sm text-gray-600 mb-6">Fill in your details below. Our team will get in touch with you soon.</p>
+              <div className="space-y-4">
+                <input className="w-full p-3 border rounded focus:outline-none focus:ring-2 focus:ring-[#d60000]" placeholder="Full Name" required />
+                <input className="w-full p-3 border rounded focus:outline-none focus:ring-2 focus:ring-[#d60000]" placeholder="Email Address" type="email" required />
+                <input className="w-full p-3 border rounded focus:outline-none focus:ring-2 focus:ring-[#d60000]" placeholder="Phone Number" type="tel" required />
+                <input className="w-full p-3 border rounded focus:outline-none focus:ring-2 focus:ring-[#d60000]" placeholder="Loan Amount" type="number" required />
+                <textarea className="w-full p-3 border rounded focus:outline-none focus:ring-2 focus:ring-[#d60000]" placeholder="Additional Information" rows="3" />
+                <div className="flex gap-3">
+                  <button
+                    onClick={() => {
+                      alert("Application submitted!");
+                      setSelectedLoan(null);
+                    }}
+                    className="px-5 py-2 bg-[#d60000] text-white rounded hover:bg-[#b50000]"
+                  >
+                    Submit
+                  </button>
+                  <button
+                    onClick={() => setSelectedLoan(null)}
+                    className="px-5 py-2 bg-gray-300 text-gray-800 rounded hover:bg-gray-400"
+                  >
+                    Cancel
+                  </button>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      <motion.section variants={fadeUp} initial="hidden" whileInView="show" className="py-12 px-6" viewport={{ once: true }}>
         <div className="max-w-3xl mx-auto bg-white p-8 rounded-2xl shadow-xl">
           <h3 className="text-xl font-semibold mb-4">EMI Calculator</h3>
           <p className="text-sm text-gray-600 mb-6">Plan your monthly outflow — tweak amount, rate and tenure.</p>
-
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
               <label className="block text-sm font-medium text-gray-700">Loan Amount (₹)</label>
@@ -452,7 +482,7 @@ export default function Homepage() {
                 type="number"
                 value={emiAmount}
                 onChange={(e) => setEmiAmount(Number(e.target.value))}
-                className="mt-2 w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0f9d58]"
+                className="mt-2 w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#d60000]"
               />
             </div>
             <div>
@@ -461,7 +491,7 @@ export default function Homepage() {
                 type="number"
                 value={emiInterest}
                 onChange={(e) => setEmiInterest(Number(e.target.value))}
-                className="mt-2 w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0f9d58]"
+                className="mt-2 w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#d60000]"
               />
             </div>
             <div>
@@ -470,11 +500,10 @@ export default function Homepage() {
                 type="number"
                 value={emiTenure}
                 onChange={(e) => setEmiTenure(Number(e.target.value))}
-                className="mt-2 w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0f9d58]"
+                className="mt-2 w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#d60000]"
               />
             </div>
-
-            <div className="bg-gradient-to-r from-[#dff4dd] to-[#eaf7e6] p-4 rounded-lg flex flex-col justify-center">
+            <div className="bg-red-200 p-4 rounded-lg flex flex-col justify-center">
               <div className="text-sm text-gray-600">Monthly EMI</div>
               <div className="text-2xl font-bold text-gray-900 mt-1">₹{emiResult.emi.toLocaleString()}</div>
               <div className="text-sm text-gray-600 mt-2">Total interest: ₹{emiResult.totalInterest.toLocaleString()}</div>
@@ -484,33 +513,19 @@ export default function Homepage() {
         </div>
       </motion.section>
 
-      {/* Eligibility Check */}
-      <motion.section
-        variants={fadeUp}
-        initial="hidden"
-        whileInView="show"
-        className="py-12 px-6 bg-white"
-        viewport={{ once: true }}
-      >
+      <motion.section variants={fadeUp} initial="hidden" whileInView="show" className="py-12 px-6 bg-white" viewport={{ once: true }}>
         <div className="max-w-4xl mx-auto text-center">
           <h3 className="text-xl font-semibold">Eligibility Check</h3>
           <p className="text-gray-600 mt-2 mb-6">Soft-check your eligibility without affecting credit score.</p>
           <div className="inline-flex items-center gap-3 w-full md:w-auto">
             <input placeholder="Mobile number" className="p-3 border rounded-l-lg w-48 md:w-64" />
-            <button className="px-5 py-3 bg-[#0f9d58] text-white rounded-r-lg">Check Now</button>
+            <button className="px-5 py-3 bg-[#d60000] text-white rounded-r-lg">Check Now</button>
           </div>
           <div className="mt-4 text-sm text-gray-500">We use encrypted channels for all data shared.</div>
         </div>
       </motion.section>
 
-      {/* Document Checklist */}
-      <motion.section
-        variants={fadeUp}
-        initial="hidden"
-        whileInView="show"
-        className="py-12 px-6 bg-gray-50"
-        viewport={{ once: true }}
-      >
+      <motion.section variants={fadeUp} initial="hidden" whileInView="show" className="py-12 px-6 bg-gray-50" viewport={{ once: true }}>
         <div className="max-w-3xl mx-auto">
           <h3 className="text-lg font-semibold text-center">Document Checklist</h3>
           <p className="text-center text-gray-600 mb-6">Keep these handy for a smooth application.</p>
@@ -535,18 +550,10 @@ export default function Homepage() {
         </div>
       </motion.section>
 
-      {/* Why Fyntegra */}
-      <motion.section
-        variants={fadeUp}
-        initial="hidden"
-        whileInView="show"
-        className="py-12 px-6 bg-white"
-        viewport={{ once: true }}
-      >
+      <motion.section variants={fadeUp} initial="hidden" whileInView="show" className="py-12 px-6 bg-white" viewport={{ once: true }}>
         <div className="max-w-6xl mx-auto">
           <h2 className="text-2xl font-extrabold text-center mb-6">Why Fyntegra</h2>
           <p className="text-center text-gray-600 mb-8">Large enough to deliver, agile enough to care — what that means in practice.</p>
-
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="p-6 rounded-xl bg-gradient-to-tr from-white to-green-50 shadow-lg">
               <div className="text-lg font-semibold mb-2">RBI-compliant LSP</div>
@@ -576,18 +583,10 @@ export default function Homepage() {
         </div>
       </motion.section>
 
-      {/* LSP Solutions */}
-      <motion.section
-        variants={fadeUp}
-        initial="hidden"
-        whileInView="show"
-        className="py-12 px-6 bg-gradient-to-br from-[#0f9d58]/6 to-transparent"
-        viewport={{ once: true }}
-      >
+      <motion.section variants={fadeUp} initial="hidden" whileInView="show" className="py-12 px-6 bg-gradient-to-br from-[#0f9d58]/6 to-transparent" viewport={{ once: true }}>
         <div className="max-w-6xl mx-auto">
           <h2 className="text-2xl font-bold text-center mb-6">LSP Solutions for Banks & Fintechs</h2>
           <p className="text-center text-gray-600 mb-8">End-to-end funnel management powered by AI + human delivery.</p>
-
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             {[
               { title: "Customer Experience & Sales", desc: "Conversational IVR, sales assist and better conversions." },
@@ -605,39 +604,22 @@ export default function Homepage() {
         </div>
       </motion.section>
 
-      {/* Platform */}
-      <motion.section
-        variants={fadeUp}
-        initial="hidden"
-        whileInView="show"
-        className="py-12 px-6 bg-white"
-        viewport={{ once: true }}
-      >
+      <motion.section variants={fadeUp} initial="hidden" whileInView="show" className="py-12 px-6 bg-white" viewport={{ once: true }}>
         <div className="max-w-5xl mx-auto text-center">
           <h2 className="text-2xl font-bold mb-4">The Fyntegra LSP Platform</h2>
           <p className="text-gray-600 mb-8 max-w-3xl mx-auto">A secure, modular, API-first stack built for lenders to manage end-to-end operations.</p>
-
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4 mb-6">
             {['Dashboard', 'Reports', 'Compliance Module', 'SaaS Tools', 'Support'].map((f, i) => (
-              <div key={i} className="p-4 bg-[#eaf7ea] rounded-lg shadow font-medium text-sm">{f}</div>
+              <div key={i} className="p-4 bg-red-200 rounded-lg shadow font-medium text-sm">{f}</div>
             ))}
           </div>
-
-          <a href="#platform" className="inline-block px-6 py-3 bg-[#0f9d58] text-white rounded-full">Explore Platform</a>
+          <a href="#platform" className="inline-block px-6 py-3 bg-[#d60000] text-white rounded-full">Explore Platform</a>
         </div>
       </motion.section>
 
-      {/* Testimonials */}
-      <motion.section
-        variants={fadeUp}
-        initial="hidden"
-        whileInView="show"
-        className="py-12 px-6 bg-gray-50"
-        viewport={{ once: true }}
-      >
+      <motion.section variants={fadeUp} initial="hidden" whileInView="show" className="py-12 px-6 bg-gray-50" viewport={{ once: true }}>
         <div className="max-w-4xl mx-auto">
           <h3 className="text-xl font-semibold text-center mb-6">What clients say</h3>
-
           <div className="relative">
             <AnimatePresence mode="wait">
               <motion.div
@@ -653,7 +635,6 @@ export default function Homepage() {
                 <div className="text-sm text-gray-600">{testimonials[testIndex].role}</div>
               </motion.div>
             </AnimatePresence>
-
             <div className="flex justify-between items-center mt-4">
               <button onClick={() => setTestIndex((t) => (t - 1 + testimonials.length) % testimonials.length)} className="px-3 py-2 bg-white rounded-lg shadow">Prev</button>
               <div className="text-sm text-gray-500">{testIndex + 1}/{testimonials.length}</div>
@@ -663,14 +644,7 @@ export default function Homepage() {
         </div>
       </motion.section>
 
-      {/* FAQ + Contact */}
-      <motion.section
-        variants={fadeUp}
-        initial="hidden"
-        whileInView="show"
-        className="py-12 px-6 bg-white"
-        viewport={{ once: true }}
-      >
+      <motion.section variants={fadeUp} initial="hidden" whileInView="show" className="py-12 px-6 bg-white" viewport={{ once: true }}>
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
           <div>
             <h3 className="text-xl font-semibold mb-4">Frequently asked questions</h3>
@@ -689,25 +663,22 @@ export default function Homepage() {
               ))}
             </div>
           </div>
-
           <div>
             <h3 className="text-xl font-semibold mb-4">Get in touch</h3>
             <p className="text-gray-600 mb-4">Interested in partnering or want a demo? Leave your details and we’ll reach out.</p>
-            <form className="space-y-3" onSubmit={(e) => e.preventDefault()}>
+            <div className="space-y-3">
               <input className="w-full p-3 border rounded" placeholder="Full name" />
               <input className="w-full p-3 border rounded" placeholder="Company / Institution" />
               <input className="w-full p-3 border rounded" placeholder="Work email" />
               <textarea className="w-full p-3 border rounded" placeholder="Short message" rows="3" />
               <div className="flex gap-3">
-                <button className="px-4 py-2 bg-[#0f9d58] text-white rounded">Request Demo</button>
+                <button className="px-4 py-2 bg-[#d60000] text-white rounded">Request Demo</button>
                 <button className="px-4 py-2 bg-white border rounded">Contact Sales</button>
               </div>
-            </form>
+            </div>
           </div>
         </div>
       </motion.section>
-
-      
     </div>
   );
 }

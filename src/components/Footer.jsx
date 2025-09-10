@@ -24,7 +24,7 @@ const Footer = () => {
 
         {/* Quick Links */}
         <div>
-          <h3 className="text-lg font-semibold mb-4 text-[#deeea5]">Quick Links</h3>
+          <h3 className="text-lg font-semibold mb-4 text-red-300">Quick Links</h3>
           <ul className="space-y-2">
             <li><a href="#loans" className="text-gray-400 hover:text-[#28af5b] transition duration-300">Loans</a></li>
             <li><a href="#eligibility" className="text-gray-400 hover:text-[#28af5b] transition duration-300">Eligibility</a></li>
@@ -36,7 +36,7 @@ const Footer = () => {
 
         {/* Contact */}
         <div>
-          <h3 className="text-lg font-semibold mb-4 text-[#deeea5]">Contact Us</h3>
+          <h3 className="text-lg font-semibold mb-4 text-red-300">Contact Us</h3>
           <p className="text-gray-400 text-sm">Email: support@fyntegra.com</p>
           <p className="text-gray-400 text-sm">Phone: +91-123-456-7890</p>
           <p className="text-gray-400 text-sm">Address: 123 Fintech Lane, Mumbai, India</p>
@@ -44,7 +44,7 @@ const Footer = () => {
 
         {/* Newsletter */}
         <div>
-          <h3 className="text-lg font-semibold mb-4 text-[#deeea5]">Subscribe to Newsletter</h3>
+          <h3 className="text-lg font-semibold mb-4 text-red-300">Subscribe to Newsletter</h3>
           <p className="text-gray-400 text-sm mb-4">Stay updated with the latest in lending and financial solutions.</p>
           <form onSubmit={handleSubscribe} className="flex flex-col space-y-2">
             <input
@@ -57,7 +57,7 @@ const Footer = () => {
             />
             <button
               type="submit"
-              className="px-4 py-2 bg-gradient-to-r from-[#28af5b] to-[#deeea5] text-white rounded-lg hover:opacity-90 transition duration-300"
+              className="px-4 py-2 bg-[#d60000] text-white rounded-lg hover:opacity-90 transition duration-300"
             >
               Subscribe
             </button>

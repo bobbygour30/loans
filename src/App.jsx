@@ -13,6 +13,8 @@ import Solutions from './pages/Solutions'
 import WhyFyntegra from './pages/WhyFyntegra'
 import EmiCalculator from './pages/EmiCalculator'
 import Contact from './pages/Contact'
+import ApplyNow from './pages/ApplyNow'
+import PartnerWithUs from './pages/PartnerWithUs'
 
 const App = () => {
   return (
@@ -30,6 +32,8 @@ const App = () => {
         <Route path="/why-fyntegra" element={<WhyFyntegra />} />
         <Route path="/emi-calculator" element={<EmiCalculator />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/apply" element={<ApplyNow />} />
+        <Route path="/partner-with-us" element={<PartnerWithUs />} />
       </Routes>
       <Footer />
     </div>

@@ -6,83 +6,98 @@ const fadeUp = {
   show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
 };
 
-export default function Contact() {
-  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+export default function PartnerWithUs() {
+  const [formData, setFormData] = useState({
+    companyName: "",
+    contactName: "",
+    email: "",
+    phone: "",
+    partnershipType: "Financial Institution",
+    message: "",
+  });
   const [formStatus, setFormStatus] = useState(null);
   const [testIndex, setTestIndex] = useState(0);
+  const [openFaq, setOpenFaq] = useState(null);
 
-  const contactDetails = [
+  const partnershipTypes = ["Financial Institution", "Fintech", "NBFC", "Technology Provider", "Other"];
+
+  const partnerBenefits = [
     {
-      title: "Email Us",
-      desc: "support@fyntegra.com",
+      title: "Scalable Technology",
+      desc: "Leverage our API-first platform to streamline lending operations.",
       icon: (
         <svg className="w-8 h-8 text-[#d60000]" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
-          <path d="M4 4h16v12H4zM20 4l-8 5-8-5" />
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2m22-2v-2a4 4 0 0 0-3-3.87m-4-12a4 4 0 0 1 0 7.75" />
         </svg>
-      ),
-      action: (
-        <a href="mailto:support@fyntegra.com" className="mt-4 inline-block text-sm text-[#d60000] hover:underline">
-          Send Email
-        </a>
       ),
     },
     {
-      title: "Call Us",
-      desc: "+91-123-456-7890",
+      title: "Compliance Ready",
+      desc: "RBI-compliant solutions with audit trails and reporting tools.",
       icon: (
         <svg className="w-8 h-8 text-[#d60000]" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
-          <path d="M3 5a2 2 0 0 1 2-2h3.28a1 1 0 0 1 .948.684l1.498 4.493a1 1 0 0 1-.502 1.21l-2.257 1.13a11.042 11.042 0 0 0 5.516 5.516l1.13-2.257a1 1 0 0 1 1.21-.502l4.493 1.498a1 1 0 0 1 .684.949V19a2 2 0 0 1-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+          <path d="M12 2l7 4v5c0 5-3.5 9.5-7 11-3.5-1.5-7-6-7-11V6l7-4z" />
         </svg>
-      ),
-      action: (
-        <a href="tel:+911234567890" className="mt-4 inline-block text-sm text-[#d60000] hover:underline">
-          Call Now
-        </a>
       ),
     },
     {
-      title: "Visit Us",
-      desc: "123 Fintech Hub, Mumbai, MH 400001",
+      title: "Enhanced CX",
+      desc: "Improve customer satisfaction with AI-driven engagement tools.",
       icon: (
         <svg className="w-8 h-8 text-[#d60000]" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
-          <path d="M12 2c-3.86 0-7 3.14-7 7 0 5.25 7 13 7 13s7-7.75 7-13c0-3.86-3.14-7-7-7zm0 10c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z" />
+          <path d="M12 12c2.2 0 4-1.8 4-4s-1.8-4-4-4-4 1.8-4 4 1.8 4 4 4zm-6 8c0-3.3 2.7-6 6-6s6 2.7 6 6" />
         </svg>
       ),
-      action: (
-        <a href="#map" className="mt-4 inline-block text-sm text-[#d60000] hover:underline">
-          View on Map
-        </a>
+    },
+    {
+      title: "Data Insights",
+      desc: "Access real-time analytics to optimize lending decisions.",
+      icon: (
+        <svg className="w-8 h-8 text-[#d60000]" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
+          <path d="M3 12h18M3 6h10M3 18h6" />
+        </svg>
       ),
+    },
+  ];
+
+  const successStories = [
+    {
+      title: "National Bank Partnership",
+      desc: "Integrated Fyntegra’s platform to streamline KYC and disbursals, reducing onboarding time by 50%.",
+      impact: "40% increase in loan conversions",
+    },
+    {
+      title: "Fintech Collaboration",
+      desc: "Leveraged AI risk models to reduce defaults and improve portfolio performance.",
+      impact: "20% reduction in NPA rates",
     },
   ];
 
   const faqs = [
     {
-      q: "How quickly can I expect a response?",
-      a: "We aim to respond to all inquiries within 24 hours. For urgent issues, use our live chat or phone support.",
+      q: "What types of organizations can partner with Fyntegra?",
+      a: "We partner with banks, NBFCs, fintechs, and technology providers looking to enhance their lending capabilities.",
     },
     {
-      q: "Can I contact you for loan-related queries?",
-      a: "Yes, our team is ready to assist with questions about loans, eligibility, or the application process.",
+      q: "How long does it take to integrate your platform?",
+      a: "Our API-first platform allows integration within weeks, depending on your existing systems and requirements.",
     },
     {
-      q: "Is my information secure when contacting you?",
-      a: "Absolutely, all communications are encrypted, and we adhere to strict data privacy standards.",
+      q: "What support do partners receive?",
+      a: "Partners get dedicated account managers, 24/7 technical support, and access to training resources.",
     },
   ];
 
   const testimonials = [
     {
-      quote: "Fyntegra’s support team responded to my query within hours and guided me through the loan process!",
-      author: "Anita Sharma, Customer",
+      quote: "Partnering with Fyntegra transformed our lending process, making it faster and more efficient.",
+      author: "Head of Operations, National Bank",
     },
     {
-      quote: "Their team was incredibly helpful in resolving my issue quickly and professionally.",
-      author: "Ravi Kumar, SME Owner",
+      quote: "Their platform’s scalability helped us grow our loan portfolio seamlessly.",
+      author: "CEO, Fintech Startup",
     },
   ];
-
-  const [openFaq, setOpenFaq] = useState(null);
 
   useEffect(() => {
     const t = setInterval(() => {
@@ -93,17 +108,17 @@ export default function Contact() {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    if (!formData.name || !formData.email || !formData.message) {
-      setFormStatus("Please fill out all fields.");
+    if (!formData.companyName || !formData.contactName || !formData.email || !formData.phone) {
+      setFormStatus("Please fill out all required fields.");
       return;
     }
-    setFormStatus("Your message has been sent successfully!");
-    setFormData({ name: "", email: "", message: "" });
+    setFormStatus("Partnership inquiry submitted successfully!");
+    setFormData({ companyName: "", contactName: "", email: "", phone: "", partnershipType: "Financial Institution", message: "" });
     setTimeout(() => setFormStatus(null), 3000);
   };
 
   return (
-    <section id="contact" className="py-20 px-6 bg-gray-50 mt-20">
+    <section id="partner-with-us" className="py-20 px-6 bg-gray-50 mt-20">
       <div className="max-w-6xl mx-auto">
         <motion.h2
           variants={fadeUp}
@@ -112,7 +127,7 @@ export default function Contact() {
           viewport={{ once: true }}
           className="text-3xl md:text-4xl font-extrabold text-center"
         >
-          Get in <span className="text-[#d60000]">Touch</span>
+          Partner <span className="text-[#d60000]">With Us</span>
         </motion.h2>
         <motion.p
           variants={fadeUp}
@@ -122,10 +137,10 @@ export default function Contact() {
           transition={{ delay: 0.2 }}
           className="mt-4 text-gray-600 max-w-3xl mx-auto text-center"
         >
-          Have questions or need assistance? Our team is here to help you with all your lending needs, 24/7.
+          Join forces with Fyntegra to revolutionize lending with our cutting-edge, compliant, and scalable platform designed for financial institutions and fintechs.
         </motion.p>
 
-        {/* Contact Form */}
+        {/* Partnership Form */}
         <motion.div
           variants={fadeUp}
           initial="hidden"
@@ -134,24 +149,53 @@ export default function Contact() {
           className="mt-12 max-w-2xl mx-auto"
         >
           <div className="bg-white p-8 rounded-xl shadow-lg">
-            <h3 className="text-xl font-semibold text-center mb-6">Send Us a Message</h3>
+            <h3 className="text-xl font-semibold text-center mb-6">Partnership Inquiry</h3>
             <div className="space-y-4">
               <input
                 type="text"
-                placeholder="Your Name"
-                value={formData.name}
-                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                placeholder="Company Name *"
+                value={formData.companyName}
+                onChange={(e) => setFormData({ ...formData, companyName: e.target.value })}
                 className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#d60000]"
+                required
+              />
+              <input
+                type="text"
+                placeholder="Contact Name *"
+                value={formData.contactName}
+                onChange={(e) => setFormData({ ...formData, contactName: e.target.value })}
+                className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#d60000]"
+                required
               />
               <input
                 type="email"
-                placeholder="Your Email"
+                placeholder="Email Address *"
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#d60000]"
+                required
               />
+              <input
+                type="tel"
+                placeholder="Phone Number *"
+                value={formData.phone}
+                onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#d60000]"
+                required
+              />
+              <select
+                value={formData.partnershipType}
+                onChange={(e) => setFormData({ ...formData, partnershipType: e.target.value })}
+                className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#d60000]"
+              >
+                {partnershipTypes.map((type, i) => (
+                  <option key={i} value={type}>
+                    {type}
+                  </option>
+                ))}
+              </select>
               <textarea
-                placeholder="Your Message"
+                placeholder="Tell us about your partnership goals (Optional)"
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                 className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#d60000]"
@@ -161,7 +205,7 @@ export default function Contact() {
                 onClick={handleFormSubmit}
                 className="w-full px-6 py-3 bg-[#d60000] text-white rounded-lg font-semibold hover:bg-[#b50000] transition"
               >
-                Send Message
+                Submit Inquiry
               </button>
               {formStatus && (
                 <motion.p
@@ -178,26 +222,48 @@ export default function Contact() {
           </div>
         </motion.div>
 
-        {/* Contact Details */}
+        {/* Partner Benefits */}
         <motion.div
           variants={fadeUp}
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-8"
+          className="mt-16"
         >
-          {contactDetails.map((c, i) => (
-            <motion.div
-              key={i}
-              whileHover={{ y: -6 }}
-              className="p-6 bg-white rounded-xl shadow-lg text-center"
-            >
-              <div className="flex justify-center mb-4">{c.icon}</div>
-              <h3 className="font-semibold text-[#d60000] mb-2">{c.title}</h3>
-              <p className="text-sm text-gray-600 mb-4">{c.desc}</p>
-              {c.action}
-            </motion.div>
-          ))}
+          <h3 className="text-2xl font-semibold text-center mb-6">Why Partner with Fyntegra?</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {partnerBenefits.map((b, i) => (
+              <motion.div
+                key={i}
+                whileHover={{ y: -6 }}
+                className="p-6 bg-white rounded-xl shadow-lg text-center"
+              >
+                <div className="flex justify-center mb-4">{b.icon}</div>
+                <h4 className="font-semibold text-[#d60000] mb-2">{b.title}</h4>
+                <p className="text-sm text-gray-600">{b.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Success Stories */}
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          className="mt-16"
+        >
+          <h3 className="text-2xl font-semibold text-center mb-6">Our Success Stories</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {successStories.map((s, i) => (
+              <div key={i} className="p-6 bg-white rounded-xl shadow-lg">
+                <h4 className="font-semibold text-[#d60000] mb-2">{s.title}</h4>
+                <p className="text-gray-600 mb-2">{s.desc}</p>
+                <p className="text-sm text-gray-500">Impact: {s.impact}</p>
+              </div>
+            ))}
+          </div>
         </motion.div>
 
         {/* FAQs */}
@@ -233,7 +299,7 @@ export default function Contact() {
           viewport={{ once: true }}
           className="mt-16 max-w-4xl mx-auto"
         >
-          <h3 className="text-2xl font-semibold text-center mb-6">What Our Customers Say</h3>
+          <h3 className="text-2xl font-semibold text-center mb-6">What Our Partners Say</h3>
           <div className="relative">
             <AnimatePresence mode="wait">
               <motion.div
@@ -266,20 +332,6 @@ export default function Contact() {
           </div>
         </motion.div>
 
-        {/* Map Placeholder */}
-        <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-          className="mt-16"
-        >
-          <h3 className="text-2xl font-semibold text-center mb-6">Our Location</h3>
-          <div className="bg-gray-200 h-64 rounded-xl flex items-center justify-center">
-            <p className="text-gray-600">Interactive Map Placeholder (123 Fintech Hub, Mumbai, MH 400001)</p>
-          </div>
-        </motion.div>
-
         {/* CTA */}
         <motion.div
           variants={fadeUp}
@@ -288,19 +340,19 @@ export default function Contact() {
           viewport={{ once: true }}
           className="mt-16 text-center"
         >
-          <h3 className="text-2xl font-semibold mb-4">Let’s Connect!</h3>
+          <h3 className="text-2xl font-semibold mb-4">Ready to Collaborate?</h3>
           <div className="flex justify-center gap-4 flex-wrap">
             <a
-              href="#contact"
+              href="#partner"
               className="px-6 py-3 bg-[#d60000] text-white rounded-full font-semibold shadow hover:bg-[#b50000] transition"
             >
-              Send a Message
+              Become a Partner
             </a>
             <a
-              href="#support"
+              href="#contact"
               className="px-6 py-3 border border-[#d60000] text-[#d60000] rounded-full font-semibold hover:bg-[#d60000]/10 transition"
             >
-              Visit Support Center
+              Contact Us
             </a>
           </div>
         </motion.div>

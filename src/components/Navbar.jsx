@@ -26,7 +26,7 @@ const Navbar = () => {
         {/* Logo */}
         <div className="flex-shrink-0">
           <Link to="/">
-          <img src={assets.logo} alt="Logo" className="h-20 w-auto" />
+            <img src={assets.logo} alt="Logo" className="h-20 w-auto" />
           </Link>
         </div>
 
@@ -39,19 +39,21 @@ const Navbar = () => {
                 className="relative group transition-colors duration-300"
               >
                 {link.label}
-                <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-blue-500 transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#d60000] transition-all duration-300 group-hover:w-full"></span>
               </a>
             </li>
           ))}
           <li>
-            <button className="px-5 py-2 bg-[#deeea5] cursor-pointer text-gray-900 rounded-full hover:bg-[#28af5b] hover:scale-105 transition duration-300">
+            <Link to="/apply">
+            <button className="px-5 py-2 bg-[#d60000] cursor-pointer text-white rounded-full hover:bg-red-700 hover:scale-105 transition duration-300">
               Apply Now
-            </button>
+            </button></Link>
           </li>
           <li>
-            <button className="px-5 py-2 bg-green-600 cursor-pointer text-white rounded-full hover:bg-green-700 hover:scale-105 transition duration-300">
+            <Link to="/partner-with-us">
+            <button className="px-5 py-2 bg-[#2e2e2e] cursor-pointer text-white rounded-full hover:bg-gray-900 hover:scale-105 transition duration-300">
               Partner With Us
-            </button>
+            </button></Link>
           </li>
         </ul>
 
@@ -88,14 +90,18 @@ const Navbar = () => {
               </li>
             ))}
             <li>
-              <button className="w-full px-4 py-2 bg-[#deeea5] text-gray-900 rounded-full hover:bg-yellow-500 transition-transform duration-300 hover:scale-105">
-                Apply Now
-              </button>
+              <Link to="/apply">
+                <button className="w-full px-4 py-2 bg-[#d60000] text-white rounded-full hover:bg-yellow-500 transition-transform duration-300 hover:scale-105">
+                  Apply Now
+                </button>
+              </Link>
             </li>
             <li>
-              <button className="w-full px-4 py-2 bg-green-600 text-white rounded-full hover:bg-green-700 transition-transform duration-300 hover:scale-105">
-                Partner With Us
-              </button>
+              <Link to="/partner-with-us">
+                <button className="w-full px-4 py-2 bg-[#2e2e2e] text-white rounded-full hover:bg-gray-800 transition-transform duration-300 hover:scale-105">
+                  Partner With Us
+                </button>
+              </Link>
             </li>
           </motion.ul>
         )}

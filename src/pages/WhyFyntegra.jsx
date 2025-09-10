@@ -1,41 +1,218 @@
 import React from "react";
 import { motion } from "framer-motion";
+import assets from "../assets/assets"; // Assuming assets import for potential images or icons
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 30 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+};
 
 export default function WhyFyntegra() {
   const features = [
-    { title: "AI + Human Expertise", desc: "Balancing automation with empathy." },
-    { title: "Compliance First", desc: "RBI-aligned governance in every workflow." },
-    { title: "Scalable Solutions", desc: "Future-ready tools that grow with you." },
+    {
+      title: "AI + Human Expertise",
+      desc: "Our platform combines advanced AI algorithms for efficient processing with human oversight to ensure empathy and accuracy in every interaction.",
+      icon: (
+        <svg className="w-8 h-8 text-[#d60000]" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
+          <path d="M12 2v20m-6-6h12" />
+        </svg>
+      ),
+    },
+    {
+      title: "Compliance First",
+      desc: "Built with RBI-aligned governance, including end-to-end audit trails, secure data flows, and regulatory reporting to minimize risks.",
+      icon: (
+        <svg className="w-8 h-8 text-[#d60000]" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
+          <path d="M12 2l7 4v5c0 5-3.5 9.5-7 11-3.5-1.5-7-6-7-11V6l7-4z" />
+        </svg>
+      ),
+    },
+    {
+      title: "Scalable Solutions",
+      desc: "Modular, API-first architecture that grows with your business, supporting from 10 to 1000+ operations with consistent SLAs.",
+      icon: (
+        <svg className="w-8 h-8 text-[#d60000]" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
+          <path d="M3 21h18M3 10h18M6 6h.01M6 14h.01M6 18h.01M18 6h.01M18 14h.01M18 18h.01" />
+        </svg>
+      ),
+    },
+    {
+      title: "Customer-Centric Design",
+      desc: "Focused on improving NPS through seamless onboarding, faster disbursals, and personalized collections strategies.",
+      icon: (
+        <svg className="w-8 h-8 text-[#d60000]" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
+          <path d="M12 12c2.2 0 4-1.8 4-4s-1.8-4-4-4-4 1.8-4 4 1.8 4 4 4zm-6 8c0-3.3 2.7-6 6-6s6 2.7 6 6" />
+        </svg>
+      ),
+    },
+    {
+      title: "Fast Integrations",
+      desc: "Plug-and-play modules and APIs that reduce time-to-market, enabling quick go-live for new lending programs.",
+      icon: (
+        <svg className="w-8 h-8 text-[#d60000]" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
+          <path d="M12 6v6l4 2" />
+        </svg>
+      ),
+    },
+    {
+      title: "Data-Driven Insights",
+      desc: "Advanced analytics and reporting tools for predictive nudges, lead scoring, and performance optimization.",
+      icon: (
+        <svg className="w-8 h-8 text-[#d60000]" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
+          <path d="M3 12h18M3 6h10M3 18h6" />
+        </svg>
+      ),
+    },
+  ];
+
+  const stats = [
+    { value: "120+", label: "Banks & NBFCs" },
+    { value: "5000+", label: "Loans Processed" },
+    { value: "85%", label: "Avg NPS" },
+    { value: "24h", label: "Avg Disbursal Time" },
+  ];
+
+  const testimonials = [
+    {
+      quote: "Fyntegra transformed our lending operations with seamless AI integration and top-notch compliance.",
+      author: "Director of CX, National Bank",
+    },
+    {
+      quote: "Their scalable solutions helped us grow without compromising on customer experience.",
+      author: "VP Collections, NBFC",
+    },
   ];
 
   return (
     <section id="why" className="py-20 px-6 bg-gray-50 mt-20">
-      <div className="max-w-6xl mx-auto text-center">
+      <div className="max-w-6xl mx-auto">
         <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
           viewport={{ once: true }}
-          className="text-3xl md:text-4xl font-bold"
+          className="text-3xl md:text-4xl font-extrabold text-center"
         >
-          Why Choose <span className="text-green-600">Fyntegra?</span>
+          Why Choose <span className="text-[#d60000]">Fyntegra?</span>
         </motion.h2>
-        <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
-          We are large enough to deliver at scale and agile enough to care about
-          every customer interaction.
-        </p>
+        <motion.p
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          transition={{ delay: 0.2 }}
+          className="mt-4 text-gray-600 max-w-3xl mx-auto text-center"
+        >
+          We blend enterprise-grade operations with agile, customer-focused innovation. Large enough to deliver at scale, agile enough to care about every detail—from compliance to customer satisfaction.
+        </motion.p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+        {/* Expanded Features */}
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          transition={{ delay: 0.4 }}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12"
+        >
           {features.map((f, i) => (
             <motion.div
               key={i}
               whileHover={{ scale: 1.05 }}
-              className="p-8 bg-white rounded-xl shadow-lg"
+              className="p-6 bg-white rounded-xl shadow-lg"
             >
-              <h3 className="text-xl font-semibold">{f.title}</h3>
-              <p className="mt-2 text-gray-600">{f.desc}</p>
+              <div className="flex justify-center mb-4">{f.icon}</div>
+              <h3 className="text-xl font-semibold text-center mb-2">{f.title}</h3>
+              <p className="text-gray-600 text-center">{f.desc}</p>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
+
+        {/* Stats Section */}
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          className="mt-16"
+        >
+          <h3 className="text-2xl font-semibold text-center mb-6">Proven Impact</h3>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {stats.map((stat, i) => (
+              <div key={i} className="bg-white p-4 rounded-xl shadow text-center">
+                <div className="text-3xl font-extrabold text-[#d60000]">{stat.value}</div>
+                <div className="text-sm text-gray-600 mt-1">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+          <p className="mt-6 text-center text-sm text-gray-600">
+            These metrics showcase our commitment to efficiency, satisfaction, and scale in lending operations.
+          </p>
+        </motion.div>
+
+        {/* Testimonials */}
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          className="mt-16"
+        >
+          <h3 className="text-2xl font-semibold text-center mb-6">What Our Partners Say</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {testimonials.map((t, i) => (
+              <div key={i} className="bg-white p-6 rounded-xl shadow-lg">
+                <p className="italic text-gray-700 mb-4">“{t.quote}”</p>
+                <div className="font-semibold text-[#d60000]">{t.author}</div>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Additional Benefits */}
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          className="mt-16 text-center"
+        >
+          <h3 className="text-2xl font-semibold mb-6">Additional Benefits</h3>
+          <ul className="max-w-3xl mx-auto space-y-4 text-left text-gray-600">
+            <li className="flex items-start gap-3">
+              <span className="text-[#d60000]">•</span>
+              <span>Seamless API integrations for reduced onboarding time and lower drop-offs.</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="text-[#d60000]">•</span>
+              <span>Omnichannel customer engagement for higher recovery rates and satisfaction.</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="text-[#d60000]">•</span>
+              <span>Customizable dashboards for real-time insights and decision-making.</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="text-[#d60000]">•</span>
+              <span>Dedicated support teams ensuring operational excellence and quick resolutions.</span>
+            </li>
+          </ul>
+        </motion.div>
+
+        {/* CTA */}
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          className="mt-16 text-center"
+        >
+          <a
+            href="#contact"
+            className="inline-block px-8 py-4 bg-[#d60000] text-white rounded-full font-semibold shadow hover:bg-[#b50000] transition"
+          >
+            Get Started with Fyntegra Today
+          </a>
+        </motion.div>
       </div>
     </section>
   );
