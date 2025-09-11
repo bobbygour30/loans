@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "react-router-dom";
 import assets from "../assets/assets";
 import {
   ShieldCheck,
@@ -201,13 +202,13 @@ export default function Homepage() {
                   efficient financial solutions tailored to your needs.
                 </p>
                 <div className="mt-6 flex justify-center md:justify-start gap-3 flex-wrap">
+                  <Link to="/solutions">
                   <motion.a
                     whileHover={{ scale: 1.03 }}
-                    href="/solutions"
                     className="px-6 py-3 bg-[#d60000] text-white rounded-full font-semibold shadow"
                   >
                     Explore Solutions
-                  </motion.a>
+                  </motion.a></Link>
                   <motion.a
                     whileHover={{ scale: 1.03 }}
                     href="/partner-with-us"
