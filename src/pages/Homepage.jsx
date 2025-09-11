@@ -46,6 +46,7 @@ export default function Homepage() {
   const [emiInterest, setEmiInterest] = useState(12);
   const [emiTenure, setEmiTenure] = useState(24);
   const [selectedLoan, setSelectedLoan] = useState(null);
+  const [mobileNumber, setMobileNumber] = useState("");
 
   const testimonials = [
     {
@@ -171,6 +172,13 @@ export default function Homepage() {
   const handleOverlayClick = (e) => {
     if (e.target === e.currentTarget) {
       setSelectedLoan(null);
+    }
+  };
+  const handleGetLoanClick = () => {
+    if (mobileNumber) {
+      alert(`Loan application started with mobile number: ${mobileNumber}`);
+    } else {
+      alert("Please enter a mobile number.");
     }
   };
 
@@ -373,6 +381,35 @@ export default function Homepage() {
                 </div>
               </li>
             </ul>
+          </div>
+        </div>
+      </motion.section>
+      <motion.section variants={fadeUp} initial="hidden" whileInView="show" className="py-20 px-6 bg-gradient-to-r from-white via-red-50 to-red-100" viewport={{ once: true }}>
+        <div className="max-w-6xl mx-auto text-center">
+          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">
+            Lightning-fast upgrades with <span className="text-[#d60000]">Instant Cash</span>
+          </h2>
+          <p className="text-lg text-gray-600 mb-6">Fyntegra — empowering your financial freedom like never before!</p>
+          <div className="text-sm text-gray-500 mb-8 flex justify-center gap-4 flex-wrap">
+            <span>Funds in your account within hours</span>
+            <span>Swift loan approvals</span>
+            <span>Flexible repayment options</span>
+            <span>Single application for multiple loans</span>
+          </div>
+          <div className="flex justify-center items-center gap-4 max-w-md mx-auto">
+            <input
+              type="tel"
+              value={mobileNumber}
+              onChange={(e) => setMobileNumber(e.target.value)}
+              placeholder="Enter your mobile number"
+              className="w-full p-3 border border-gray-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-[#d60000] text-gray-700 placeholder-gray-400"
+            />
+            <button
+              onClick={handleGetLoanClick}
+              className="px-6 py-1 bg-[#d60000] text-white rounded-lg hover:bg-[#b50000] transition duration-300 shadow-lg"
+            >
+              Get your loan now
+            </button>
           </div>
         </div>
       </motion.section>
