@@ -291,18 +291,18 @@ export default function AboutUs() {
             Join us to deliver lending solutions that combine compliance, speed, and customer-centric innovation. Let’s shape the future of finance together.
           </p>
           <div className="mt-6 flex justify-center gap-4 flex-wrap">
-            <a
+            <button
               href="/contact"
               className="px-6 py-3 bg-white text-[#d60000] rounded-full font-semibold shadow hover:scale-105 transition"
             >
               Contact Us
-            </a>
-            <a
+            </button>
+            <button
               href="/partner-with-us"
               className="px-6 py-3 border border-white/50 text-white rounded-full font-semibold hover:bg-white/10 transition"
             >
               Request Demo
-            </a>
+            </button>
           </div>
         </div>
       </motion.section>

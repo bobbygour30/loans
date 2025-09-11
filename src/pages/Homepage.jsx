@@ -201,7 +201,7 @@ export default function Homepage() {
                   Empowering borrowers and lenders with seamless, compliant, and
                   efficient financial solutions tailored to your needs.
                 </p>
-                <div className="mt-6 flex justify-center md:justify-start gap-3 flex-wrap">
+                <div className="mt-6 flex justify-center md:justify-start gap-7 flex-wrap">
                   <Link to="/solutions">
                   <motion.a
                     whileHover={{ scale: 1.03 }}
@@ -212,7 +212,7 @@ export default function Homepage() {
                   <Link to="/partner-with-us">
                   <motion.a
                     whileHover={{ scale: 1.03 }}
-                    className="px-6 py-3 bg-[#444242]   text-white rounded-full font-semibold"
+                    className="px-6 py-3 bg-[#444242]  text-white rounded-full font-semibold"
                   >
                     Partner with Us
                   </motion.a></Link>
@@ -871,7 +871,6 @@ export default function Homepage() {
           </div>
           <Link to="/platform">
           <button
-            href=""
             className="inline-block px-6 py-3 bg-[#d60000] text-white rounded-full cursor-pointer"
           >
             Explore Platform
