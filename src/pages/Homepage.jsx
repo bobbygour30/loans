@@ -209,13 +209,13 @@ export default function Homepage() {
                   >
                     Explore Solutions
                   </motion.a></Link>
+                  <Link to="/partner-with-us">
                   <motion.a
                     whileHover={{ scale: 1.03 }}
-                    href="/partner-with-us"
                     className="px-6 py-3 bg-[#444242]   text-white rounded-full font-semibold"
                   >
                     Partner with Us
-                  </motion.a>
+                  </motion.a></Link>
                 </div>
               </div>
               <motion.div
@@ -869,12 +869,13 @@ export default function Homepage() {
               </div>
             ))}
           </div>
-          <a
-            href="/platform"
-            className="inline-block px-6 py-3 bg-[#d60000] text-white rounded-full"
+          <Link to="/platform">
+          <button
+            href=""
+            className="inline-block px-6 py-3 bg-[#d60000] text-white rounded-full cursor-pointer"
           >
             Explore Platform
-          </a>
+          </button></Link>
         </div>
       </motion.section>
 
