@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { UserRoundCheck, Wallet, IdCard, FileCheck2 } from "lucide-react";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -11,38 +12,22 @@ export default function Eligibility() {
     {
       title: "Age Requirement",
       desc: "Applicants must be between 21 and 60 years old to qualify for most loan products.",
-      icon: (
-        <svg className="w-6 h-6 text-[#d60000]" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
-          <path d="M12 12c2.2 0 4-1.8 4-4s-1.8-4-4-4-4 1.8-4 4 1.8 4 4 4zm-6 8c0-3.3 2.7-6 6-6s6 2.7 6 6" />
-        </svg>
-      ),
+      icon: <UserRoundCheck className="w-7 h-7 text-[#d60000]" />,
     },
     {
       title: "Minimum Income",
       desc: "A stable monthly income (varies by loan type) to ensure repayment capacity.",
-      icon: (
-        <svg className="w-6 h-6 text-[#d60000]" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
-          <path d="M3 21h18M3 10h18M6 6h.01M6 14h.01M6 18h.01M18 6h.01M18 14h.01M18 18h.01" />
-        </svg>
-      ),
+      icon: <Wallet className="w-7 h-7 text-[#d60000]" />,
     },
     {
       title: "Valid KYC Documents",
       desc: "Aadhaar, PAN, and other identity proofs for secure and compliant verification.",
-      icon: (
-        <svg className="w-6 h-6 text-[#d60000]" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
-          <path d="M12 2l7 4v5c0 5-3.5 9.5-7 11-3.5-1.5-7-6-7-11V6l7-4z" />
-        </svg>
-      ),
+      icon: <IdCard className="w-7 h-7 text-[#d60000]" />,
     },
     {
       title: "Stable Credit History",
       desc: "A good credit score or consistent repayment history to qualify for favorable terms.",
-      icon: (
-        <svg className="w-6 h-6 text-[#d60000]" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
-          <path d="M12 6v6l4 2" />
-        </svg>
-      ),
+      icon: <FileCheck2 className="w-7 h-7 text-[#d60000]" />,
     },
   ];
 
@@ -269,13 +254,13 @@ export default function Eligibility() {
           <h3 className="text-2xl font-semibold mb-4">Ready to Apply?</h3>
           <div className="flex justify-center gap-4 flex-wrap">
             <a
-              href="#apply"
+              href="/"
               className="px-6 py-3 bg-[#d60000] text-white rounded-full font-semibold shadow hover:bg-[#b50000] transition"
             >
               Start Your Application
             </a>
             <a
-              href="#contact"
+              href="/contact"
               className="px-6 py-3 border border-[#d60000] text-[#d60000] rounded-full font-semibold hover:bg-[#d60000]/10 transition"
             >
               Contact Us

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Mail, Phone, MapPin } from "lucide-react";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -15,11 +16,7 @@ export default function Contact() {
     {
       title: "Email Us",
       desc: "support@fyntegra.com",
-      icon: (
-        <svg className="w-8 h-8 text-[#d60000]" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
-          <path d="M4 4h16v12H4zM20 4l-8 5-8-5" />
-        </svg>
-      ),
+      icon: <Mail className="w-8 h-8 text-[#d60000]" />,
       action: (
         <a href="mailto:support@fyntegra.com" className="mt-4 inline-block text-sm text-[#d60000] hover:underline">
           Send Email
@@ -29,11 +26,7 @@ export default function Contact() {
     {
       title: "Call Us",
       desc: "+91-123-456-7890",
-      icon: (
-        <svg className="w-8 h-8 text-[#d60000]" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
-          <path d="M3 5a2 2 0 0 1 2-2h3.28a1 1 0 0 1 .948.684l1.498 4.493a1 1 0 0 1-.502 1.21l-2.257 1.13a11.042 11.042 0 0 0 5.516 5.516l1.13-2.257a1 1 0 0 1 1.21-.502l4.493 1.498a1 1 0 0 1 .684.949V19a2 2 0 0 1-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-        </svg>
-      ),
+      icon: <Phone className="w-8 h-8 text-[#d60000]" />,
       action: (
         <a href="tel:+911234567890" className="mt-4 inline-block text-sm text-[#d60000] hover:underline">
           Call Now
@@ -43,11 +36,7 @@ export default function Contact() {
     {
       title: "Visit Us",
       desc: "123 Fintech Hub, Mumbai, MH 400001",
-      icon: (
-        <svg className="w-8 h-8 text-[#d60000]" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
-          <path d="M12 2c-3.86 0-7 3.14-7 7 0 5.25 7 13 7 13s7-7.75 7-13c0-3.86-3.14-7-7-7zm0 10c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z" />
-        </svg>
-      ),
+      icon: <MapPin className="w-8 h-8 text-[#d60000]" />,
       action: (
         <a href="#map" className="mt-4 inline-block text-sm text-[#d60000] hover:underline">
           View on Map
@@ -291,13 +280,13 @@ export default function Contact() {
           <h3 className="text-2xl font-semibold mb-4">Let’s Connect!</h3>
           <div className="flex justify-center gap-4 flex-wrap">
             <a
-              href="#contact"
+              href="/contact"
               className="px-6 py-3 bg-[#d60000] text-white rounded-full font-semibold shadow hover:bg-[#b50000] transition"
             >
               Send a Message
             </a>
             <a
-              href="#support"
+              href="/support"
               className="px-6 py-3 border border-[#d60000] text-[#d60000] rounded-full font-semibold hover:bg-[#d60000]/10 transition"
             >
               Visit Support Center

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Wallet, BriefcaseBusiness, GraduationCap, Home, Gem, Car } from "lucide-react";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -11,58 +12,32 @@ export default function Loans() {
     {
       title: "Personal Loans",
       desc: "Quick access to funds for personal needs like medical emergencies, travel, or home renovations with flexible repayment options.",
-      icon: (
-        <svg className="w-8 h-8 text-[#d60000]" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
-          <path d="M12 8c-2.2 0-4 1.8-4 4s1.8 4 4 4 4-1.8 4-4-1.8-4-4-4zm0-6v2m0 16v2m10-10h2M0 12h2m15.07 7.07l1.41 1.41M4.51 4.51l1.41 1.41m12.73 0l1.41-1.41M4.51 19.49l1.41-1.41" />
-        </svg>
-      ),
+      icon: <Wallet className="w-8 h-8 text-[#d60000]" />,
     },
     {
       title: "Business Loans",
       desc: "Tailored financing for SMEs and startups to support working capital, expansion, or equipment purchases.",
-      icon: (
-        <svg className="w-8 h-8 text-[#d60000]" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
-          <path d="M3 21h18M3 10h18M6 6h.01M6 14h.01M6 18h.01M18 6h.01M18 14h.01M18 18h.01" />
-        </svg>
-      ),
+      icon: <BriefcaseBusiness className="w-8 h-8 text-[#d60000]" />,
     },
     {
       title: "Education Loans",
       desc: "Affordable financing for students to pursue higher education in India or abroad with flexible repayment terms.",
-      icon: (
-        <svg className="w-8 h-8 text-[#d60000]" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
-          <path d="M12 2l9 5-9 5-9-5 9-5z" />
-          <path d="M3 7v10l9 5 9-5V7" />
-        </svg>
-      ),
+      icon: <GraduationCap className="w-8 h-8 text-[#d60000]" />,
     },
     {
       title: "Home Loans",
       desc: "Competitive rates to help you purchase or renovate your dream home with streamlined processing.",
-      icon: (
-        <svg className="w-8 h-8 text-[#d60000]" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
-          <path d="M3 12l9-9 9 9M9 21V9h6v12" />
-        </svg>
-      ),
+      icon: <Home className="w-8 h-8 text-[#d60000]" /> ,
     },
     {
       title: "Gold Loans",
       desc: "Instant liquidity against gold assets with minimal documentation and quick disbursal.",
-      icon: (
-        <svg className="w-8 h-8 text-[#d60000]" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
-          <path d="M12 2l9 5-9 5-9-5 9-5z" />
-          <path d="M3 7v10l9 5 9-5V7" />
-        </svg>
-      ),
+      icon: <Gem className="w-8 h-8 text-[#d60000]" />,
     },
     {
       title: "Vehicle Loans",
       desc: "Finance your dream car or two-wheeler with easy EMIs and fast approval processes.",
-      icon: (
-        <svg className="w-8 h-8 text-[#d60000]" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
-          <path d="M3 13l2-5h14l2 5v6a1 1 0 0 1-1 1h-1a3 3 0 0 1-6 0H10a3 3 0 0 1-6 0H3a1 1 0 0 1-1-1v-6z" />
-        </svg>
-      ),
+      icon: <Car className="w-8 h-8 text-[#d60000]" />,
     },
   ];
 
@@ -310,13 +285,13 @@ export default function Loans() {
           <h3 className="text-2xl font-semibold mb-4">Ready to Get Started?</h3>
           <div className="flex justify-center gap-4 flex-wrap">
             <a
-              href="#apply"
+              href="/"
               className="px-6 py-3 bg-[#d60000] text-white rounded-full font-semibold shadow hover:bg-[#b50000] transition"
             >
               Apply for a Loan
             </a>
             <a
-              href="#contact"
+              href="/contact"
               className="px-6 py-3 border border-[#d60000] text-[#d60000] rounded-full font-semibold hover:bg-[#d60000]/10 transition"
             >
               Contact Us

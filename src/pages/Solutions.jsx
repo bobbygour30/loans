@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { IdCard, BrainCircuit, Users, TrendingUp, BarChart3, Workflow } from "lucide-react";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -11,56 +12,32 @@ export default function Solutions() {
     {
       title: "Digital KYC",
       desc: "Streamlined onboarding with real-time identity verification, fraud detection, and RBI-compliant processes to reduce drop-offs.",
-      icon: (
-        <svg className="w-8 h-8 text-[#d60000]" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
-          <path d="M12 2l7 4v5c0 5-3.5 9.5-7 11-3.5-1.5-7-6-7-11V6l7-4z" />
-        </svg>
-      ),
+      icon: <IdCard className="w-8 h-8 text-[#d60000]" />,
     },
     {
       title: "AI Risk Models",
       desc: "Advanced predictive analytics to assess credit risk, minimize defaults, and optimize loan approvals with precision.",
-      icon: (
-        <svg className="w-8 h-8 text-[#d60000]" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
-          <path d="M3 12h18M3 6h10M3 18h6" />
-        </svg>
-      ),
+      icon: <BrainCircuit className="w-8 h-8 text-[#d60000]" />,
     },
     {
       title: "Customer Engagement",
       desc: "Omnichannel outreach with AI-driven nudges and consent-logged communications to boost retention and satisfaction.",
-      icon: (
-        <svg className="w-8 h-8 text-[#d60000]" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
-          <path d="M12 12c2.2 0 4-1.8 4-4s-1.8-4-4-4-4 1.8-4 4 1.8 4 4 4zm-6 8c0-3.3 2.7-6 6-6s6 2.7 6 6" />
-        </svg>
-      ),
+      icon: <Users className="w-8 h-8 text-[#d60000]" />,
     },
     {
       title: "Collections Optimization",
       desc: "Data-driven prioritization and automated workflows to improve recovery rates while maintaining customer trust.",
-      icon: (
-        <svg className="w-8 h-8 text-[#d60000]" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
-          <path d="M12 6v6l4 2" />
-        </svg>
-      ),
+      icon: <TrendingUp className="w-8 h-8 text-[#d60000]" />,
     },
     {
       title: "Analytics & Reporting",
       desc: "Customizable dashboards with real-time insights and regulatory reporting for informed decision-making.",
-      icon: (
-        <svg className="w-8 h-8 text-[#d60000]" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
-          <path d="M3 21h18M3 10h18M6 6h.01M6 14h.01M6 18h.01M18 6h.01M18 14h.01M18 18h.01" />
-        </svg>
-      ),
+      icon: <BarChart3 className="w-8 h-8 text-[#d60000]" />,
     },
     {
       title: "Seamless Integrations",
       desc: "API-first modules for quick setup with existing systems, reducing time-to-market for lending programs.",
-      icon: (
-        <svg className="w-8 h-8 text-[#d60000]" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
-          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2m22-2v-2a4 4 0 0 0-3-3.87m-4-12a4 4 0 0 1 0 7.75" />
-        </svg>
-      ),
+      icon: <Workflow className="w-8 h-8 text-[#d60000]" />,
     },
   ];
 
@@ -258,13 +235,13 @@ export default function Solutions() {
           <h3 className="text-2xl font-semibold mb-4">Transform Your Lending Operations</h3>
           <div className="flex justify-center gap-4 flex-wrap">
             <a
-              href="#demo"
+              href="/partner-with-us"
               className="px-6 py-3 bg-[#d60000] text-white rounded-full font-semibold shadow hover:bg-[#b50000] transition"
             >
               Request a Demo
             </a>
             <a
-              href="#contact"
+              href="/contact"
               className="px-6 py-3 border border-[#d60000] text-[#d60000] rounded-full font-semibold hover:bg-[#d60000]/10 transition"
             >
               Contact Us

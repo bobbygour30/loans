@@ -1,5 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import {
+  Code,
+  Server,
+  Users,
+  Brain,
+  ChevronLeft,
+  ChevronRight,
+} from "lucide-react";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -12,41 +20,25 @@ export default function Careers() {
       role: "Frontend Developer",
       location: "Remote / Delhi",
       desc: "Build intuitive and responsive user interfaces using React and Tailwind CSS to enhance our lending platform.",
-      icon: (
-        <svg className="w-8 h-8 text-[#d60000]" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
-          <path d="M3 9h18M3 15h18M6 6h.01M6 12h.01M6 18h.01M18 6h.01M18 12h.01M18 18h.01" />
-        </svg>
-      ),
+      icon: <Code className="w-8 h-8 text-[#d60000]" />,
     },
     {
       role: "Backend Engineer",
       location: "Bangalore",
       desc: "Develop scalable APIs and microservices to power our AI-driven lending solutions with high performance and security.",
-      icon: (
-        <svg className="w-8 h-8 text-[#d60000]" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
-          <path d="M12 2v20m-6-6h12" />
-        </svg>
-      ),
+      icon: <Server className="w-8 h-8 text-[#d60000]" />,
     },
     {
       role: "Customer Success Manager",
       location: "Mumbai",
       desc: "Drive client satisfaction by managing relationships and ensuring seamless adoption of our platform.",
-      icon: (
-        <svg className="w-8 h-8 text-[#d60000]" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
-          <path d="M12 12c2.2 0 4-1.8 4-4s-1.8-4-4-4-4 1.8-4 4 1.8 4 4 4zm-6 8c0-3.3 2.7-6 6-6s6 2.7 6 6" />
-        </svg>
-      ),
+      icon: <Users className="w-8 h-8 text-[#d60000]" />,
     },
     {
       role: "Data Scientist",
       location: "Remote / Hyderabad",
       desc: "Leverage AI and machine learning to enhance risk models and predictive analytics for lending decisions.",
-      icon: (
-        <svg className="w-8 h-8 text-[#d60000]" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
-          <path d="M3 12h18M3 6h10M3 18h6" />
-        </svg>
-      ),
+      icon: <Brain className="w-8 h-8 text-[#d60000]" />,
     },
   ];
 
@@ -249,7 +241,7 @@ export default function Careers() {
           <h3 className="text-2xl font-semibold mb-4">Ready to Make an Impact?</h3>
           <div className="flex justify-center gap-4 flex-wrap">
             <a
-              href="#apply"
+              href="/"
               className="px-6 py-3 bg-[#d60000] text-white rounded-full font-semibold shadow hover:bg-[#b50000] transition"
             >
               View Openings

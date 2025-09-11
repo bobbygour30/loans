@@ -1,6 +1,13 @@
 import React from "react";
 import { motion } from "framer-motion";
-import assets from "../assets/assets"; // Assuming assets import for potential images or icons
+import {
+  BrainCircuit,
+  ShieldCheck,
+  ServerCog,
+  Users,
+  Zap,
+  BarChart3,
+} from "lucide-react";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -12,56 +19,32 @@ export default function WhyFyntegra() {
     {
       title: "AI + Human Expertise",
       desc: "Our platform combines advanced AI algorithms for efficient processing with human oversight to ensure empathy and accuracy in every interaction.",
-      icon: (
-        <svg className="w-8 h-8 text-[#d60000]" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
-          <path d="M12 2v20m-6-6h12" />
-        </svg>
-      ),
+      icon: <BrainCircuit className="w-8 h-8 text-[#d60000]" />,
     },
     {
       title: "Compliance First",
       desc: "Built with RBI-aligned governance, including end-to-end audit trails, secure data flows, and regulatory reporting to minimize risks.",
-      icon: (
-        <svg className="w-8 h-8 text-[#d60000]" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
-          <path d="M12 2l7 4v5c0 5-3.5 9.5-7 11-3.5-1.5-7-6-7-11V6l7-4z" />
-        </svg>
-      ),
+      icon: <ShieldCheck className="w-8 h-8 text-[#d60000]" />,
     },
     {
       title: "Scalable Solutions",
       desc: "Modular, API-first architecture that grows with your business, supporting from 10 to 1000+ operations with consistent SLAs.",
-      icon: (
-        <svg className="w-8 h-8 text-[#d60000]" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
-          <path d="M3 21h18M3 10h18M6 6h.01M6 14h.01M6 18h.01M18 6h.01M18 14h.01M18 18h.01" />
-        </svg>
-      ),
+      icon: <ServerCog className="w-8 h-8 text-[#d60000]" />,
     },
     {
       title: "Customer-Centric Design",
       desc: "Focused on improving NPS through seamless onboarding, faster disbursals, and personalized collections strategies.",
-      icon: (
-        <svg className="w-8 h-8 text-[#d60000]" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
-          <path d="M12 12c2.2 0 4-1.8 4-4s-1.8-4-4-4-4 1.8-4 4 1.8 4 4 4zm-6 8c0-3.3 2.7-6 6-6s6 2.7 6 6" />
-        </svg>
-      ),
+      icon: <Users className="w-8 h-8 text-[#d60000]" />,
     },
     {
       title: "Fast Integrations",
       desc: "Plug-and-play modules and APIs that reduce time-to-market, enabling quick go-live for new lending programs.",
-      icon: (
-        <svg className="w-8 h-8 text-[#d60000]" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
-          <path d="M12 6v6l4 2" />
-        </svg>
-      ),
+      icon: <Zap className="w-8 h-8 text-[#d60000]" />,
     },
     {
       title: "Data-Driven Insights",
       desc: "Advanced analytics and reporting tools for predictive nudges, lead scoring, and performance optimization.",
-      icon: (
-        <svg className="w-8 h-8 text-[#d60000]" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
-          <path d="M3 12h18M3 6h10M3 18h6" />
-        </svg>
-      ),
+      icon: <BarChart3 className="w-8 h-8 text-[#d60000]" />,
     },
   ];
 
@@ -207,7 +190,7 @@ export default function WhyFyntegra() {
           className="mt-16 text-center"
         >
           <a
-            href="#contact"
+            href="/contact"
             className="inline-block px-8 py-4 bg-[#d60000] text-white rounded-full font-semibold shadow hover:bg-[#b50000] transition"
           >
             Get Started with Fyntegra Today

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Users, ShieldCheck, Smile, BarChart3, ChevronDown, ChevronUp, ArrowLeft, ArrowRight } from "lucide-react";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -25,38 +26,22 @@ export default function PartnerWithUs() {
     {
       title: "Scalable Technology",
       desc: "Leverage our API-first platform to streamline lending operations.",
-      icon: (
-        <svg className="w-8 h-8 text-[#d60000]" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
-          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2m22-2v-2a4 4 0 0 0-3-3.87m-4-12a4 4 0 0 1 0 7.75" />
-        </svg>
-      ),
+      icon: <Users className="w-8 h-8 text-[#d60000]" />,
     },
     {
       title: "Compliance Ready",
       desc: "RBI-compliant solutions with audit trails and reporting tools.",
-      icon: (
-        <svg className="w-8 h-8 text-[#d60000]" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
-          <path d="M12 2l7 4v5c0 5-3.5 9.5-7 11-3.5-1.5-7-6-7-11V6l7-4z" />
-        </svg>
-      ),
+      icon: <ShieldCheck className="w-8 h-8 text-[#d60000]" />,
     },
     {
       title: "Enhanced CX",
       desc: "Improve customer satisfaction with AI-driven engagement tools.",
-      icon: (
-        <svg className="w-8 h-8 text-[#d60000]" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
-          <path d="M12 12c2.2 0 4-1.8 4-4s-1.8-4-4-4-4 1.8-4 4 1.8 4 4 4zm-6 8c0-3.3 2.7-6 6-6s6 2.7 6 6" />
-        </svg>
-      ),
+      icon: <Smile className="w-8 h-8 text-[#d60000]" />,
     },
     {
       title: "Data Insights",
       desc: "Access real-time analytics to optimize lending decisions.",
-      icon: (
-        <svg className="w-8 h-8 text-[#d60000]" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
-          <path d="M3 12h18M3 6h10M3 18h6" />
-        </svg>
-      ),
+      icon: <BarChart3 className="w-8 h-8 text-[#d60000]" />,
     },
   ];
 
@@ -343,13 +328,13 @@ export default function PartnerWithUs() {
           <h3 className="text-2xl font-semibold mb-4">Ready to Collaborate?</h3>
           <div className="flex justify-center gap-4 flex-wrap">
             <a
-              href="#partner"
+              href="/partner-with-us"
               className="px-6 py-3 bg-[#d60000] text-white rounded-full font-semibold shadow hover:bg-[#b50000] transition"
             >
               Become a Partner
             </a>
             <a
-              href="#contact"
+              href="/contact"
               className="px-6 py-3 border border-[#d60000] text-[#d60000] rounded-full font-semibold hover:bg-[#d60000]/10 transition"
             >
               Contact Us

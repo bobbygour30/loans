@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Mail, MessageSquare, BookOpen, Phone } from "lucide-react";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -11,11 +12,7 @@ export default function Support() {
     {
       title: "Email Support",
       desc: "Reach out to our team at support@fyntegra.com for detailed assistance on any issue.",
-      icon: (
-        <svg className="w-8 h-8 text-[#d60000]" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
-          <path d="M4 4h16v12H4zM20 4l-8 5-8-5" />
-        </svg>
-      ),
+      icon: <Mail className="w-8 h-8 text-[#d60000]" />,
       action: (
         <a href="mailto:support@fyntegra.com" className="mt-4 inline-block text-sm text-[#d60000] hover:underline">
           Send Email
@@ -25,11 +22,7 @@ export default function Support() {
     {
       title: "Live Chat",
       desc: "Get instant answers from our support team via our 24/7 live chat service.",
-      icon: (
-        <svg className="w-8 h-8 text-[#d60000]" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
-          <path d="M21 11.5a8.38 8.38 0 0 1-8.5 7.5H4l4-4h4.5a3.5 3.5 0 0 0 0-7H4v-2h17z" />
-        </svg>
-      ),
+      icon: <MessageSquare className="w-8 h-8 text-[#d60000]" />,
       action: (
         <button className="mt-4 inline-block px-4 py-2 rounded-full bg-[#d60000] text-white hover:bg-[#b50000]">
           Start Chat
@@ -39,11 +32,7 @@ export default function Support() {
     {
       title: "Help Center",
       desc: "Browse our comprehensive FAQs, guides, and tutorials available anytime.",
-      icon: (
-        <svg className="w-8 h-8 text-[#d60000]" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
-          <path d="M12 2v20m-6-6h12" />
-        </svg>
-      ),
+      icon: <BookOpen className="w-8 h-8 text-[#d60000]" />,
       action: (
         <a href="#help-center" className="mt-4 inline-block text-sm text-[#d60000] hover:underline">
           Visit Help Center
@@ -53,11 +42,7 @@ export default function Support() {
     {
       title: "Phone Support",
       desc: "Speak directly with our experts at +91-123-456-7890 for immediate help.",
-      icon: (
-        <svg className="w-8 h-8 text-[#d60000]" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
-          <path d="M3 5a2 2 0 0 1 2-2h3.28a1 1 0 0 1 .948.684l1.498 4.493a1 1 0 0 1-.502 1.21l-2.257 1.13a11.042 11.042 0 0 0 5.516 5.516l1.13-2.257a1 1 0 0 1 1.21-.502l4.493 1.498a1 1 0 0 1 .684.949V19a2 2 0 0 1-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-        </svg>
-      ),
+      icon: <Phone className="w-8 h-8 text-[#d60000]" />,
       action: (
         <a href="tel:+911234567890" className="mt-4 inline-block text-sm text-[#d60000] hover:underline">
           Call Now
@@ -273,13 +258,13 @@ export default function Support() {
           <h3 className="text-2xl font-semibold mb-4">Need Help? We’re Here for You!</h3>
           <div className="flex justify-center gap-4 flex-wrap">
             <a
-              href="#contact"
+              href="/contact"
               className="px-6 py-3 bg-[#d60000] text-white rounded-full font-semibold shadow hover:bg-[#b50000] transition"
             >
               Contact Support
             </a>
             <a
-              href="#help-center"
+              href="/support"
               className="px-6 py-3 border border-[#d60000] text-[#d60000] rounded-full font-semibold hover:bg-[#d60000]/10 transition"
             >
               Visit Help Center

@@ -1,6 +1,12 @@
 import React from "react";
 import { motion } from "framer-motion";
 import assets from "../assets/assets";
+import {
+  ShieldCheck,
+  Lightbulb,
+  Users,
+  HeartHandshake,
+} from "lucide-react";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -38,13 +44,13 @@ export default function AboutUs() {
             className="mt-6 flex justify-center gap-3 flex-wrap"
           >
             <a
-              href="#contact"
+              href="/contact"
               className="px-6 py-3 bg-white text-[#d60000] rounded-full font-semibold shadow hover:scale-105 transition"
             >
               Get in Touch
             </a>
             <a
-              href="#demo"
+              href="/partner-with-us"
               className="px-6 py-3 border border-white/50 text-white rounded-full font-semibold hover:bg-white/10 transition"
             >
               Request a Demo
@@ -144,47 +150,34 @@ export default function AboutUs() {
         className="py-16 px-6"
       >
         <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-2xl md:text-3xl font-extrabold mb-6">Our Core Values</h2>
+          <h2 className="text-2xl md:text-3xl font-extrabold mb-6">
+            Our Core Values
+          </h2>
           <p className="text-gray-600 mb-8 max-w-3xl mx-auto">
-            Our principles define how we innovate, collaborate, and deliver value to our partners and customers.
+            Our principles define how we innovate, collaborate, and deliver
+            value to our partners and customers.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             {[
               {
                 title: "Integrity",
                 desc: "Upholding the highest standards of compliance and transparency in all operations.",
-                icon: (
-                  <svg className="w-8 h-8 text-[#d60000]" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
-                    <path d="M12 2l7 4v5c0 5-3.5 9.5-7 11-3.5-1.5-7-6-7-11V6l7-4z" />
-                  </svg>
-                ),
+                icon: <ShieldCheck className="w-8 h-8 text-[#d60000]" />,
               },
               {
                 title: "Innovation",
                 desc: "Pioneering AI-driven solutions while maintaining human oversight for precision.",
-                icon: (
-                  <svg className="w-8 h-8 text-[#d60000]" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
-                    <path d="M12 2v20m-6-6h12" />
-                  </svg>
-                ),
+                icon: <Lightbulb className="w-8 h-8 text-[#d60000]" />,
               },
               {
                 title: "Customer Centricity",
                 desc: "Prioritizing the needs of lenders and borrowers to create seamless experiences.",
-                icon: (
-                  <svg className="w-8 h-8 text-[#d60000]" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
-                    <path d="M12 12c2.2 0 4-1.8 4-4s-1.8-4-4-4-4 1.8-4 4 1.8 4 4 4zm-6 8c0-3.3 2.7-6 6-6s6 2.7 6 6" />
-                  </svg>
-                ),
+                icon: <Users className="w-8 h-8 text-[#d60000]" />,
               },
               {
                 title: "Collaboration",
                 desc: "Fostering partnerships to drive mutual success and innovation in lending.",
-                icon: (
-                  <svg className="w-8 h-8 text-[#d60000]" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
-                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2m22-2v-2a4 4 0 0 0-3-3.87m-4-12a4 4 0 0 1 0 7.75" />
-                  </svg>
-                ),
+                icon: <HeartHandshake className="w-8 h-8 text-[#d60000]" />,
               },
             ].map((v, i) => (
               <motion.div
@@ -299,13 +292,13 @@ export default function AboutUs() {
           </p>
           <div className="mt-6 flex justify-center gap-4 flex-wrap">
             <a
-              href="#contact"
+              href="/contact"
               className="px-6 py-3 bg-white text-[#d60000] rounded-full font-semibold shadow hover:scale-105 transition"
             >
               Contact Us
             </a>
             <a
-              href="#demo"
+              href="/partner-with-us"
               className="px-6 py-3 border border-white/50 text-white rounded-full font-semibold hover:bg-white/10 transition"
             >
               Request Demo
