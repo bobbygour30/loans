@@ -15,6 +15,8 @@ import EmiCalculator from './pages/EmiCalculator'
 import Contact from './pages/Contact'
 import ApplyNow from './pages/ApplyNow'
 import PartnerWithUs from './pages/PartnerWithUs'
+import Login from './pages/Login'
+import SignUp from './pages/SignUp'
 
 const App = () => {
   return (
@@ -34,6 +36,8 @@ const App = () => {
         <Route path="/contact" element={<Contact />} />
         <Route path="/apply" element={<ApplyNow />} />
         <Route path="/partner-with-us" element={<PartnerWithUs />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/sign-up" element={<SignUp />} />
       </Routes>
       <Footer />
     </div>

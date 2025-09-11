@@ -85,6 +85,13 @@ const Navbar = () => {
                 </button>
               </Link>
             </li>
+            <li>
+              <Link to="/sign-up">
+                <button className="px-5 py-2 bg-[#d60000] cursor-pointer text-white rounded-full hover:bg-gray-800 hover:scale-105 transition duration-300">
+                  Sign Up
+                </button>
+              </Link>
+            </li>
           </ul>
 
           {/* Mobile Hamburger */}
@@ -133,6 +140,13 @@ const Navbar = () => {
                   </button>
                 </Link>
               </li>
+              <li>
+                <Link to="/sign-up">
+                  <button className="w-full px-4 py-2 bg-[#d60000] text-white rounded-full hover:bg-gray-800 transition-transform duration-300 hover:scale-105">
+                    Sign Up
+                  </button>
+                </Link>
+              </li>
             </motion.ul>
           )}
         </AnimatePresence>
@@ -140,33 +154,33 @@ const Navbar = () => {
 
       {/* Mobile Bottom Menu (Scroll-triggered) */}
       <AnimatePresence>
-        
-            {isMobileMenuVisible && (
-              <motion.div
-                initial={{ opacity: 0, y: 100 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: 100 }}
-                transition={{ duration: 0.3 }}
-                className="md:hidden fixed bottom-0 left-0 w-full bg-gray-800 backdrop-blur-md shadow-lg p-4  z-40"
+        {isMobileMenuVisible && (
+          <motion.div
+            initial={{ opacity: 0, y: 100 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 100 }}
+            transition={{ duration: 0.3 }}
+            className="md:hidden fixed bottom-0 left-0 w-full bg-gray-800 backdrop-blur-md shadow-lg p-4 z-40"
+          >
+            <p className="text-white text-center mb-2">Need Cash? Get up to 5 Lakhs instantly</p>
+            <div className="flex items-center gap-2 w-full">
+              <input
+                type="tel"
+                value={mobileNumber}
+                onChange={(e) => setMobileNumber(e.target.value)}
+                placeholder="Enter mobile"
+                className="p-2 border rounded-lg w-full text-white text-sm focus:outline-none focus:ring-2 focus:ring-[#d60000]"
+              />
+              <button
+                onClick={handleApplyClick}
+                className="px-3 py-2 w-1/2 bg-[#d60000] text-white rounded text-sm hover:bg-red-700"
               >
-                <p className="text-white text-center mb-2">Need Cash? Get up to 5 Lakhs instantly</p>
-                <div className="flex items-center gap-2 w-full">
-                  <input
-                    type="tel"
-                    value={mobileNumber}
-                    onChange={(e) => setMobileNumber(e.target.value)}
-                    placeholder="Enter mobile"
-                    className="p-2 border rounded-lg w-full text-white text-sm focus:outline-none focus:ring-2 focus:ring-[#d60000]"
-                  />
-                  <button
-                    onClick={handleApplyClick}
-                    className="px-3 py-2 w-1/2 bg-[#d60000] text-white rounded text-sm hover:bg-red-700"
-                  >
-                    Apply Now
-                  </button>
-                </div>
-              </motion.div>
-            )}
+                Apply Now
+              </button>
+            </div>
+            
+          </motion.div>
+        )}
       </AnimatePresence>
     </>
   );
