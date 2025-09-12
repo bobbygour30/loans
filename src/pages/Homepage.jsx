@@ -187,7 +187,7 @@ export default function Homepage() {
             >
               <div className="flex-1 text-center md:text-left">
                 <img
-                  src={assets.logo}
+                  src={assets.logo2}
                   alt="logo"
                   className="h-16 md:h-20 inline-block mb-4"
                 />

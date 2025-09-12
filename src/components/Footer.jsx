@@ -15,7 +15,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
         {/* Company Info */}
         <div>
-          <img src={assets.logo} alt="Fyntegra Logo" className="h-12 mb-4" />
+          <img src={assets.logo2} alt="Fyntegra Logo" className="h-12 mb-4" />
           <p className="text-gray-400 text-sm">
             Fyntegra is revolutionizing lending and customer experience with AI-driven solutions and human expertise. Powered by Konexions, we deliver scalable, compliant financial services across India.
           </p>
