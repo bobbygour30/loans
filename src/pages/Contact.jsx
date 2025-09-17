@@ -17,7 +17,7 @@ export default function Contact() {
   const contactDetails = [
     {
       title: "Email Us",
-      desc: "support@fyntegra.com",
+      desc: "support@fyntegra.in",
       icon: <Mail className="w-8 h-8 text-[#d60000]" />,
       action: (
         <a href="mailto:support@fyntegra.com" className="mt-4 inline-block text-sm text-[#d60000] hover:underline">
