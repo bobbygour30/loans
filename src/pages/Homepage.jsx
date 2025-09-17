@@ -840,12 +840,12 @@ export default function Homepage() {
               >
                 <div className="font-semibold mb-2">{s.title}</div>
                 <div className="text-sm text-gray-600">{s.desc}</div>
-                <a
+                <Link
                   className="mt-4 inline-block text-sm text-[#0f9d58]"
-                  href="#learn"
+                  to="/platform"
                 >
                   Learn more →
-                </a>
+                </Link>
               </motion.div>
             ))}
           </div>

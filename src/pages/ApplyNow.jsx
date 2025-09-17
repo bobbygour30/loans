@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -293,18 +294,18 @@ export default function ApplyNow() {
         >
           <h3 className="text-2xl font-semibold mb-4">Ready to Get Started?</h3>
           <div className="flex justify-center gap-4 flex-wrap">
-            <a
-              href="#apply"
+            <Link
+              to="/apply"
               className="px-6 py-3 bg-[#d60000] text-white rounded-full font-semibold shadow hover:bg-[#b50000] transition"
             >
               Apply Now
-            </a>
-            <a
-              href="#contact"
+            </Link>
+            <Link
+              to="/contact"
               className="px-6 py-3 border border-[#d60000] text-[#d60000] rounded-full font-semibold hover:bg-[#d60000]/10 transition"
             >
               Contact Support
-            </a>
+            </Link>
           </div>
         </motion.div>
       </div>

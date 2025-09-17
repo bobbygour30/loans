@@ -21,6 +21,7 @@ import {
   Headphones,
   BookOpen,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const accent = "text-[#d60000]";
 const circleAccent = "bg-[#d60000]";
@@ -126,18 +127,18 @@ export default function Platform() {
             </div>
 
             <div className="flex gap-3">
-              <a
-                href="/partner-with-us"
+              <Link
+                to="/partner-with-us"
                 className="inline-flex items-center px-4 py-2 bg-[#d60000] text-white rounded-md text-sm font-semibold shadow-sm hover:brightness-95 transition"
               >
                 Request Demo
-              </a>
-              <a
-                href="/platform"
+              </Link>
+              <Link
+                to="/platform"
                 className="inline-flex items-center px-4 py-2 border border-gray-200 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50 transition"
               >
                 Explore Platform
-              </a>
+              </Link>
             </div>
           </div>
 
@@ -213,18 +214,18 @@ export default function Platform() {
 
           {/* Bottom CTA */}
           <div className="mt-8 flex items-center gap-4">
-            <a
-              href="/partner-with-us"
+            <Link
+              to="/partner-with-us"
               className="inline-flex items-center px-5 py-3 bg-[#d60000] text-white rounded-md font-semibold shadow hover:brightness-95 transition"
             >
               Book a Demo
-            </a>
-            <a
-              href="/contact"
+            </Link>
+            <Link
+              to="/contact"
               className="inline-flex items-center px-5 py-3 border border-gray-200 rounded-md text-gray-700 hover:bg-gray-50 transition"
             >
               Contact Sales
-            </a>
+            </Link>
             <span className="ml-auto text-sm text-gray-500">Need a quick walk-through? We do 20–30min demos.</span>
           </div>
         </div>

@@ -7,6 +7,7 @@ import {
   Users,
   HeartHandshake,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -43,18 +44,18 @@ export default function AboutUs() {
             transition={{ delay: 0.5 }}
             className="mt-6 flex justify-center gap-3 flex-wrap"
           >
-            <a
-              href="/contact"
+            <Link
+              to="/contact"
               className="px-6 py-3 bg-white text-[#d60000] rounded-full font-semibold shadow hover:scale-105 transition"
             >
               Get in Touch
-            </a>
-            <a
-              href="/partner-with-us"
+            </Link>
+            <Link
+              to="/partner-with-us"
               className="px-6 py-3 border border-white/50 text-white rounded-full font-semibold hover:bg-white/10 transition"
             >
               Request a Demo
-            </a>
+            </Link>
           </motion.div>
         </div>
       </header>
@@ -291,18 +292,19 @@ export default function AboutUs() {
             Join us to deliver lending solutions that combine compliance, speed, and customer-centric innovation. Let’s shape the future of finance together.
           </p>
           <div className="mt-6 flex justify-center gap-4 flex-wrap">
+            <Link to="/contact">
             <button
-              href="/contact"
               className="px-6 py-3 bg-white text-[#d60000] rounded-full font-semibold shadow hover:scale-105 transition"
             >
               Contact Us
-            </button>
+            </button></Link>
+            <Link to="/partner-with-us">
             <button
-              href="/partner-with-us"
+              
               className="px-6 py-3 border border-white/50 text-white rounded-full font-semibold hover:bg-white/10 transition"
             >
               Request Demo
-            </button>
+            </button></Link>
           </div>
         </div>
       </motion.section>

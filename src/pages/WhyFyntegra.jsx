@@ -7,6 +7,7 @@ import {
   ServerCog,
   Scale,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -84,12 +85,12 @@ export default function WhyFyntegra() {
           viewport={{ once: true }}
           className="mt-16"
         >
-          <a
-            href="/contact"
+          <Link
+            to="/contact"
             className="inline-block px-8 py-4 bg-[#d60000] text-white rounded-full font-semibold shadow hover:bg-[#b50000] transition"
           >
             Partner With Us
-          </a>
+          </Link>
         </motion.div>
       </div>
     </section>

@@ -179,12 +179,12 @@ export default function CollectionsRecovery() {
           viewport={{ once: true }}
           className="mt-16 text-center"
         >
-          <a
-            href="/contact"
+          <Link
+            to="/contact"
             className="px-8 py-3 bg-[#d60000] text-white rounded-full font-semibold shadow hover:bg-[#b50000] transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
           >
             Book a Demo
-          </a>
+          </Link>
         </motion.div>
       </div>
     </section>

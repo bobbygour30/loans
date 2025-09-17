@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { UserRoundCheck, Wallet, IdCard, FileCheck2 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -253,18 +254,18 @@ export default function Eligibility() {
         >
           <h3 className="text-2xl font-semibold mb-4">Ready to Apply?</h3>
           <div className="flex justify-center gap-4 flex-wrap">
-            <a
-              href="/"
+            <Link
+              to="/"
               className="px-6 py-3 bg-[#d60000] text-white rounded-full font-semibold shadow hover:bg-[#b50000] transition"
             >
               Start Your Application
-            </a>
-            <a
-              href="/contact"
+            </Link>
+            <Link
+              to="/contact"
               className="px-6 py-3 border border-[#d60000] text-[#d60000] rounded-full font-semibold hover:bg-[#d60000]/10 transition"
             >
               Contact Us
-            </a>
+            </Link>
           </div>
         </motion.div>
       </div>

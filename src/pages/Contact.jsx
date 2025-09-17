@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Mail, Phone, MapPin } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -279,18 +280,18 @@ export default function Contact() {
         >
           <h3 className="text-2xl font-semibold mb-4">Let’s Connect!</h3>
           <div className="flex justify-center gap-4 flex-wrap">
-            <a
-              href="/contact"
+            <Link
+              to="/contact"
               className="px-6 py-3 bg-[#d60000] text-white rounded-full font-semibold shadow hover:bg-[#b50000] transition"
             >
               Send a Message
-            </a>
-            <a
-              href="/support"
+            </Link>
+            <Link
+              to="/support"
               className="px-6 py-3 border border-[#d60000] text-[#d60000] rounded-full font-semibold hover:bg-[#d60000]/10 transition"
             >
               Visit Support Center
-            </a>
+            </Link>
           </div>
         </motion.div>
       </div>

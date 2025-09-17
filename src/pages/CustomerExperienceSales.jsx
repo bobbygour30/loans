@@ -12,6 +12,7 @@ import {
   Users,
   ShoppingCart,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -181,12 +182,12 @@ export default function CustomerExperienceSales() {
           viewport={{ once: true }}
           className="mt-16 text-center"
         >
-          <a
-            href="/contact"
+          <Link
+            to="/contact"
             className="px-8 py-3 bg-[#d60000] text-white rounded-full font-semibold shadow hover:bg-[#b50000] transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
           >
             Talk to an Expert
-          </a>
+          </Link>
         </motion.div>
       </div>
     </section>

@@ -8,6 +8,7 @@ import {
   ChevronLeft,
   ChevronRight,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -141,12 +142,12 @@ export default function Careers() {
               <h3 className="font-semibold text-[#d60000] mb-2">{o.role}</h3>
               <p className="text-sm text-gray-600 mb-2">{o.location}</p>
               <p className="text-sm text-gray-600 mb-4">{o.desc}</p>
-              <a
-                href="#apply"
+              <Link
+                to="/apply"
                 className="inline-block px-4 py-2 bg-[#d60000] text-white rounded-full font-semibold hover:bg-[#b50000] transition"
               >
                 Apply Now
-              </a>
+              </Link>
             </motion.div>
           ))}
         </motion.div>
@@ -240,18 +241,18 @@ export default function Careers() {
         >
           <h3 className="text-2xl font-semibold mb-4">Ready to Make an Impact?</h3>
           <div className="flex justify-center gap-4 flex-wrap">
-            <a
-              href="/"
+            <Link
+              to="/"
               className="px-6 py-3 bg-[#d60000] text-white rounded-full font-semibold shadow hover:bg-[#b50000] transition"
             >
               View Openings
-            </a>
-            <a
-              href="#contact"
+            </Link>
+            <Link
+              to="#contact"
               className="px-6 py-3 border border-[#d60000] text-[#d60000] rounded-full font-semibold hover:bg-[#d60000]/10 transition"
             >
               Contact HR
-            </a>
+            </Link>
           </div>
         </motion.div>
       </div>

@@ -257,18 +257,18 @@ export default function Support() {
         >
           <h3 className="text-2xl font-semibold mb-4">Need Help? We’re Here for You!</h3>
           <div className="flex justify-center gap-4 flex-wrap">
-            <a
-              href="/contact"
+            <Link
+              to="/contact"
               className="px-6 py-3 bg-[#d60000] text-white rounded-full font-semibold shadow hover:bg-[#b50000] transition"
             >
               Contact Support
-            </a>
-            <a
-              href="/support"
+            </Link>
+            <Link
+              to="/support"
               className="px-6 py-3 border border-[#d60000] text-[#d60000] rounded-full font-semibold hover:bg-[#d60000]/10 transition"
             >
               Visit Help Center
-            </a>
+            </Link>
           </div>
         </motion.div>
       </div>

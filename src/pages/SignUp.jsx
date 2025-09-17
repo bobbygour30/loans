@@ -73,13 +73,13 @@ const SignUp = () => {
               />
               <p className="text-sm text-gray-600">
                 By continuing, you agree to our{" "}
-                <a href="/privacy" className="text-blue-600 hover:underline">
+                <Link to="/privacy" className="text-blue-600 hover:underline">
                   privacy policies
-                </a>{" "}
+                </Link>{" "}
                 and{" "}
-                <a href="/terms" className="text-blue-600 hover:underline">
+                <Link to="/terms" className="text-blue-600 hover:underline">
                   T&C
-                </a>
+                </Link>
                 . You also authorize us to retrieve your credit report &amp;
                 communicate with you via phone, e-mails, WhatsApp, etc.
               </p>

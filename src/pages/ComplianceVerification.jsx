@@ -8,6 +8,7 @@ import {
   FileCheck,
   Clock,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -122,12 +123,12 @@ export default function ComplianceVerification() {
         variants={fadeUp}
         className="mt-12 text-center"
       >
-        <a
-          href="/solutions/compliance"
+        <Link
+          to="/solutions"
           className="inline-block px-8 py-4 bg-[#d60000] text-white font-semibold text-lg rounded-full shadow-lg hover:shadow-2xl hover:bg-[#b80000] transition-all"
         >
           Explore Platform
-        </a>
+        </Link>
       </motion.div>
     </div>
   );

@@ -7,6 +7,7 @@ import {
   Share2,
   BarChart3,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const fadeUp = (delay = 0) => ({
   hidden: { opacity: 0, y: 40 },
@@ -142,12 +143,12 @@ export default function AiSaasTools() {
         variants={fadeUp(0.2)}
         className="mt-16 text-center"
       >
-        <a
-          href="/solutions/ai-saas"
+        <Link
+          to="/solutions/ai-saas"
           className="inline-block px-10 py-4 text-lg font-semibold text-white bg-gradient-to-r from-[#d60000] to-[#ff4d4d] rounded-full shadow-lg hover:shadow-2xl hover:scale-105 transition transform"
         >
           See it in Action
-        </a>
+        </Link>
       </motion.div>
     </div>
   );

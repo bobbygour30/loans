@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { IdCard, BrainCircuit, Users, TrendingUp } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -131,12 +132,12 @@ export default function Solutions() {
               <div className="flex justify-center mb-4">{s.icon}</div>
               <h3 className="text-lg font-semibold text-center mb-2">{s.title}</h3>
               <p className="text-gray-600 text-center text-sm min-h-[60px]">{s.desc}</p>
-              <a
-                href={s.url}
+              <Link
+                to={s.url}
                 className="mt-4 inline-block px-4 py-2 bg-[#d60000] text-white rounded-full text-sm font-semibold hover:bg-[#b50000] transition-all duration-300 transform hover:scale-105"
               >
                 Learn More
-              </a>
+              </Link>
             </motion.div>
           ))}
         </motion.div>
@@ -231,18 +232,18 @@ export default function Solutions() {
         >
           <h3 className="text-2xl font-semibold mb-4">Transform Your Lending Operations</h3>
           <div className="flex justify-center gap-4 flex-wrap">
-            <a
-              href="/partner-with-us"
+            <Link
+              to="/partner-with-us"
               className="px-6 py-3 bg-[#d60000] text-white rounded-full font-semibold shadow hover:bg-[#b50000] transition"
             >
               Request a Demo
-            </a>
-            <a
-              href="/contact"
+            </Link>
+            <Link
+              to="/contact"
               className="px-6 py-3 border border-[#d60000] text-[#d60000] rounded-full font-semibold hover:bg-[#d60000]/10 transition"
             >
               Contact Us
-            </a>
+            </Link>
           </div>
         </motion.div>
       </div>
