@@ -114,16 +114,28 @@ export default function Homepage() {
 
   const faqs = [
     {
-      q: "How does Fyntegra work with banks & NBFCs?",
-      a: "We plug into the lender's onboarding and disbursal flows with compliance-first modules, verification APIs and human-assisted review where needed — enabling quick go-live and lower drops.",
+      q: "What loans can I apply for?",
+      a: "Personal, Business, Gold, Home, LAP, Loan Against Mutual Funds (LAMF), Loan Against Securities, Education, Vehicle, Consumer Durable, and Medical/Emergency loans via our NBFC/Bank partners.",
     },
     {
-      q: "Does applying affect my credit score?",
-      a: "We offer soft-check eligibility that won't affect your score. Full applications may result in credit checks by partner lenders as per their policy.",
+      q: "How fast is approval?",
+      a: "How fast is approval?Eligibility is instant in most cases. Disbursal ranges from same-day to 48 hours depending on product and verification.",
     },
     {
-      q: "How long does disbursal take?",
-      a: "Typical disbursal time varies by product & lender — many retail loans disburse within 24-72 hours after verification; business & secured loans depend on documentation.",
+      q: "What documents are required?",
+      a: "Typically PAN, Aadhaar, bank statements, income proofs; property or asset papers for secured loans.",
+    },
+    {
+      q: "Can I prepay?",
+      a: "Most products allow part-payment/foreclosure as per lender policy. Charges may apply.",
+    },
+    {
+      q: "How does Fyntegra ensure RBI compliance?",
+      a: "We operate as an LSP under RBI guidelines with governance, KYC & audit trails, including a published grievance redressal process.",
+    },
+    {
+      q: "Where can I raise a complaint?",
+      a: "Visit /grievance for escalation levels and our Grievance Redressal Officer (GRO) details.",
     },
   ];
   const [openFaq, setOpenFaq] = useState(null);

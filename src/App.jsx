@@ -1,8 +1,8 @@
-import React from 'react'
+import React , { useEffect } from 'react'
 import Navbar from './components/Navbar'
 import Homepage from './pages/Homepage'
 import Footer from './components/Footer'
-import { Routes, Route } from 'react-router-dom'
+import {  Routes, Route, useLocation } from 'react-router-dom';
 import AboutUs from './pages/AboutUs'
 import Careers from './pages/Careers'
 import Eligibility from './pages/Eligibility'
@@ -21,11 +21,22 @@ import CustomerExperienceSales from './pages/CustomerExperienceSales'
 import CollectionsRecovery from './pages/CollectionsRecovery'
 import ComplianceVerification from './pages/ComplianceVerification'
 import AiSaasTools from './pages/AiSaasTools'
+import Grievance from './pages/Grievance'
 
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [pathname]);
+
+  return null;
+}
 const App = () => {
   return (
     <div>
       <Navbar />
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/about" element={<AboutUs />} />
@@ -46,6 +57,7 @@ const App = () => {
         <Route path="/partner-with-us" element={<PartnerWithUs />} />
         <Route path="/login" element={<Login />} />
         <Route path="/sign-up" element={<SignUp />} />
+        <Route path="/grievance" element={<Grievance />} />
       </Routes>
       <Footer />
     </div>

@@ -26,18 +26,18 @@ const Footer = () => {
         <div>
           <h3 className="text-lg font-semibold mb-4 text-red-300">Quick Links</h3>
           <ul className="space-y-2">
-            <li><a href="#loans" className="text-gray-400 hover:text-[#28af5b] transition duration-300">Loans</a></li>
-            <li><a href="#eligibility" className="text-gray-400 hover:text-[#28af5b] transition duration-300">Eligibility</a></li>
-            <li><a href="#emi" className="text-gray-400 hover:text-[#28af5b] transition duration-300">EMI Calculator</a></li>
-            <li><a href="#solutions" className="text-gray-400 hover:text-[#28af5b] transition duration-300">Solutions</a></li>
-            <li><a href="#platform" className="text-gray-400 hover:text-[#28af5b] transition duration-300">Platform</a></li>
+            <li><a href="/loans" className="text-gray-400 hover:text-[#28af5b] transition duration-300">Loans</a></li>
+            <li><a href="/eligibility" className="text-gray-400 hover:text-[#28af5b] transition duration-300">Eligibility</a></li>
+            <li><a href="/emi-calculator" className="text-gray-400 hover:text-[#28af5b] transition duration-300">EMI Calculator</a></li>
+            <li><a href="/solutions" className="text-gray-400 hover:text-[#28af5b] transition duration-300">Solutions</a></li>
+            <li><a href="/platform" className="text-gray-400 hover:text-[#28af5b] transition duration-300">Platform</a></li>
           </ul>
         </div>
 
         {/* Contact */}
         <div>
           <h3 className="text-lg font-semibold mb-4 text-red-300">Contact Us</h3>
-          <p className="text-gray-400 text-sm">Email: support@fyntegra.com</p>
+          <p className="text-gray-400 text-sm">Email: support@fyntegra.in</p>
           <p className="text-gray-400 text-sm">Phone: +91-123-456-7890</p>
           <p className="text-gray-400 text-sm">Address: 123 Fintech Lane, Mumbai, India</p>
         </div>

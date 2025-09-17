@@ -27,11 +27,20 @@ export default function ResponsiveNavbar() {
         { label: "Platform", href: "/platform" },
       ],
     },
+    { label: "Solutions", href: "/solutions" , sublinks: [
+      { label: "Customer Experience & Sales", href: "/solutions/cx-sales" },
+      { label: "Collections & Recovery", href: "/solutions/collections" },
+      { label: "Compliance & Verification", href: "/solutions/compliance" },
+      { label: "AI + SaaS Tools", href: "/solutions/ai-saas" },
+    ]},
+    {
+      label: "Compliance & Grievance",
+      href: "/grievance",
+    },
     {
       label: "Loans",
       href: "/loans",
       sublinks: [
-        { label: "Solutions", href: "/solutions" },
         { label: "Eligibility", href: "/eligibility" },
       ],
     },
