@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import assets from '../assets/assets';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const [email, setEmail] = useState('');
@@ -26,11 +27,11 @@ const Footer = () => {
         <div>
           <h3 className="text-lg font-semibold mb-4 text-red-300">Quick Links</h3>
           <ul className="space-y-2">
-            <li><a href="/loans" className="text-gray-400 hover:text-[#28af5b] transition duration-300">Loans</a></li>
-            <li><a href="/eligibility" className="text-gray-400 hover:text-[#28af5b] transition duration-300">Eligibility</a></li>
-            <li><a href="/emi-calculator" className="text-gray-400 hover:text-[#28af5b] transition duration-300">EMI Calculator</a></li>
-            <li><a href="/solutions" className="text-gray-400 hover:text-[#28af5b] transition duration-300">Solutions</a></li>
-            <li><a href="/platform" className="text-gray-400 hover:text-[#28af5b] transition duration-300">Platform</a></li>
+            <li><Link to="/loans" className="text-gray-400 hover:text-[#28af5b] transition duration-300">Loans</Link></li>
+            <li><Link to="/eligibility" className="text-gray-400 hover:text-[#28af5b] transition duration-300">Eligibility</Link></li>
+            <li><Link to="/emi-calculator" className="text-gray-400 hover:text-[#28af5b] transition duration-300">EMI Calculator</Link></li>
+            <li><Link to="/solutions" className="text-gray-400 hover:text-[#28af5b] transition duration-300">Solutions</Link></li>
+            <li><Link to="/platform" className="text-gray-400 hover:text-[#28af5b] transition duration-300">Platform</Link></li>
           </ul>
         </div>
 
