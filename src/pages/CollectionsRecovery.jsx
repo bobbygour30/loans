@@ -13,6 +13,7 @@ import {
   CreditCard,
   Landmark,
 } from "lucide-react";
+import { Link as RouterLink } from "react-router-dom";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -179,12 +180,11 @@ export default function CollectionsRecovery() {
           viewport={{ once: true }}
           className="mt-16 text-center"
         >
-          <Link
-            to="/contact"
-            className="px-8 py-3 bg-[#d60000] text-white rounded-full font-semibold shadow hover:bg-[#b50000] transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
-          >
-            Book a Demo
-          </Link>
+          <RouterLink to="/contact">
+            <button className="px-8 py-3 bg-[#d60000] cursor-pointer text-white rounded-full font-semibold shadow hover:bg-[#b50000] transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
+              Book a Demo
+            </button>
+          </RouterLink>
         </motion.div>
       </div>
     </section>
