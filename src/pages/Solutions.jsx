@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { IdCard, BrainCircuit, Users, TrendingUp, BarChart3, Workflow } from "lucide-react";
+import { IdCard, BrainCircuit, Users, TrendingUp } from "lucide-react";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -10,34 +10,28 @@ const fadeUp = {
 export default function Solutions() {
   const solutions = [
     {
-      title: "Digital KYC",
-      desc: "Streamlined onboarding with real-time identity verification, fraud detection, and RBI-compliant processes to reduce drop-offs.",
-      icon: <IdCard className="w-8 h-8 text-[#d60000]" />,
-    },
-    {
-      title: "AI Risk Models",
-      desc: "Advanced predictive analytics to assess credit risk, minimize defaults, and optimize loan approvals with precision.",
-      icon: <BrainCircuit className="w-8 h-8 text-[#d60000]" />,
-    },
-    {
-      title: "Customer Engagement",
-      desc: "Omnichannel outreach with AI-driven nudges and consent-logged communications to boost retention and satisfaction.",
+      title: "Customer Experience & Sales",
+      desc: "AI-driven tools to enhance engagement, boost sales, and improve satisfaction.",
       icon: <Users className="w-8 h-8 text-[#d60000]" />,
+      url: "/solutions/cx-sales",
     },
     {
-      title: "Collections Optimization",
-      desc: "Data-driven prioritization and automated workflows to improve recovery rates while maintaining customer trust.",
+      title: "Collections & Recovery",
+      desc: "Data-driven workflows to optimize recovery and maintain customer trust.",
       icon: <TrendingUp className="w-8 h-8 text-[#d60000]" />,
+      url: "/solutions/collections",
     },
     {
-      title: "Analytics & Reporting",
-      desc: "Customizable dashboards with real-time insights and regulatory reporting for informed decision-making.",
-      icon: <BarChart3 className="w-8 h-8 text-[#d60000]" />,
+      title: "Compliance & Verification",
+      desc: "Streamlined KYC and fraud detection for RBI compliance and audits.",
+      icon: <IdCard className="w-8 h-8 text-[#d60000]" />,
+      url: "/solutions/compliance",
     },
     {
-      title: "Seamless Integrations",
-      desc: "API-first modules for quick setup with existing systems, reducing time-to-market for lending programs.",
-      icon: <Workflow className="w-8 h-8 text-[#d60000]" />,
+      title: "AI + SaaS Tools",
+      desc: "AI models and SaaS for risk assessment, analytics, and operations.",
+      icon: <BrainCircuit className="w-8 h-8 text-[#d60000]" />,
+      url: "/solutions/ai-saas",
     },
   ];
 
@@ -63,27 +57,27 @@ export default function Solutions() {
   const caseStudies = [
     {
       title: "National Bank Streamlines Onboarding",
-      desc: "Reduced KYC processing time by 50% using Fyntegra’s Digital KYC module.",
+      desc: "Reduced KYC processing time by 50% using Fyntegra’s Compliance & Verification module.",
       impact: "40% increase in customer conversions",
     },
     {
       title: "Fintech Boosts Recovery Rates",
-      desc: "Implemented AI-driven collections suite to prioritize high-risk accounts.",
+      desc: "Implemented AI-driven Collections & Recovery suite to prioritize high-risk accounts.",
       impact: "25% improvement in recovery rates",
     },
   ];
 
   const testimonials = [
     {
-      quote: "Fyntegra’s Digital KYC solution cut our onboarding time in half while ensuring full compliance.",
+      quote: "Fyntegra’s Compliance & Verification solution cut our onboarding time in half while ensuring full compliance.",
       author: "Head of Operations, National Bank",
     },
     {
-      quote: "The AI risk models helped us reduce defaults and make smarter lending decisions.",
+      quote: "The AI + SaaS tools helped us reduce defaults and make smarter lending decisions.",
       author: "Risk Manager, Fintech Co.",
     },
     {
-      quote: "Their customer engagement tools transformed our retention strategy.",
+      quote: "Their Customer Experience & Sales tools transformed our retention strategy.",
       author: "VP Customer Success, NBFC",
     },
   ];
@@ -99,7 +93,7 @@ export default function Solutions() {
 
   return (
     <section id="solutions" className="py-20 px-6 bg-gray-50 mt-20">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         <motion.h2
           variants={fadeUp}
           initial="hidden"
@@ -107,7 +101,7 @@ export default function Solutions() {
           viewport={{ once: true }}
           className="text-3xl md:text-4xl font-extrabold text-center"
         >
-          Our <span className="text-[#d60000]">Solutions</span>
+          LSP Solutions for <span className="text-[#d60000]">Banks, NBFCs & Fintechs</span>
         </motion.h2>
         <motion.p
           variants={fadeUp}
@@ -117,7 +111,7 @@ export default function Solutions() {
           transition={{ delay: 0.2 }}
           className="mt-4 text-gray-600 max-w-3xl mx-auto text-center"
         >
-          Empowering lenders with modular, AI-driven solutions to streamline the entire credit lifecycle, from onboarding to collections, with unmatched compliance and efficiency.
+          Fyntegra combines AI-driven automation with human delivery expertise to help lenders improve disbursals, reduce NPAs, and stay compliant with RBI’s LSP framework.
         </motion.p>
 
         {/* Solutions Section */}
@@ -126,19 +120,22 @@ export default function Solutions() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12"
         >
           {solutions.map((s, i) => (
             <motion.div
               key={i}
               whileHover={{ y: -6 }}
-              className="p-6 bg-white rounded-xl shadow-lg"
+              className="p-6 bg-white rounded-xl shadow-lg flex flex-col items-center"
             >
               <div className="flex justify-center mb-4">{s.icon}</div>
               <h3 className="text-lg font-semibold text-center mb-2">{s.title}</h3>
-              <p className="text-gray-600 text-center">{s.desc}</p>
-              <a href="#learn-more" className="mt-4 inline-block text-sm text-[#d60000] hover:underline text-center">
-                Learn More →
+              <p className="text-gray-600 text-center text-sm min-h-[60px]">{s.desc}</p>
+              <a
+                href={s.url}
+                className="mt-4 inline-block px-4 py-2 bg-[#d60000] text-white rounded-full text-sm font-semibold hover:bg-[#b50000] transition-all duration-300 transform hover:scale-105"
+              >
+                Learn More
               </a>
             </motion.div>
           ))}

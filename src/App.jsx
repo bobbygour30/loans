@@ -17,6 +17,10 @@ import ApplyNow from './pages/ApplyNow'
 import PartnerWithUs from './pages/PartnerWithUs'
 import Login from './pages/Login'
 import SignUp from './pages/SignUp'
+import CustomerExperienceSales from './pages/CustomerExperienceSales'
+import CollectionsRecovery from './pages/CollectionsRecovery'
+import ComplianceVerification from './pages/ComplianceVerification'
+import AiSaasTools from './pages/AiSaasTools'
 
 const App = () => {
   return (
@@ -31,6 +35,10 @@ const App = () => {
         <Route path="/platform" element={<Platform />} />
         <Route path="/support" element={<Support />} />
         <Route path="/solutions" element={<Solutions />} />
+        <Route path="/solutions/cx-sales" element={<CustomerExperienceSales />} />
+        <Route path="/solutions/collections" element={<CollectionsRecovery />} />
+        <Route path="/solutions/compliance" element={<ComplianceVerification />} />
+        <Route path="/solutions/ai-saas" element={<AiSaasTools />} />
         <Route path="/why-fyntegra" element={<WhyFyntegra />} />
         <Route path="/emi-calculator" element={<EmiCalculator />} />
         <Route path="/contact" element={<Contact />} />
