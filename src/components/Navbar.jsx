@@ -178,7 +178,7 @@ export default function ResponsiveNavbar() {
             </li>
             <li>
               <Link to="/partner-with-us">
-                <button className="px-3 sm:px-4 py-2 bg-[#444242] text-sm text-white rounded-full hover:bg-gray-900 hover:scale-105 transition duration-200">
+                <button className="px-3 sm:px-4 py-2 bg-[#FFD35B] text-sm text-black rounded-full hover:bg-gray-900 hover:scale-105 transition duration-200">
                   Partner With Us
                 </button>
               </Link>
@@ -270,7 +270,7 @@ export default function ResponsiveNavbar() {
               </li>
               <li>
                 <Link to="/partner-with-us" onClick={() => setIsOpen(false)}>
-                  <button className="w-full px-4 py-2 bg-[#2e2e2e] text-sm text-white rounded-full hover:bg-gray-800">
+                  <button className="w-full px-4 py-2 bg-[#FFD35B] text-sm text-black rounded-full hover:bg-gray-800">
                     Partner With Us
                   </button>
                 </Link>

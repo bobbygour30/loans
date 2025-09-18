@@ -217,7 +217,7 @@ export default function Homepage() {
                   <Link to="/solutions">
                     <motion.a
                       whileHover={{ scale: 1.03 }}
-                      className="px-6 py-3 bg-[#0E8299] text-white rounded-full font-semibold shadow"
+                      className="px-6 py-3 bg-[#FFD35B] text-black rounded-full font-semibold shadow"
                     >
                       Explore Solutions
                     </motion.a>
@@ -225,7 +225,7 @@ export default function Homepage() {
                   <Link to="/partner-with-us">
                     <motion.a
                       whileHover={{ scale: 1.03 }}
-                      className="px-6 py-3 bg-[#444242] text-white rounded-full font-semibold"
+                      className="px-6 py-3 bg-[#0E8299] text-white rounded-full font-semibold"
                     >
                       Partner with Us
                     </motion.a>
