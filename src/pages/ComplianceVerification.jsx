@@ -44,11 +44,11 @@ export default function ComplianceVerification() {
         className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16 max-w-6xl mx-auto"
       >
         {[
-          { icon: <IdCard className="w-8 h-8 text-[#d60000]" />, text: "PAN, Aadhaar, Video KYC, AML/Sanction checks" },
-          { icon: <ShieldCheck className="w-8 h-8 text-[#d60000]" />, text: "Maker-checker workflow for approvals" },
-          { icon: <Scale className="w-8 h-8 text-[#d60000]" />, text: "Grievance Redressal Officer (GRO) integration" },
-          { icon: <FileCheck className="w-8 h-8 text-[#d60000]" />, text: "Real-time audit dashboards" },
-          { icon: <Clock className="w-8 h-8 text-[#d60000]" />, text: "Escalation workflows for compliance exceptions" },
+          { icon: <IdCard className="w-8 h-8 text-[#0E8299]" />, text: "PAN, Aadhaar, Video KYC, AML/Sanction checks" },
+          { icon: <ShieldCheck className="w-8 h-8 text-[#0E8299]" />, text: "Maker-checker workflow for approvals" },
+          { icon: <Scale className="w-8 h-8 text-[#0E8299]" />, text: "Grievance Redressal Officer (GRO) integration" },
+          { icon: <FileCheck className="w-8 h-8 text-[#0E8299]" />, text: "Real-time audit dashboards" },
+          { icon: <Clock className="w-8 h-8 text-[#0E8299]" />, text: "Escalation workflows for compliance exceptions" },
         ].map((item, idx) => (
           <motion.div
             key={idx}
@@ -125,7 +125,7 @@ export default function ComplianceVerification() {
       >
         <Link
           to="/solutions"
-          className="inline-block px-8 py-4 bg-[#d60000] text-white font-semibold text-lg rounded-full shadow-lg hover:shadow-2xl hover:bg-[#b80000] transition-all"
+          className="inline-block px-8 py-4 bg-[#0E8299] text-white font-semibold text-lg rounded-full shadow-lg hover:shadow-2xl hover:bg-[#b80000] transition-all"
         >
           Explore Platform
         </Link>

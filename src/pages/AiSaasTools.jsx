@@ -70,7 +70,7 @@ export default function AiSaasTools() {
             whileHover={{ scale: 1.05, translateY: -6 }}
             className="bg-white/80 backdrop-blur-xl border border-gray-200 shadow-xl rounded-2xl p-8 flex flex-col items-center text-center transition-all"
           >
-            <div className="mb-4 flex items-center justify-center w-14 h-14 rounded-full bg-gradient-to-br from-[#d60000] to-[#ff4d4d] shadow-md">
+            <div className="mb-4 flex items-center justify-center w-14 h-14 rounded-full bg-gradient-to-br from-[#0E8299] to-[#ff4d4d] shadow-md">
               {item.icon}
             </div>
             <h3 className="text-lg font-semibold text-gray-900 mb-2">
@@ -145,7 +145,7 @@ export default function AiSaasTools() {
       >
         <Link
           to="/solutions/ai-saas"
-          className="inline-block px-10 py-4 text-lg font-semibold text-white bg-gradient-to-r from-[#d60000] to-[#ff4d4d] rounded-full shadow-lg hover:shadow-2xl hover:scale-105 transition transform"
+          className="inline-block px-10 py-4 text-lg font-semibold text-white bg-gradient-to-r from-[#0E8299] to-[#ff4d4d] rounded-full shadow-lg hover:shadow-2xl hover:scale-105 transition transform"
         >
           See it in Action
         </Link>

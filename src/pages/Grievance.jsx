@@ -51,7 +51,7 @@ export default function Grievance() {
           className="text-3xl md:text-4xl font-extrabold text-center"
         >
           Grievance Redressal & Regulatory{" "}
-          <span className="text-[#d60000]">Disclosures</span>
+          <span className="text-[#0E8299]">Disclosures</span>
         </motion.h1>
         <motion.p
           variants={fadeUp}
@@ -80,19 +80,19 @@ export default function Grievance() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-gray-700">
             <div className="flex items-center gap-3">
-              <Mail className="text-[#d60000]" />
+              <Mail className="text-[#0E8299]" />
               <span>Email: grievance@fyntegra.in</span>
             </div>
             <div className="flex items-center gap-3">
-              <Phone className="text-[#d60000]" />
+              <Phone className="text-[#0E8299]" />
               <span>Phone: +91-XXXXXXXXXX</span>
             </div>
             <div className="flex items-center gap-3">
-              <MapPin className="text-[#d60000]" />
+              <MapPin className="text-[#0E8299]" />
               <span>Address: [To be added]</span>
             </div>
             <div className="flex items-center gap-3">
-              <ShieldCheck className="text-[#d60000]" />
+              <ShieldCheck className="text-[#0E8299]" />
               <span>Name: [To be added]</span>
             </div>
           </div>
@@ -116,11 +116,11 @@ export default function Grievance() {
                 key={i}
                 className="flex flex-col items-center bg-white p-6 rounded-xl shadow w-72 text-center"
               >
-                <div className="text-[#d60000] font-bold">{step.level}</div>
+                <div className="text-[#0E8299] font-bold">{step.level}</div>
                 <div className="text-gray-800 mt-2">{step.contact}</div>
                 <a
                   href={`mailto:${step.email}`}
-                  className="text-sm text-[#d60000] mt-2"
+                  className="text-sm text-[#0E8299] mt-2"
                 >
                   {step.email}
                 </a>
@@ -141,9 +141,9 @@ export default function Grievance() {
           <h2 className="text-2xl font-semibold mb-4">Resolution Timelines</h2>
           <p className="text-gray-600">
             Acknowledgement within{" "}
-            <span className="font-semibold text-[#d60000]">48 hours</span> & full
+            <span className="font-semibold text-[#0E8299]">48 hours</span> & full
             resolution within{" "}
-            <span className="font-semibold text-[#d60000]">30 days</span>.
+            <span className="font-semibold text-[#0E8299]">30 days</span>.
           </p>
         </motion.div>
 
@@ -157,7 +157,7 @@ export default function Grievance() {
           className="mt-16 bg-white p-8 rounded-xl shadow-lg text-center"
         >
           <p className="text-gray-700 max-w-3xl mx-auto">
-            <ShieldCheck className="inline w-6 h-6 text-[#d60000] mr-2" />
+            <ShieldCheck className="inline w-6 h-6 text-[#0E8299] mr-2" />
             Fyntegra operates as a Lending Service Provider (LSP) under RBI
             guidelines, partnering with NBFCs & Banks to deliver compliant and
             customer-centric services.
@@ -179,9 +179,9 @@ export default function Grievance() {
               <a
                 key={i}
                 href={p.link}
-                className="flex items-center gap-2 text-gray-700 hover:text-[#d60000] transition"
+                className="flex items-center gap-2 text-gray-700 hover:text-[#0E8299] transition"
               >
-                <FileText className="w-5 h-5 text-[#d60000]" />
+                <FileText className="w-5 h-5 text-[#0E8299]" />
                 {p.name}
               </a>
             ))}

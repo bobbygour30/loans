@@ -119,7 +119,7 @@ export default function Homepage() {
     },
     {
       q: "How fast is approval?",
-      a: "How fast is approval?Eligibility is instant in most cases. Disbursal ranges from same-day to 48 hours depending on product and verification.",
+      a: "Eligibility is instant in most cases. Disbursal ranges from same-day to 48 hours depending on product and verification.",
     },
     {
       q: "What documents are required?",
@@ -144,32 +144,32 @@ export default function Homepage() {
     {
       title: "Personal Loan",
       desc: "Access flexible financing for personal needs such as medical emergencies, travel, or debt consolidation. Enjoy quick approvals, competitive interest rates, and customizable repayment tenures tailored to your financial situation.",
-      icon: <Landmark className="w-8 h-8 text-[#d60000]" />,
+      icon: <Landmark className="w-8 h-8 text-[#0E8299]" />,
     },
     {
       title: "Business Loan",
       desc: "Fuel your business growth with tailored working capital solutions. Whether it’s expanding operations, purchasing inventory, or investing in equipment, our loans offer flexible terms and fast disbursals to support your entrepreneurial journey.",
-      icon: <Building2 className="w-8 h-8 text-[#d60000]" />,
+      icon: <Building2 className="w-8 h-8 text-[#0E8299]" />,
     },
     {
       title: "Gold Loan",
       desc: "Unlock quick liquidity by pledging your gold assets. Benefit from low interest rates, minimal documentation, and instant disbursal, all while retaining ownership of your gold with our secure and transparent process.",
-      icon: <Gem className="w-8 h-8 text-[#d60000]" />,
+      icon: <Gem className="w-8 h-8 text-[#0E8299]" />,
     },
     {
       title: "Home Loan",
       desc: "Make your dream home a reality with our competitive home loan rates. Enjoy long repayment tenures, easy documentation, and personalized support to finance your home purchase or construction effortlessly.",
-      icon: <Home className="w-8 h-8 text-[#d60000]" />,
+      icon: <Home className="w-8 h-8 text-[#0E8299]" />,
     },
     {
       title: "LAMF",
       desc: "Access liquidity against mutual funds without redeeming your investments. Our Loan Against Mutual Funds (LAMF) offers low rates and flexible terms, allowing you to retain your portfolio’s growth potential.",
-      icon: <LineChart className="w-8 h-8 text-[#d60000]" />,
+      icon: <LineChart className="w-8 h-8 text-[#0E8299]" />,
     },
     {
       title: "Vehicle Loans",
       desc: "Drive your dream car or bike with our vehicle loans, offering affordable EMIs, quick approvals, and financing for both new and used vehicles. Get on the road with minimal hassle and tailored repayment plans.",
-      icon: <Car className="w-8 h-8 text-[#d60000]" />,
+      icon: <Car className="w-8 h-8 text-[#0E8299]" />,
     },
   ];
 
@@ -189,7 +189,7 @@ export default function Homepage() {
   return (
     <div className="bg-white text-gray-900 min-h-screen mt-20">
       <header className="relative overflow-hidden">
-        <div className="bg-gradient-to-r from-[#2e2e2e] to-[#d60000] text-white py-28 px-6 md:px-12">
+        <div className="bg-gradient-to-r from-[#001935] to-[#0E8299] text-white py-28 px-6 md:px-12">
           <div className="max-w-6xl mx-auto relative z-10">
             <motion.div
               initial={{ opacity: 0, y: 18 }}
@@ -215,19 +215,21 @@ export default function Homepage() {
                 </p>
                 <div className="mt-6 flex justify-center md:justify-start gap-7 flex-wrap">
                   <Link to="/solutions">
-                  <motion.a
-                    whileHover={{ scale: 1.03 }}
-                    className="px-6 py-3 bg-[#d60000] text-white rounded-full font-semibold shadow"
-                  >
-                    Explore Solutions
-                  </motion.a></Link>
+                    <motion.a
+                      whileHover={{ scale: 1.03 }}
+                      className="px-6 py-3 bg-[#0E8299] text-white rounded-full font-semibold shadow"
+                    >
+                      Explore Solutions
+                    </motion.a>
+                  </Link>
                   <Link to="/partner-with-us">
-                  <motion.a
-                    whileHover={{ scale: 1.03 }}
-                    className="px-6 py-3 bg-[#444242]  text-white rounded-full font-semibold"
-                  >
-                    Partner with Us
-                  </motion.a></Link>
+                    <motion.a
+                      whileHover={{ scale: 1.03 }}
+                      className="px-6 py-3 bg-[#444242] text-white rounded-full font-semibold"
+                    >
+                      Partner with Us
+                    </motion.a>
+                  </Link>
                 </div>
               </div>
               <motion.div
@@ -237,6 +239,56 @@ export default function Homepage() {
                 className="w-full md:w-2/5 bg-white/10 backdrop-blur-md rounded-xl p-6 shadow-lg"
                 aria-hidden
               >
+                <style jsx>{`
+    input[type="range"] {
+      -webkit-appearance: none; /* Remove default WebKit styles */
+      width: 100%;
+      height: 8px;
+      background: transparent;
+      outline: none;
+    }
+
+    /* WebKit (Chrome, Safari) */
+    input[type="range"]::-webkit-slider-runnable-track {
+      height: 8px;
+      background: #e5e7eb; /* Light gray track */
+      border-radius: 4px;
+    }
+
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 16px;
+      height: 16px;
+      background: #0E8299; /* Your desired color */
+      border-radius: 50%;
+      cursor: pointer;
+      margin-top: -4px; /* Center thumb on track */
+    }
+
+    input[type="range"]:focus::-webkit-slider-runnable-track {
+      background: #d1d5db; /* Slightly darker track on focus */
+    }
+
+    /* Mozilla (Firefox) */
+    input[type="range"]::-moz-range-track {
+      height: 8px;
+      background: #e5e7eb;
+      border-radius: 4px;
+    }
+
+    input[type="range"]::-moz-range-thumb {
+      width: 16px;
+      height: 16px;
+      background: #0E8299; /* Your desired color */
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    input[type="range"]:focus::-moz-range-track {
+      background: #d1d5db;
+    }
+  `}</style>
                 <div className="text-left">
                   <div className="text-xl text-white">Quick EMI Preview</div>
                   <div className="mt-3">
@@ -326,8 +378,8 @@ export default function Homepage() {
             </p>
             <div className="mt-6 grid grid-cols-1 gap-3">
               <div className="flex items-start gap-3">
-                <div className="flex-shrink-0 bg-red-100 p-3 rounded-lg">
-                  <ShieldCheck className="w-6 h-6 text-[#d60000]" />
+                <div className="flex-shrink-0 bg-[#b9edf8] p-3 rounded-lg">
+                  <ShieldCheck className="w-6 h-6 text-[#0E8299]" />
                 </div>
                 <div>
                   <div className="font-semibold text-gray-900">
@@ -339,8 +391,8 @@ export default function Homepage() {
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <div className="flex-shrink-0 bg-red-100 p-3 rounded-lg">
-                  <Settings className="w-6 h-6 text-[#d60000]" />
+                <div className="flex-shrink-0 bg-[#b9edf8] p-3 rounded-lg">
+                  <Settings className="w-6 h-6 text-[#0E8299]" />
                 </div>
                 <div>
                   <div className="font-semibold text-gray-900">
@@ -352,8 +404,8 @@ export default function Homepage() {
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <div className="flex-shrink-0 bg-red-100 p-3 rounded-lg">
-                  <Brain className="w-6 h-6 text-[#d60000]" />
+                <div className="flex-shrink-0 bg-[#b9edf8] p-3 rounded-lg">
+                  <Brain className="w-6 h-6 text-[#0E8299]" />
                 </div>
                 <div>
                   <div className="font-semibold text-gray-900">Human + AI</div>
@@ -365,7 +417,6 @@ export default function Homepage() {
             </div>
           </div>
 
-          {/* Stats Section remains unchanged */}
           <div className="p-6 md:p-10 bg-gray-50 flex flex-col gap-6 justify-center w-[106%]">
             <div className="grid grid-cols-2 gap-6">
               <div className="bg-white p-4 rounded-xl shadow">
@@ -383,14 +434,13 @@ export default function Homepage() {
             </div>
           </div>
 
-          {/* What we deliver */}
           <div className="p-8 md:p-10 bg-white/95">
             <h4 className="font-extrabold text-gray-900 text-2xl">
               What we deliver
             </h4>
             <ul className="mt-4 space-y-3">
               <li className="flex gap-3 items-start">
-                <FileCheck className="w-6 h-6 text-[#d60000] mt-1" />
+                <FileCheck className="w-6 h-6 text-[#0E8299] mt-1" />
                 <div>
                   <div className="font-semibold">RBI-ready compliance</div>
                   <div className="text-sm text-gray-600">
@@ -399,7 +449,7 @@ export default function Homepage() {
                 </div>
               </li>
               <li className="flex gap-3 items-start">
-                <Zap className="w-6 h-6 text-[#d60000] mt-1" />
+                <Zap className="w-6 h-6 text-[#0E8299] mt-1" />
                 <div>
                   <div className="font-semibold">Fast integrations</div>
                   <div className="text-sm text-gray-600">
@@ -408,7 +458,7 @@ export default function Homepage() {
                 </div>
               </li>
               <li className="flex gap-3 items-start">
-                <BarChart className="w-6 h-6 text-[#d60000] mt-1" />
+                <BarChart className="w-6 h-6 text-[#0E8299] mt-1" />
                 <div>
                   <div className="font-semibold">Operational excellence</div>
                   <div className="text-sm text-gray-600">
@@ -424,13 +474,13 @@ export default function Homepage() {
         variants={fadeUp}
         initial="hidden"
         whileInView="show"
-        className="py-20 px-6 bg-gradient-to-r from-white via-red-50 to-red-100"
+        className="py-20 px-6 bg-[#e6f8fc]"
         viewport={{ once: true }}
       >
         <div className="max-w-6xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">
             Lightning-fast upgrades with{" "}
-            <span className="text-[#d60000]">Instant Cash</span>
+            <span className="text-[#0E8299]">Instant Cash</span>
           </h2>
           <p className="text-lg text-gray-600 mb-6">
             Fyntegra — empowering your financial freedom like never before!
@@ -447,11 +497,11 @@ export default function Homepage() {
               value={mobileNumber}
               onChange={(e) => setMobileNumber(e.target.value)}
               placeholder="Enter your mobile number"
-              className="w-full p-3 border border-gray-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-[#d60000] text-gray-700 placeholder-gray-400"
+              className="w-full p-3 border border-gray-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-[#0E8299] text-gray-700 placeholder-gray-400"
             />
             <button
               onClick={handleGetLoanClick}
-              className="px-6 py-1 bg-[#d60000] text-white rounded-lg hover:bg-[#b50000] transition duration-300 shadow-lg"
+              className="px-6 py-1 bg-[#0E8299] text-white rounded-lg hover:bg-[#001935] transition duration-300 shadow-lg"
             >
               Get your loan now
             </button>
@@ -494,7 +544,7 @@ export default function Homepage() {
         variants={fadeUp}
         initial="hidden"
         whileInView="show"
-        className="py-12 px-6 bg-gradient-to-r from-white via-red-50 to-red-100"
+        className="py-12 px-6 bg-[#e6f8fc]"
         viewport={{ once: true }}
       >
         <div className="max-w-6xl mx-auto ">
@@ -520,7 +570,7 @@ export default function Homepage() {
                 <div className="mt-4">
                   <button
                     onClick={() => setSelectedLoan(loan.title)}
-                    className="inline-block px-4 py-2 rounded-full bg-[#d60000] text-white"
+                    className="inline-block px-4 py-2 rounded-full bg-[#0E8299] text-white"
                   >
                     Apply
                   </button>
@@ -558,30 +608,30 @@ export default function Homepage() {
               </p>
               <div className="space-y-4">
                 <input
-                  className="w-full p-3 border rounded focus:outline-none focus:ring-2 focus:ring-[#d60000]"
+                  className="w-full p-3 border rounded focus:outline-none focus:ring-2 focus:ring-[#0E8299]"
                   placeholder="Full Name"
                   required
                 />
                 <input
-                  className="w-full p-3 border rounded focus:outline-none focus:ring-2 focus:ring-[#d60000]"
+                  className="w-full p-3 border rounded focus:outline-none focus:ring-2 focus:ring-[#0E8299]"
                   placeholder="Email Address"
                   type="email"
                   required
                 />
                 <input
-                  className="w-full p-3 border rounded focus:outline-none focus:ring-2 focus:ring-[#d60000]"
+                  className="w-full p-3 border rounded focus:outline-none focus:ring-2 focus:ring-[#0E8299]"
                   placeholder="Phone Number"
                   type="tel"
                   required
                 />
                 <input
-                  className="w-full p-3 border rounded focus:outline-none focus:ring-2 focus:ring-[#d60000]"
+                  className="w-full p-3 border rounded focus:outline-none focus:ring-2 focus:ring-[#0E8299]"
                   placeholder="Loan Amount"
                   type="number"
                   required
                 />
                 <textarea
-                  className="w-full p-3 border rounded focus:outline-none focus:ring-2 focus:ring-[#d60000]"
+                  className="w-full p-3 border rounded focus:outline-none focus:ring-2 focus:ring-[#0E8299]"
                   placeholder="Additional Information"
                   rows="3"
                 />
@@ -591,7 +641,7 @@ export default function Homepage() {
                       alert("Application submitted!");
                       setSelectedLoan(null);
                     }}
-                    className="px-5 py-2 bg-[#d60000] text-white rounded hover:bg-[#b50000]"
+                    className="px-5 py-2 bg-[#0E8299] text-white rounded hover:bg-[#001935]"
                   >
                     Submit
                   </button>
@@ -629,7 +679,7 @@ export default function Homepage() {
                 type="number"
                 value={emiAmount}
                 onChange={(e) => setEmiAmount(Number(e.target.value))}
-                className="mt-2 w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#d60000]"
+                className="mt-2 w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0E8299]"
               />
             </div>
             <div>
@@ -640,7 +690,7 @@ export default function Homepage() {
                 type="number"
                 value={emiInterest}
                 onChange={(e) => setEmiInterest(Number(e.target.value))}
-                className="mt-2 w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#d60000]"
+                className="mt-2 w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0E8299]"
               />
             </div>
             <div>
@@ -651,10 +701,10 @@ export default function Homepage() {
                 type="number"
                 value={emiTenure}
                 onChange={(e) => setEmiTenure(Number(e.target.value))}
-                className="mt-2 w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#d60000]"
+                className="mt-2 w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0E8299]"
               />
             </div>
-            <div className="bg-red-200 p-4 rounded-lg flex flex-col justify-center">
+            <div className="bg-[#e6f8fc] p-4 rounded-lg flex flex-col justify-center">
               <div className="text-sm text-gray-600">Monthly EMI</div>
               <div className="text-2xl font-bold text-gray-900 mt-1">
                 ₹{emiResult.emi.toLocaleString()}
@@ -687,7 +737,7 @@ export default function Homepage() {
               placeholder="Mobile number"
               className="p-3 border rounded-l-lg w-48 md:w-64"
             />
-            <button className="px-5 py-3 bg-[#d60000] text-white rounded-r-lg">
+            <button className="px-5 py-3 bg-[#0E8299] text-white rounded-r-lg">
               Check Now
             </button>
           </div>
@@ -701,7 +751,7 @@ export default function Homepage() {
         variants={fadeUp}
         initial="hidden"
         whileInView="show"
-        className="py-12 px-6 bg-gradient-to-r from-white via-red-50 to-red-100"
+        className="py-12 px-6 bg-[#e6f8fc]"
         viewport={{ once: true }}
       >
         <div className="max-w-3xl mx-auto">
@@ -804,7 +854,7 @@ export default function Homepage() {
         variants={fadeUp}
         initial="hidden"
         whileInView="show"
-        className="py-12 px-6 bg-gradient-to-r from-white via-red-50 to-red-100 "
+        className="py-12 px-6 bg-[#e6f8fc]"
         viewport={{ once: true }}
       >
         <div className="max-w-6xl mx-auto">
@@ -841,7 +891,7 @@ export default function Homepage() {
                 <div className="font-semibold mb-2">{s.title}</div>
                 <div className="text-sm text-gray-600">{s.desc}</div>
                 <Link
-                  className="mt-4 inline-block text-sm text-[#0f9d58]"
+                  className="mt-4 inline-block text-sm text-[#0E8299]"
                   to="/platform"
                 >
                   Learn more →
@@ -875,18 +925,19 @@ export default function Homepage() {
             ].map((f, i) => (
               <div
                 key={i}
-                className="p-4 bg-red-200 rounded-lg shadow font-medium text-sm"
+                className="p-4 bg-[#e6f8fc] rounded-lg shadow font-medium text-sm"
               >
                 {f}
               </div>
             ))}
           </div>
           <Link to="/platform">
-          <button
-            className="inline-block px-6 py-3 bg-[#d60000] text-white rounded-full cursor-pointer"
-          >
-            Explore Platform
-          </button></Link>
+            <button
+              className="inline-block px-6 py-3 bg-[#0E8299] text-white rounded-full cursor-pointer"
+            >
+              Explore Platform
+            </button>
+          </Link>
         </div>
       </motion.section>
 
@@ -894,7 +945,7 @@ export default function Homepage() {
         variants={fadeUp}
         initial="hidden"
         whileInView="show"
-        className="py-12 px-6 bg-gradient-to-r from-white via-red-50 to-red-100"
+        className="py-12 px-6 bg-[#e6f8fc]"
         viewport={{ once: true }}
       >
         <div className="max-w-4xl mx-auto">
@@ -1005,7 +1056,7 @@ export default function Homepage() {
                 rows="3"
               />
               <div className="flex gap-3">
-                <button className="px-4 py-2 bg-[#d60000] text-white rounded">
+                <button className="px-4 py-2 bg-[#0E8299] text-white rounded">
                   Request Demo
                 </button>
                 <button className="px-4 py-2 bg-white border rounded">

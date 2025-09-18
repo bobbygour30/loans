@@ -13,25 +13,25 @@ export default function Solutions() {
     {
       title: "Customer Experience & Sales",
       desc: "AI-driven tools to enhance engagement, boost sales, and improve satisfaction.",
-      icon: <Users className="w-8 h-8 text-[#d60000]" />,
+      icon: <Users className="w-8 h-8 text-[#0E8299]" />,
       url: "/solutions/cx-sales",
     },
     {
       title: "Collections & Recovery",
       desc: "Data-driven workflows to optimize recovery and maintain customer trust.",
-      icon: <TrendingUp className="w-8 h-8 text-[#d60000]" />,
+      icon: <TrendingUp className="w-8 h-8 text-[#0E8299]" />,
       url: "/solutions/collections",
     },
     {
       title: "Compliance & Verification",
       desc: "Streamlined KYC and fraud detection for RBI compliance and audits.",
-      icon: <IdCard className="w-8 h-8 text-[#d60000]" />,
+      icon: <IdCard className="w-8 h-8 text-[#0E8299]" />,
       url: "/solutions/compliance",
     },
     {
       title: "AI + SaaS Tools",
       desc: "AI models and SaaS for risk assessment, analytics, and operations.",
-      icon: <BrainCircuit className="w-8 h-8 text-[#d60000]" />,
+      icon: <BrainCircuit className="w-8 h-8 text-[#0E8299]" />,
       url: "/solutions/ai-saas",
     },
   ];
@@ -102,7 +102,7 @@ export default function Solutions() {
           viewport={{ once: true }}
           className="text-3xl md:text-4xl font-extrabold text-center"
         >
-          LSP Solutions for <span className="text-[#d60000]">Banks, NBFCs & Fintechs</span>
+          LSP Solutions for <span className="text-[#0E8299]">Banks, NBFCs & Fintechs</span>
         </motion.h2>
         <motion.p
           variants={fadeUp}
@@ -134,7 +134,7 @@ export default function Solutions() {
               <p className="text-gray-600 text-center text-sm min-h-[60px]">{s.desc}</p>
               <Link
                 to={s.url}
-                className="mt-4 inline-block px-4 py-2 bg-[#d60000] text-white rounded-full text-sm font-semibold hover:bg-[#b50000] transition-all duration-300 transform hover:scale-105"
+                className="mt-4 inline-block px-4 py-2 bg-[#0E8299] text-white rounded-full text-sm font-semibold  transition-all duration-300 transform hover:scale-105"
               >
                 Learn More
               </Link>
@@ -154,7 +154,7 @@ export default function Solutions() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             {benefits.map((b, i) => (
               <div key={i} className="p-6 bg-gradient-to-tr from-white to-gray-100 rounded-xl shadow-lg">
-                <h4 className="font-semibold text-[#d60000] mb-2">{b.title}</h4>
+                <h4 className="font-semibold text-[#0E8299] mb-2">{b.title}</h4>
                 <p className="text-sm text-gray-600">{b.desc}</p>
               </div>
             ))}
@@ -173,7 +173,7 @@ export default function Solutions() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {caseStudies.map((cs, i) => (
               <div key={i} className="p-6 bg-white rounded-xl shadow-lg">
-                <h4 className="font-semibold text-[#d60000] mb-2">{cs.title}</h4>
+                <h4 className="font-semibold text-[#0E8299] mb-2">{cs.title}</h4>
                 <p className="text-gray-600 mb-2">{cs.desc}</p>
                 <p className="text-sm text-gray-500">Impact: {cs.impact}</p>
               </div>
@@ -201,7 +201,7 @@ export default function Solutions() {
                 className="bg-white p-8 rounded-xl shadow-lg"
               >
                 <p className="italic text-gray-700">“{testimonials[testIndex].quote}”</p>
-                <div className="mt-4 font-semibold text-[#d60000]">{testimonials[testIndex].author}</div>
+                <div className="mt-4 font-semibold text-[#0E8299]">{testimonials[testIndex].author}</div>
               </motion.div>
             </AnimatePresence>
             <div className="flex justify-between items-center mt-4">
@@ -234,13 +234,13 @@ export default function Solutions() {
           <div className="flex justify-center gap-4 flex-wrap">
             <Link
               to="/partner-with-us"
-              className="px-6 py-3 bg-[#d60000] text-white rounded-full font-semibold shadow hover:bg-[#b50000] transition"
+              className="px-6 py-3 bg-[#0E8299] text-white rounded-full font-semibold shadow  transition"
             >
               Request a Demo
             </Link>
             <Link
               to="/contact"
-              className="px-6 py-3 border border-[#d60000] text-[#d60000] rounded-full font-semibold hover:bg-[#d60000]/10 transition"
+              className="px-6 py-3 border border-[#0E8299] text-[#0E8299] rounded-full font-semibold hover:bg-[#0E8299]/10 transition"
             >
               Contact Us
             </Link>

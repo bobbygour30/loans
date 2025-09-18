@@ -18,9 +18,9 @@ export default function Contact() {
     {
       title: "Email Us",
       desc: "support@fyntegra.in",
-      icon: <Mail className="w-8 h-8 text-[#d60000]" />,
+      icon: <Mail className="w-8 h-8 text-[#0E8299]" />,
       action: (
-        <a href="mailto:support@fyntegra.com" className="mt-4 inline-block text-sm text-[#d60000] hover:underline">
+        <a href="mailto:support@fyntegra.com" className="mt-4 inline-block text-sm text-[#0E8299] hover:underline">
           Send Email
         </a>
       ),
@@ -28,9 +28,9 @@ export default function Contact() {
     {
       title: "Call Us",
       desc: "+91-123-456-7890",
-      icon: <Phone className="w-8 h-8 text-[#d60000]" />,
+      icon: <Phone className="w-8 h-8 text-[#0E8299]" />,
       action: (
-        <a href="tel:+911234567890" className="mt-4 inline-block text-sm text-[#d60000] hover:underline">
+        <a href="tel:+911234567890" className="mt-4 inline-block text-sm text-[#0E8299] hover:underline">
           Call Now
         </a>
       ),
@@ -38,9 +38,9 @@ export default function Contact() {
     {
       title: "Visit Us",
       desc: "123 Fintech Hub, Mumbai, MH 400001",
-      icon: <MapPin className="w-8 h-8 text-[#d60000]" />,
+      icon: <MapPin className="w-8 h-8 text-[#0E8299]" />,
       action: (
-        <a href="#map" className="mt-4 inline-block text-sm text-[#d60000] hover:underline">
+        <a href="#map" className="mt-4 inline-block text-sm text-[#0E8299] hover:underline">
           View on Map
         </a>
       ),
@@ -103,7 +103,7 @@ export default function Contact() {
           viewport={{ once: true }}
           className="text-3xl md:text-4xl font-extrabold text-center"
         >
-          Get in <span className="text-[#d60000]">Touch</span>
+          Get in <span className="text-[#0E8299]">Touch</span>
         </motion.h2>
         <motion.p
           variants={fadeUp}
@@ -132,25 +132,25 @@ export default function Contact() {
                 placeholder="Your Name"
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#d60000]"
+                className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0E8299]"
               />
               <input
                 type="email"
                 placeholder="Your Email"
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#d60000]"
+                className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0E8299]"
               />
               <textarea
                 placeholder="Your Message"
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#d60000]"
+                className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0E8299]"
                 rows="4"
               />
               <button
                 onClick={handleFormSubmit}
-                className="w-full px-6 py-3 bg-[#d60000] text-white rounded-lg font-semibold hover:bg-[#b50000] transition"
+                className="w-full px-6 py-3 bg-[#0E8299] text-white rounded-lg font-semibold  transition"
               >
                 Send Message
               </button>
@@ -184,7 +184,7 @@ export default function Contact() {
               className="p-6 bg-white rounded-xl shadow-lg text-center"
             >
               <div className="flex justify-center mb-4">{c.icon}</div>
-              <h3 className="font-semibold text-[#d60000] mb-2">{c.title}</h3>
+              <h3 className="font-semibold text-[#0E8299] mb-2">{c.title}</h3>
               <p className="text-sm text-gray-600 mb-4">{c.desc}</p>
               {c.action}
             </motion.div>
@@ -236,7 +236,7 @@ export default function Contact() {
                 className="bg-white p-8 rounded-xl shadow-lg"
               >
                 <p className="italic text-gray-700">“{testimonials[testIndex].quote}”</p>
-                <div className="mt-4 font-semibold text-[#d60000]">{testimonials[testIndex].author}</div>
+                <div className="mt-4 font-semibold text-[#0E8299]">{testimonials[testIndex].author}</div>
               </motion.div>
             </AnimatePresence>
             <div className="flex justify-between items-center mt-4">
@@ -283,13 +283,13 @@ export default function Contact() {
           <div className="flex justify-center gap-4 flex-wrap">
             <Link
               to="/contact"
-              className="px-6 py-3 bg-[#d60000] text-white rounded-full font-semibold shadow hover:bg-[#b50000] transition"
+              className="px-6 py-3 bg-[#0E8299] text-white rounded-full font-semibold shadow  transition"
             >
               Send a Message
             </Link>
             <Link
               to="/support"
-              className="px-6 py-3 border border-[#d60000] text-[#d60000] rounded-full font-semibold hover:bg-[#d60000]/10 transition"
+              className="px-6 py-3 border border-[#0E8299] text-[#0E8299] rounded-full font-semibold hover:bg-[#0E8299]/10 transition"
             >
               Visit Support Center
             </Link>

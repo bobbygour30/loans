@@ -84,7 +84,7 @@ export default function ApplyNow() {
           viewport={{ once: true }}
           className="text-3xl md:text-4xl font-extrabold text-center"
         >
-          Apply <span className="text-[#d60000]">Now</span>
+          Apply <span className="text-[#0E8299]">Now</span>
         </motion.h2>
         <motion.p
           variants={fadeUp}
@@ -113,7 +113,7 @@ export default function ApplyNow() {
                 placeholder="Full Name *"
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#d60000]"
+                className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0E8299]"
                 required
               />
               <input
@@ -121,7 +121,7 @@ export default function ApplyNow() {
                 placeholder="Email Address *"
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#d60000]"
+                className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0E8299]"
                 required
               />
               <input
@@ -129,13 +129,13 @@ export default function ApplyNow() {
                 placeholder="Phone Number *"
                 value={formData.phone}
                 onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#d60000]"
+                className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0E8299]"
                 required
               />
               <select
                 value={formData.loanType}
                 onChange={(e) => setFormData({ ...formData, loanType: e.target.value })}
-                className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#d60000]"
+                className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0E8299]"
               >
                 {loanTypes.map((type, i) => (
                   <option key={i} value={type}>
@@ -148,19 +148,19 @@ export default function ApplyNow() {
                 placeholder="Loan Amount *"
                 value={formData.amount}
                 onChange={(e) => setFormData({ ...formData, amount: e.target.value })}
-                className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#d60000]"
+                className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0E8299]"
                 required
               />
               <textarea
                 placeholder="Additional Information (Optional)"
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#d60000]"
+                className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0E8299]"
                 rows="4"
               />
               <button
                 onClick={handleFormSubmit}
-                className="w-full px-6 py-3 bg-[#d60000] text-white rounded-lg font-semibold hover:bg-[#b50000] transition"
+                className="w-full px-6 py-3 bg-[#0E8299] text-white rounded-lg font-semibold  transition"
               >
                 Submit Application
               </button>
@@ -191,7 +191,7 @@ export default function ApplyNow() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {eligibilityHighlights.map((e, i) => (
               <div key={i} className="p-6 bg-white rounded-xl shadow-lg text-center">
-                <h4 className="font-semibold text-[#d60000] mb-2">{e.title}</h4>
+                <h4 className="font-semibold text-[#0E8299] mb-2">{e.title}</h4>
                 <p className="text-sm text-gray-600">{e.desc}</p>
               </div>
             ))}
@@ -210,7 +210,7 @@ export default function ApplyNow() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             {applicationSteps.map((step, i) => (
               <div key={i} className="p-6 bg-gradient-to-tr from-white to-gray-100 rounded-xl shadow-lg text-center">
-                <div className="text-2xl font-bold text-[#d60000] mb-2">Step {i + 1}</div>
+                <div className="text-2xl font-bold text-[#0E8299] mb-2">Step {i + 1}</div>
                 <h4 className="font-semibold mb-2">{step.title}</h4>
                 <p className="text-sm text-gray-600">{step.desc}</p>
               </div>
@@ -263,7 +263,7 @@ export default function ApplyNow() {
                 className="bg-white p-8 rounded-xl shadow-lg"
               >
                 <p className="italic text-gray-700">“{testimonials[testIndex].quote}”</p>
-                <div className="mt-4 font-semibold text-[#d60000]">{testimonials[testIndex].author}</div>
+                <div className="mt-4 font-semibold text-[#0E8299]">{testimonials[testIndex].author}</div>
               </motion.div>
             </AnimatePresence>
             <div className="flex justify-between items-center mt-4">
@@ -296,13 +296,13 @@ export default function ApplyNow() {
           <div className="flex justify-center gap-4 flex-wrap">
             <Link
               to="/apply"
-              className="px-6 py-3 bg-[#d60000] text-white rounded-full font-semibold shadow hover:bg-[#b50000] transition"
+              className="px-6 py-3 bg-[#0E8299] text-white rounded-full font-semibold shadow  transition"
             >
               Apply Now
             </Link>
             <Link
               to="/contact"
-              className="px-6 py-3 border border-[#d60000] text-[#d60000] rounded-full font-semibold hover:bg-[#d60000]/10 transition"
+              className="px-6 py-3 border border-[#0E8299] text-[#0E8299] rounded-full font-semibold hover:bg-[#0E8299]/10 transition"
             >
               Contact Support
             </Link>

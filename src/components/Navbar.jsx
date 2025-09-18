@@ -130,7 +130,7 @@ export default function ResponsiveNavbar() {
                         <ChevronDown size={14} className={`transition-transform ${openDropdown === i ? "rotate-180" : ""}`} />
                       </span>
                     )}
-                    <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#d60000] transition-all duration-200 group-hover:w-full"></span>
+                    <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#01495F] transition-all duration-200 group-hover:w-full"></span>
                   </Link>
                 </div>
 
@@ -171,7 +171,7 @@ export default function ResponsiveNavbar() {
           <ul className="hidden xl:flex items-center space-x-2 sm:space-x-3 font-medium text-gray-700">
             <li>
               <Link to="/apply">
-                <button className="px-3 sm:px-4 py-2 bg-[#d60000] text-sm text-white rounded-full hover:bg-red-700 hover:scale-105 transition duration-200">
+                <button className="px-3 sm:px-4 py-2 bg-[#0E8299] text-sm text-white rounded-full  hover:scale-105 transition duration-200">
                   Apply Now
                 </button>
               </Link>
@@ -185,7 +185,7 @@ export default function ResponsiveNavbar() {
             </li>
             <li>
               <Link to="/sign-up">
-                <button className="px-3 sm:px-4 py-2 bg-[#d60000] text-sm text-white rounded-full hover:bg-gray-800 hover:scale-105 transition duration-200">
+                <button className="px-3 sm:px-4 py-2 bg-[#0E8299] text-sm text-white rounded-full  hover:scale-105 transition duration-200">
                   Sign Up
                 </button>
               </Link>
@@ -263,7 +263,7 @@ export default function ResponsiveNavbar() {
               {/* Mobile action buttons */}
               <li className="pt-2">
                 <Link to="/apply" onClick={() => setIsOpen(false)}>
-                  <button className="w-full px-4 py-2 bg-[#d60000] text-sm text-white rounded-full hover:bg-red-700">
+                  <button className="w-full px-4 py-2 bg-[#0E8299] text-sm text-white rounded-full ">
                     Apply Now
                   </button>
                 </Link>
@@ -277,7 +277,7 @@ export default function ResponsiveNavbar() {
               </li>
               <li>
                 <Link to="/sign-up" onClick={() => setIsOpen(false)}>
-                  <button className="w-full px-4 py-2 bg-[#d60000] text-sm text-white rounded-full hover:bg-gray-800">
+                  <button className="w-full px-4 py-2 bg-[#0E8299] text-sm text-white rounded-full ">
                     Sign Up
                   </button>
                 </Link>
@@ -302,11 +302,11 @@ export default function ResponsiveNavbar() {
                 value={mobileNumber}
                 onChange={(e) => setMobileNumber(e.target.value)}
                 placeholder="Enter mobile"
-                className="p-2 border rounded-lg w-full text-white text-sm focus:outline-none focus:ring-2 focus:ring-[#d60000]"
+                className="p-2 border rounded-lg w-full text-white text-sm focus:outline-none focus:ring-2 focus:ring-[#01495F]"
               />
               <button
                 onClick={handleApplyClick}
-                className="px-3 py-2 w-1/2 bg-[#d60000] text-white rounded text-sm hover:bg-red-700"
+                className="px-3 py-2 w-1/2 bg-[#01495F] text-white rounded text-sm hover:bg-red-700"
               >
                 Apply Now
               </button>

@@ -21,25 +21,25 @@ export default function Careers() {
       role: "Frontend Developer",
       location: "Remote / Delhi",
       desc: "Build intuitive and responsive user interfaces using React and Tailwind CSS to enhance our lending platform.",
-      icon: <Code className="w-8 h-8 text-[#d60000]" />,
+      icon: <Code className="w-8 h-8 text-[#0E8299]" />,
     },
     {
       role: "Backend Engineer",
       location: "Bangalore",
       desc: "Develop scalable APIs and microservices to power our AI-driven lending solutions with high performance and security.",
-      icon: <Server className="w-8 h-8 text-[#d60000]" />,
+      icon: <Server className="w-8 h-8 text-[#0E8299]" />,
     },
     {
       role: "Customer Success Manager",
       location: "Mumbai",
       desc: "Drive client satisfaction by managing relationships and ensuring seamless adoption of our platform.",
-      icon: <Users className="w-8 h-8 text-[#d60000]" />,
+      icon: <Users className="w-8 h-8 text-[#0E8299]" />,
     },
     {
       role: "Data Scientist",
       location: "Remote / Hyderabad",
       desc: "Leverage AI and machine learning to enhance risk models and predictive analytics for lending decisions.",
-      icon: <Brain className="w-8 h-8 text-[#d60000]" />,
+      icon: <Brain className="w-8 h-8 text-[#0E8299]" />,
     },
   ];
 
@@ -111,7 +111,7 @@ export default function Careers() {
           viewport={{ once: true }}
           className="text-3xl md:text-4xl font-extrabold text-center"
         >
-          Join <span className="text-[#d60000]">Our Team</span>
+          Join <span className="text-[#0E8299]">Our Team</span>
         </motion.h2>
         <motion.p
           variants={fadeUp}
@@ -139,12 +139,12 @@ export default function Careers() {
               className="p-6 bg-white rounded-xl shadow-lg text-center"
             >
               <div className="flex justify-center mb-4">{o.icon}</div>
-              <h3 className="font-semibold text-[#d60000] mb-2">{o.role}</h3>
+              <h3 className="font-semibold text-[#0E8299] mb-2">{o.role}</h3>
               <p className="text-sm text-gray-600 mb-2">{o.location}</p>
               <p className="text-sm text-gray-600 mb-4">{o.desc}</p>
               <Link
                 to="/apply"
-                className="inline-block px-4 py-2 bg-[#d60000] text-white rounded-full font-semibold hover:bg-[#b50000] transition"
+                className="inline-block px-4 py-2 bg-[#0E8299] text-white rounded-full font-semibold  transition"
               >
                 Apply Now
               </Link>
@@ -164,7 +164,7 @@ export default function Careers() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             {culture.map((c, i) => (
               <div key={i} className="p-6 bg-gradient-to-tr from-white to-gray-100 rounded-xl shadow-lg">
-                <h4 className="font-semibold text-[#d60000] mb-2">{c.title}</h4>
+                <h4 className="font-semibold text-[#0E8299] mb-2">{c.title}</h4>
                 <p className="text-sm text-gray-600">{c.desc}</p>
               </div>
             ))}
@@ -183,7 +183,7 @@ export default function Careers() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             {perks.map((p, i) => (
               <div key={i} className="p-6 bg-white rounded-xl shadow-lg">
-                <h4 className="font-semibold text-[#d60000] mb-2">{p.title}</h4>
+                <h4 className="font-semibold text-[#0E8299] mb-2">{p.title}</h4>
                 <p className="text-sm text-gray-600">{p.desc}</p>
               </div>
             ))}
@@ -210,7 +210,7 @@ export default function Careers() {
                 className="bg-white p-8 rounded-xl shadow-lg"
               >
                 <p className="italic text-gray-700">“{testimonials[testIndex].quote}”</p>
-                <div className="mt-4 font-semibold text-[#d60000]">{testimonials[testIndex].author}</div>
+                <div className="mt-4 font-semibold text-[#0E8299]">{testimonials[testIndex].author}</div>
               </motion.div>
             </AnimatePresence>
             <div className="flex justify-between items-center mt-4">
@@ -243,13 +243,13 @@ export default function Careers() {
           <div className="flex justify-center gap-4 flex-wrap">
             <Link
               to="/"
-              className="px-6 py-3 bg-[#d60000] text-white rounded-full font-semibold shadow hover:bg-[#b50000] transition"
+              className="px-6 py-3 bg-[#0E8299] text-white rounded-full font-semibold shadow  transition"
             >
               View Openings
             </Link>
             <Link
               to="#contact"
-              className="px-6 py-3 border border-[#d60000] text-[#d60000] rounded-full font-semibold hover:bg-[#d60000]/10 transition"
+              className="px-6 py-3 border border-[#0E8299] text-[#0E8299] rounded-full font-semibold hover:bg-[#0E8299]/10 transition"
             >
               Contact HR
             </Link>

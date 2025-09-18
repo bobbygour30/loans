@@ -13,32 +13,32 @@ export default function Loans() {
     {
       title: "Personal Loans",
       desc: "Quick access to funds for personal needs like medical emergencies, travel, or home renovations with flexible repayment options.",
-      icon: <Wallet className="w-8 h-8 text-[#d60000]" />,
+      icon: <Wallet className="w-8 h-8 text-[#0E8299]" />,
     },
     {
       title: "Business Loans",
       desc: "Tailored financing for SMEs and startups to support working capital, expansion, or equipment purchases.",
-      icon: <BriefcaseBusiness className="w-8 h-8 text-[#d60000]" />,
+      icon: <BriefcaseBusiness className="w-8 h-8 text-[#0E8299]" />,
     },
     {
       title: "Education Loans",
       desc: "Affordable financing for students to pursue higher education in India or abroad with flexible repayment terms.",
-      icon: <GraduationCap className="w-8 h-8 text-[#d60000]" />,
+      icon: <GraduationCap className="w-8 h-8 text-[#0E8299]" />,
     },
     {
       title: "Home Loans",
       desc: "Competitive rates to help you purchase or renovate your dream home with streamlined processing.",
-      icon: <Home className="w-8 h-8 text-[#d60000]" /> ,
+      icon: <Home className="w-8 h-8 text-[#0E8299]" /> ,
     },
     {
       title: "Gold Loans",
       desc: "Instant liquidity against gold assets with minimal documentation and quick disbursal.",
-      icon: <Gem className="w-8 h-8 text-[#d60000]" />,
+      icon: <Gem className="w-8 h-8 text-[#0E8299]" />,
     },
     {
       title: "Vehicle Loans",
       desc: "Finance your dream car or two-wheeler with easy EMIs and fast approval processes.",
-      icon: <Car className="w-8 h-8 text-[#d60000]" />,
+      icon: <Car className="w-8 h-8 text-[#0E8299]" />,
     },
   ];
 
@@ -102,7 +102,7 @@ export default function Loans() {
           viewport={{ once: true }}
           className="text-3xl md:text-4xl font-extrabold text-center"
         >
-          Loan <span className="text-[#d60000]">Solutions</span>
+          Loan <span className="text-[#0E8299]">Solutions</span>
         </motion.h2>
         <motion.p
           variants={fadeUp}
@@ -135,7 +135,7 @@ export default function Loans() {
               <div className="mt-4 text-center">
                 <button
                   onClick={() => setSelectedLoan(t.title)}
-                  className="inline-block px-4 py-2 rounded-full bg-[#d60000] text-white hover:bg-[#b50000]"
+                  className="inline-block px-4 py-2 rounded-full bg-[#0E8299] text-white "
                 >
                   Apply Now
                 </button>
@@ -166,18 +166,18 @@ export default function Loans() {
                 <h3 className="text-xl font-semibold mb-2">Apply for {selectedLoan}</h3>
                 <p className="text-sm text-gray-600 mb-6">Fill in your details below. Our team will get in touch with you soon.</p>
                 <div className="space-y-4">
-                  <input className="w-full p-3 border rounded focus:outline-none focus:ring-2 focus:ring-[#d60000]" placeholder="Full Name" required />
-                  <input className="w-full p-3 border rounded focus:outline-none focus:ring-2 focus:ring-[#d60000]" placeholder="Email Address" type="email" required />
-                  <input className="w-full p-3 border rounded focus:outline-none focus:ring-2 focus:ring-[#d60000]" placeholder="Phone Number" type="tel" required />
-                  <input className="w-full p-3 border rounded focus:outline-none focus:ring-2 focus:ring-[#d60000]" placeholder="Loan Amount" type="number" required />
-                  <textarea className="w-full p-3 border rounded focus:outline-none focus:ring-2 focus:ring-[#d60000]" placeholder="Additional Information" rows="3" />
+                  <input className="w-full p-3 border rounded focus:outline-none focus:ring-2 focus:ring-[#0E8299]" placeholder="Full Name" required />
+                  <input className="w-full p-3 border rounded focus:outline-none focus:ring-2 focus:ring-[#0E8299]" placeholder="Email Address" type="email" required />
+                  <input className="w-full p-3 border rounded focus:outline-none focus:ring-2 focus:ring-[#0E8299]" placeholder="Phone Number" type="tel" required />
+                  <input className="w-full p-3 border rounded focus:outline-none focus:ring-2 focus:ring-[#0E8299]" placeholder="Loan Amount" type="number" required />
+                  <textarea className="w-full p-3 border rounded focus:outline-none focus:ring-2 focus:ring-[#0E8299]" placeholder="Additional Information" rows="3" />
                   <div className="flex gap-3">
                     <button
                       onClick={() => {
                         alert("Application submitted!");
                         setSelectedLoan(null);
                       }}
-                      className="px-5 py-2 bg-[#d60000] text-white rounded hover:bg-[#b50000]"
+                      className="px-5 py-2 bg-[#0E8299] text-white rounded "
                     >
                       Submit
                     </button>
@@ -206,7 +206,7 @@ export default function Loans() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             {benefits.map((b, i) => (
               <div key={i} className="p-6 bg-gradient-to-tr from-white to-gray-100 rounded-xl shadow-lg">
-                <h4 className="font-semibold text-[#d60000] mb-2">{b.title}</h4>
+                <h4 className="font-semibold text-[#0E8299] mb-2">{b.title}</h4>
                 <p className="text-sm text-gray-600">{b.desc}</p>
               </div>
             ))}
@@ -233,7 +233,7 @@ export default function Loans() {
                 className="bg-white p-8 rounded-xl shadow-lg"
               >
                 <p className="italic text-gray-700">“{testimonials[testIndex].quote}”</p>
-                <div className="mt-4 font-semibold text-[#d60000]">{testimonials[testIndex].author}</div>
+                <div className="mt-4 font-semibold text-[#0E8299]">{testimonials[testIndex].author}</div>
               </motion.div>
             </AnimatePresence>
             <div className="flex justify-between items-center mt-4">
@@ -267,8 +267,8 @@ export default function Loans() {
             Find out if you qualify for our loan products with a soft credit check that won’t affect your score.
           </p>
           <div className="inline-flex items-center gap-3 w-full md:w-auto">
-            <input placeholder="Mobile Number" className="p-3 border rounded-l-lg w-48 md:w-64 focus:outline-none focus:ring-2 focus:ring-[#d60000]" />
-            <button className="px-5 py-3 bg-[#d60000] text-white rounded-r-lg hover:bg-[#b50000]">
+            <input placeholder="Mobile Number" className="p-3 border rounded-l-lg w-48 md:w-64 focus:outline-none focus:ring-2 focus:ring-[#0E8299]" />
+            <button className="px-5 py-3 bg-[#0E8299] text-white rounded-r-lg ">
               Check Now
             </button>
           </div>
@@ -287,13 +287,13 @@ export default function Loans() {
           <div className="flex justify-center gap-4 flex-wrap">
             <Link
               to="/"
-              className="px-6 py-3 bg-[#d60000] text-white rounded-full font-semibold shadow hover:bg-[#b50000] transition"
+              className="px-6 py-3 bg-[#0E8299] text-white rounded-full font-semibold shadow  transition"
             >
               Apply for a Loan
             </Link>
             <Link
               to="/contact"
-              className="px-6 py-3 border border-[#d60000] text-[#d60000] rounded-full font-semibold hover:bg-[#d60000]/10 transition"
+              className="px-6 py-3 border border-[#0E8299] text-[#0E8299] rounded-full font-semibold hover:bg-[#0E8299]/10 transition"
             >
               Contact Us
             </Link>

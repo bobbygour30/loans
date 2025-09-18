@@ -87,7 +87,7 @@ const SignUp = () => {
 
             <button
               type="submit"
-              className="w-full py-3 bg-[#d60000] text-white rounded-lg font-semibold hover:bg-red-700 transition-transform transform hover:scale-105"
+              className="w-full py-3 bg-[#0E8299] text-white rounded-lg font-semibold hover:bg-red-700 transition-transform transform hover:scale-105"
             >
               Get Started
             </button>
@@ -104,7 +104,7 @@ const SignUp = () => {
             />
             <button
               type="submit"
-              className="w-full py-3 bg-[#d60000] text-white rounded-lg font-semibold hover:bg-red-700 transition-transform transform hover:scale-105"
+              className="w-full py-3 bg-[#0E8299] text-white rounded-lg font-semibold hover:bg-red-700 transition-transform transform hover:scale-105"
             >
               Verify OTP & Sign Up
             </button>
@@ -115,7 +115,7 @@ const SignUp = () => {
           Already have an account?{" "}
           <Link
             to="/login"
-            className="text-[#d60000] font-semibold hover:underline"
+            className="text-[#0E8299] font-semibold hover:underline"
           >
             Login
           </Link>

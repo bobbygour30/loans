@@ -63,7 +63,7 @@ export default function EmiCalculator() {
           viewport={{ once: true }}
           className="text-3xl md:text-4xl font-extrabold text-center"
         >
-          EMI <span className="text-[#d60000]">Calculator</span>
+          EMI <span className="text-[#0E8299]">Calculator</span>
         </motion.h2>
         <motion.p
           variants={fadeUp}
@@ -84,13 +84,63 @@ export default function EmiCalculator() {
           viewport={{ once: true }}
           className="mt-10 max-w-4xl mx-auto bg-white p-8 rounded-2xl shadow-lg"
         >
+          <style jsx>{`
+    input[type="range"] {
+      -webkit-appearance: none; /* Remove default WebKit styles */
+      width: 100%;
+      height: 8px;
+      background: transparent;
+      outline: none;
+    }
+
+    /* WebKit (Chrome, Safari) */
+    input[type="range"]::-webkit-slider-runnable-track {
+      height: 8px;
+      background: #e5e7eb; /* Light gray track */
+      border-radius: 4px;
+    }
+
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 16px;
+      height: 16px;
+      background: #0E8299; /* Your desired color */
+      border-radius: 50%;
+      cursor: pointer;
+      margin-top: -4px; /* Center thumb on track */
+    }
+
+    input[type="range"]:focus::-webkit-slider-runnable-track {
+      background: #d1d5db; /* Slightly darker track on focus */
+    }
+
+    /* Mozilla (Firefox) */
+    input[type="range"]::-moz-range-track {
+      height: 8px;
+      background: #e5e7eb;
+      border-radius: 4px;
+    }
+
+    input[type="range"]::-moz-range-thumb {
+      width: 16px;
+      height: 16px;
+      background: #0E8299; /* Your desired color */
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    input[type="range"]:focus::-moz-range-track {
+      background: #d1d5db;
+    }
+  `}</style>
           <div className="space-y-6">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">Loan Type</label>
               <select
                 value={loanType}
                 onChange={(e) => setLoanType(e.target.value)}
-                className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#d60000]"
+                className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0E8299]"
               >
                 {loanTypes.map((type, i) => (
                   <option key={i} value={type}>
@@ -109,7 +159,7 @@ export default function EmiCalculator() {
                   value={amount}
                   onChange={handleAmountChange}
                   placeholder="Enter amount"
-                  className="w-1/2 p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#d60000]"
+                  className="w-1/2 p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0E8299]"
                 />
                 <input
                   type="range"
@@ -131,7 +181,7 @@ export default function EmiCalculator() {
                   value={rate}
                   onChange={handleRateChange}
                   placeholder="Enter rate"
-                  className="w-1/2 p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#d60000]"
+                  className="w-1/2 p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0E8299]"
                 />
                 <input
                   type="range"
@@ -154,7 +204,7 @@ export default function EmiCalculator() {
                   value={tenure}
                   onChange={handleTenureChange}
                   placeholder="Enter tenure"
-                  className="w-1/2 p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#d60000]"
+                  className="w-1/2 p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0E8299]"
                 />
                 <input
                   type="range"
@@ -169,7 +219,7 @@ export default function EmiCalculator() {
           </div>
           <motion.div
             whileHover={{ scale: 1.05 }}
-            className="mt-8 p-6 bg-gradient-to-r from-[#2e2e2e] to-[#d60000] rounded-xl text-white"
+            className="mt-8 p-6 bg-gradient-to-r from-[#2e2e2e] to-[#0E8299] rounded-xl text-white"
           >
             <h3 className="text-xl font-semibold">Estimated Results</h3>
             <div className="mt-4 space-y-2">
@@ -222,15 +272,15 @@ export default function EmiCalculator() {
           <h3 className="text-2xl font-semibold text-center mb-6">Tips for Smart Borrowing</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="p-6 bg-white rounded-xl shadow-lg">
-              <h4 className="font-semibold text-[#d60000] mb-2">Assess Your Needs</h4>
+              <h4 className="font-semibold text-[#0E8299] mb-2">Assess Your Needs</h4>
               <p className="text-sm text-gray-600">Borrow only what you need to avoid unnecessary interest costs.</p>
             </div>
             <div className="p-6 bg-white rounded-xl shadow-lg">
-              <h4 className="font-semibold text-[#d60000] mb-2">Check Your Credit</h4>
+              <h4 className="font-semibold text-[#0E8299] mb-2">Check Your Credit</h4>
               <p className="text-sm text-gray-600">A good credit score can secure lower interest rates.</p>
             </div>
             <div className="p-6 bg-white rounded-xl shadow-lg">
-              <h4 className="font-semibold text-[#d60000] mb-2">Plan Repayments</h4>
+              <h4 className="font-semibold text-[#0E8299] mb-2">Plan Repayments</h4>
               <p className="text-sm text-gray-600">Choose a tenure that aligns with your financial capacity.</p>
             </div>
           </div>
@@ -248,13 +298,13 @@ export default function EmiCalculator() {
           <div className="flex justify-center gap-4 flex-wrap">
             <Link
               to="/"
-              className="px-6 py-3 bg-[#d60000] text-white rounded-full font-semibold shadow hover:bg-[#b50000] transition"
+              className="px-6 py-3 bg-[#0E8299] text-white rounded-full font-semibold shadow  transition"
             >
               Start Your Application
             </Link>
             <Link
               to="/contact"
-              className="px-6 py-3 border border-[#d60000] text-[#d60000] rounded-full font-semibold hover:bg-[#d60000]/10 transition"
+              className="px-6 py-3 border border-[#0E8299] text-[#0E8299] rounded-full font-semibold hover:bg-[#0E8299]/10 transition"
             >
               Contact Us
             </Link>

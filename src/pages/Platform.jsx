@@ -23,8 +23,8 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
-const accent = "text-[#d60000]";
-const circleAccent = "bg-[#d60000]";
+const accent = "text-[#0E8299]";
+const circleAccent = "bg-[#0E8299]";
 
 const panelVariants = {
   hidden: { opacity: 0, y: 8 },
@@ -118,7 +118,7 @@ export default function Platform() {
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
             <div>
               <h1 className="text-3xl md:text-4xl font-extrabold text-gray-900">
-                The <span className="text-[#d60000]">Fyntegra LSP Platform</span>
+                The <span className="text-[#0E8299]">Fyntegra LSP Platform</span>
               </h1>
               <p className="mt-3 text-gray-600 max-w-2xl">
                 Secure, modular, API-first dashboard that integrates loan sourcing,
@@ -129,7 +129,7 @@ export default function Platform() {
             <div className="flex gap-3">
               <Link
                 to="/partner-with-us"
-                className="inline-flex items-center px-4 py-2 bg-[#d60000] text-white rounded-md text-sm font-semibold shadow-sm hover:brightness-95 transition"
+                className="inline-flex items-center px-4 py-2 bg-[#0E8299] text-white rounded-md text-sm font-semibold shadow-sm hover:brightness-95 transition"
               >
                 Request Demo
               </Link>
@@ -193,7 +193,7 @@ export default function Platform() {
                           <div key={i} className="p-4 rounded-lg border border-gray-100 bg-white">
                             <div className="flex gap-3 items-start">
                               <div className="flex-shrink-0 mt-1">
-                                <span className="inline-flex items-center justify-center w-9 h-9 rounded-md bg-gray-100 text-[#d60000]">
+                                <span className="inline-flex items-center justify-center w-9 h-9 rounded-md bg-gray-100 text-[#0E8299]">
                                   <CheckCircle className="w-4 h-4" />
                                 </span>
                               </div>
@@ -216,7 +216,7 @@ export default function Platform() {
           <div className="mt-8 flex items-center gap-4">
             <Link
               to="/partner-with-us"
-              className="inline-flex items-center px-5 py-3 bg-[#d60000] text-white rounded-md font-semibold shadow hover:brightness-95 transition"
+              className="inline-flex items-center px-5 py-3 bg-[#0E8299] text-white rounded-md font-semibold shadow hover:brightness-95 transition"
             >
               Book a Demo
             </Link>
@@ -237,7 +237,7 @@ export default function Platform() {
             <div className="bg-white rounded-lg p-4 shadow-sm border">
               <div className="flex items-center justify-between mb-2">
                 <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-md bg-gray-100 flex items-center justify-center text-[#d60000]"><BarChart3 className="w-5 h-5" /></div>
+                  <div className="w-9 h-9 rounded-md bg-gray-100 flex items-center justify-center text-[#0E8299]"><BarChart3 className="w-5 h-5" /></div>
                   <div>
                     <div className="text-sm font-semibold text-gray-800">CX Performance</div>
                     <div className="text-xs text-gray-500">Conversion | CSAT | TAT</div>
@@ -248,7 +248,7 @@ export default function Platform() {
 
               <div className="mt-3 space-y-2">
                 <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
-                  <div className="h-2 bg-[#d60000]" style={{ width: "72%" }} />
+                  <div className="h-2 bg-[#0E8299]" style={{ width: "72%" }} />
                 </div>
                 <div className="text-xs text-gray-600">Onboarding TAT: 18 hrs · CSAT: 4.2/5</div>
               </div>
@@ -258,7 +258,7 @@ export default function Platform() {
             <div className="bg-white rounded-lg p-4 shadow-sm border">
               <div className="flex items-center justify-between mb-2">
                 <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-md bg-gray-100 flex items-center justify-center text-[#d60000]"><Activity className="w-5 h-5" /></div>
+                  <div className="w-9 h-9 rounded-md bg-gray-100 flex items-center justify-center text-[#0E8299]"><Activity className="w-5 h-5" /></div>
                   <div>
                     <div className="text-sm font-semibold text-gray-800">Collections Tracker</div>
                     <div className="text-xs text-gray-500">DPD buckets & PTP</div>
@@ -287,7 +287,7 @@ export default function Platform() {
             <div className="bg-white rounded-lg p-4 shadow-sm border">
               <div className="flex items-center justify-between mb-2">
                 <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-md bg-gray-100 flex items-center justify-center text-[#d60000]"><ShieldCheck className="w-5 h-5" /></div>
+                  <div className="w-9 h-9 rounded-md bg-gray-100 flex items-center justify-center text-[#0E8299]"><ShieldCheck className="w-5 h-5" /></div>
                   <div>
                     <div className="text-sm font-semibold text-gray-800">Compliance Health</div>
                     <div className="text-xs text-gray-500">KYC %, Audit score, GRO</div>
@@ -298,7 +298,7 @@ export default function Platform() {
 
               <div className="mt-3 flex items-center gap-3">
                 <div className="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center">
-                  <PieChart className="w-6 h-6 text-[#d60000]" />
+                  <PieChart className="w-6 h-6 text-[#0E8299]" />
                 </div>
                 <div>
                   <div className="text-sm font-semibold">KYC completion</div>
@@ -311,7 +311,7 @@ export default function Platform() {
             <div className="bg-white rounded-lg p-4 shadow-sm border">
               <div className="flex items-center justify-between mb-2">
                 <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-md bg-gray-100 flex items-center justify-center text-[#d60000]"><Bot className="w-5 h-5" /></div>
+                  <div className="w-9 h-9 rounded-md bg-gray-100 flex items-center justify-center text-[#0E8299]"><Bot className="w-5 h-5" /></div>
                   <div>
                     <div className="text-sm font-semibold text-gray-800">SaaS Usage</div>
                     <div className="text-xs text-gray-500">Bots · Containment % · Seats</div>
@@ -330,7 +330,7 @@ export default function Platform() {
             <div className="bg-white rounded-lg p-4 shadow-sm border">
               <div className="flex items-center justify-between mb-2">
                 <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-md bg-gray-100 flex items-center justify-center text-[#d60000]"><AlertCircle className="w-5 h-5" /></div>
+                  <div className="w-9 h-9 rounded-md bg-gray-100 flex items-center justify-center text-[#0E8299]"><AlertCircle className="w-5 h-5" /></div>
                   <div>
                     <div className="text-sm font-semibold text-gray-800">Alerts</div>
                     <div className="text-xs text-gray-500">Fraud · SLA · Escalations</div>

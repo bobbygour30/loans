@@ -24,53 +24,53 @@ export default function CollectionsRecovery() {
   const features = [
     {
       text: "1–30 DPD buckets, soft & reminder calling",
-      icon: <PhoneCall className="w-7 h-7 text-[#d60000]" />,
+      icon: <PhoneCall className="w-7 h-7 text-[#0E8299]" />,
     },
     {
       text: "Hybrid recovery: AI bots for nudges, humans for negotiation",
-      icon: <Bot className="w-7 h-7 text-[#d60000]" />,
+      icon: <Bot className="w-7 h-7 text-[#0E8299]" />,
     },
     {
       text: "Promise-to-pay (PTP) tracking",
-      icon: <Handshake className="w-7 h-7 text-[#d60000]" />,
+      icon: <Handshake className="w-7 h-7 text-[#0E8299]" />,
     },
     {
       text: "Digital payment link journeys",
-      icon: <Link className="w-7 h-7 text-[#d60000]" />,
+      icon: <Link className="w-7 h-7 text-[#0E8299]" />,
     },
     {
       text: "Predictive risk scoring for delinquency",
-      icon: <Activity className="w-7 h-7 text-[#d60000]" />,
+      icon: <Activity className="w-7 h-7 text-[#0E8299]" />,
     },
   ];
 
   const outcomes = [
     {
       text: "Roll-rate reduction: 20–35%",
-      icon: <TrendingDown className="w-6 h-6 text-[#d60000]" />,
+      icon: <TrendingDown className="w-6 h-6 text-[#0E8299]" />,
     },
     {
       text: "Recovery efficiency +25%",
-      icon: <Gauge className="w-6 h-6 text-[#d60000]" />,
+      icon: <Gauge className="w-6 h-6 text-[#0E8299]" />,
     },
     {
       text: "Lower cost-to-collect vs traditional agencies",
-      icon: <DollarSign className="w-6 h-6 text-[#d60000]" />,
+      icon: <DollarSign className="w-6 h-6 text-[#0E8299]" />,
     },
   ];
 
   const idealFor = [
     {
       text: "NBFCs with consumer loans",
-      icon: <Building className="w-7 h-7 text-[#d60000]" />,
+      icon: <Building className="w-7 h-7 text-[#0E8299]" />,
     },
     {
       text: "BNPL fintechs",
-      icon: <CreditCard className="w-7 h-7 text-[#d60000]" />,
+      icon: <CreditCard className="w-7 h-7 text-[#0E8299]" />,
     },
     {
       text: "Banks running card collections",
-      icon: <Landmark className="w-7 h-7 text-[#d60000]" />,
+      icon: <Landmark className="w-7 h-7 text-[#0E8299]" />,
     },
   ];
 
@@ -85,7 +85,7 @@ export default function CollectionsRecovery() {
           viewport={{ once: true }}
           className="text-3xl md:text-4xl font-extrabold text-center"
         >
-          Collections & <span className="text-[#d60000]">Recovery</span>
+          Collections & <span className="text-[#0E8299]">Recovery</span>
         </motion.h2>
 
         {/* Overview */}
@@ -181,7 +181,7 @@ export default function CollectionsRecovery() {
           className="mt-16 text-center"
         >
           <RouterLink to="/contact">
-            <button className="px-8 py-3 bg-[#d60000] cursor-pointer text-white rounded-full font-semibold shadow hover:bg-[#b50000] transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
+            <button className="px-8 py-3 bg-[#0E8299] cursor-pointer text-white rounded-full font-semibold shadow  transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
               Book a Demo
             </button>
           </RouterLink>

@@ -23,57 +23,57 @@ export default function CustomerExperienceSales() {
   const features = [
     {
       text: "Omnichannel outreach (IVR, WhatsApp, chatbots, live agents)",
-      icon: <MessageSquare className="w-7 h-7 text-[#d60000]" />,
+      icon: <MessageSquare className="w-7 h-7 text-[#0E8299]" />,
     },
     {
       text: "Lead scoring & funnel tracking",
-      icon: <LineChart className="w-7 h-7 text-[#d60000]" />,
+      icon: <LineChart className="w-7 h-7 text-[#0E8299]" />,
     },
     {
       text: "Assisted onboarding journeys",
-      icon: <UserPlus className="w-7 h-7 text-[#d60000]" />,
+      icon: <UserPlus className="w-7 h-7 text-[#0E8299]" />,
     },
     {
       text: "Upsell, cross-sell, retention campaigns",
-      icon: <Headphones className="w-7 h-7 text-[#d60000]" />,
+      icon: <Headphones className="w-7 h-7 text-[#0E8299]" />,
     },
     {
       text: "Premium desk setups (cards, BNPL, high-value CX)",
-      icon: <CreditCard className="w-7 h-7 text-[#d60000]" />,
+      icon: <CreditCard className="w-7 h-7 text-[#0E8299]" />,
     },
   ];
 
   const outcomes = [
     {
       text: "Contactability uplift: +30%",
-      icon: <Users className="w-6 h-6 text-[#d60000]" />,
+      icon: <Users className="w-6 h-6 text-[#0E8299]" />,
     },
     {
       text: "Conversion ratio improvement: 15–25%",
-      icon: <BarChart3 className="w-6 h-6 text-[#d60000]" />,
+      icon: <BarChart3 className="w-6 h-6 text-[#0E8299]" />,
     },
     {
       text: "Higher CSAT & NPS scores",
-      icon: <Smile className="w-6 h-6 text-[#d60000]" />,
+      icon: <Smile className="w-6 h-6 text-[#0E8299]" />,
     },
     {
       text: "Faster TAT in onboarding",
-      icon: <Timer className="w-6 h-6 text-[#d60000]" />,
+      icon: <Timer className="w-6 h-6 text-[#0E8299]" />,
     },
   ];
 
   const idealFor = [
     {
       text: "Loan origination desks",
-      icon: <CreditCard className="w-7 h-7 text-[#d60000]" />,
+      icon: <CreditCard className="w-7 h-7 text-[#0E8299]" />,
     },
     {
       text: "Credit card sourcing",
-      icon: <ShoppingCart className="w-7 h-7 text-[#d60000]" />,
+      icon: <ShoppingCart className="w-7 h-7 text-[#0E8299]" />,
     },
     {
       text: "BNPL & consumer lending funnels",
-      icon: <LineChart className="w-7 h-7 text-[#d60000]" />,
+      icon: <LineChart className="w-7 h-7 text-[#0E8299]" />,
     },
   ];
 
@@ -88,7 +88,7 @@ export default function CustomerExperienceSales() {
           viewport={{ once: true }}
           className="text-3xl md:text-4xl font-extrabold text-center"
         >
-          Customer Experience & <span className="text-[#d60000]">Sales</span>
+          Customer Experience & <span className="text-[#0E8299]">Sales</span>
         </motion.h2>
 
         <motion.p
@@ -184,7 +184,7 @@ export default function CustomerExperienceSales() {
         >
           <Link
             to="/contact"
-            className="px-8 py-3 bg-[#d60000] text-white rounded-full font-semibold shadow hover:bg-[#b50000] transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+            className="px-8 py-3 bg-[#0E8299] text-white rounded-full font-semibold shadow  transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
           >
             Talk to an Expert
           </Link>

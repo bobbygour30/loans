@@ -13,22 +13,22 @@ export default function Eligibility() {
     {
       title: "Age Requirement",
       desc: "Applicants must be between 21 and 60 years old to qualify for most loan products.",
-      icon: <UserRoundCheck className="w-7 h-7 text-[#d60000]" />,
+      icon: <UserRoundCheck className="w-7 h-7 text-[#0E8299]" />,
     },
     {
       title: "Minimum Income",
       desc: "A stable monthly income (varies by loan type) to ensure repayment capacity.",
-      icon: <Wallet className="w-7 h-7 text-[#d60000]" />,
+      icon: <Wallet className="w-7 h-7 text-[#0E8299]" />,
     },
     {
       title: "Valid KYC Documents",
       desc: "Aadhaar, PAN, and other identity proofs for secure and compliant verification.",
-      icon: <IdCard className="w-7 h-7 text-[#d60000]" />,
+      icon: <IdCard className="w-7 h-7 text-[#0E8299]" />,
     },
     {
       title: "Stable Credit History",
       desc: "A good credit score or consistent repayment history to qualify for favorable terms.",
-      icon: <FileCheck2 className="w-7 h-7 text-[#d60000]" />,
+      icon: <FileCheck2 className="w-7 h-7 text-[#0E8299]" />,
     },
   ];
 
@@ -97,7 +97,7 @@ export default function Eligibility() {
           viewport={{ once: true }}
           className="text-3xl md:text-4xl font-extrabold text-center"
         >
-          Loan <span className="text-[#d60000]">Eligibility</span>
+          Loan <span className="text-[#0E8299]">Eligibility</span>
         </motion.h2>
         <motion.p
           variants={fadeUp}
@@ -128,7 +128,7 @@ export default function Eligibility() {
               className="p-6 bg-white rounded-xl shadow-lg text-center"
             >
               <div className="flex justify-center mb-4">{c.icon}</div>
-              <h3 className="font-semibold text-[#d60000] mb-2">{c.title}</h3>
+              <h3 className="font-semibold text-[#0E8299] mb-2">{c.title}</h3>
               <p className="text-sm text-gray-600">{c.desc}</p>
             </motion.div>
           ))}
@@ -146,7 +146,7 @@ export default function Eligibility() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
             {applicationSteps.map((step, i) => (
               <div key={i} className="p-6 bg-gradient-to-tr from-white to-gray-100 rounded-xl shadow-lg text-center">
-                <div className="text-2xl font-bold text-[#d60000] mb-2">Step {i + 1}</div>
+                <div className="text-2xl font-bold text-[#0E8299] mb-2">Step {i + 1}</div>
                 <h4 className="font-semibold mb-2">{step.step}</h4>
                 <p className="text-sm text-gray-600">{step.desc}</p>
               </div>
@@ -199,7 +199,7 @@ export default function Eligibility() {
                 className="bg-white p-8 rounded-xl shadow-lg"
               >
                 <p className="italic text-gray-700">“{testimonials[testIndex].quote}”</p>
-                <div className="mt-4 font-semibold text-[#d60000]">{testimonials[testIndex].author}</div>
+                <div className="mt-4 font-semibold text-[#0E8299]">{testimonials[testIndex].author}</div>
               </motion.div>
             </AnimatePresence>
             <div className="flex justify-between items-center mt-4">
@@ -235,9 +235,9 @@ export default function Eligibility() {
           <div className="inline-flex items-center gap-3 w-full md:w-auto">
             <input
               placeholder="Mobile Number"
-              className="p-3 border rounded-l-lg w-48 md:w-64 focus:outline-none focus:ring-2 focus:ring-[#d60000]"
+              className="p-3 border rounded-l-lg w-48 md:w-64 focus:outline-none focus:ring-2 focus:ring-[#0E8299]"
             />
-            <button className="px-5 py-3 bg-[#d60000] text-white rounded-r-lg hover:bg-[#b50000]">
+            <button className="px-5 py-3 bg-[#0E8299] text-white rounded-r-lg ">
               Check Now
             </button>
           </div>
@@ -256,13 +256,13 @@ export default function Eligibility() {
           <div className="flex justify-center gap-4 flex-wrap">
             <Link
               to="/"
-              className="px-6 py-3 bg-[#d60000] text-white rounded-full font-semibold shadow hover:bg-[#b50000] transition"
+              className="px-6 py-3 bg-[#0E8299] text-white rounded-full font-semibold shadow  transition"
             >
               Start Your Application
             </Link>
             <Link
               to="/contact"
-              className="px-6 py-3 border border-[#d60000] text-[#d60000] rounded-full font-semibold hover:bg-[#d60000]/10 transition"
+              className="px-6 py-3 border border-[#0E8299] text-[#0E8299] rounded-full font-semibold hover:bg-[#0E8299]/10 transition"
             >
               Contact Us
             </Link>

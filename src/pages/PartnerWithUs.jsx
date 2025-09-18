@@ -27,22 +27,22 @@ export default function PartnerWithUs() {
     {
       title: "Scalable Technology",
       desc: "Leverage our API-first platform to streamline lending operations.",
-      icon: <Users className="w-8 h-8 text-[#d60000]" />,
+      icon: <Users className="w-8 h-8 text-[#0E8299]" />,
     },
     {
       title: "Compliance Ready",
       desc: "RBI-compliant solutions with audit trails and reporting tools.",
-      icon: <ShieldCheck className="w-8 h-8 text-[#d60000]" />,
+      icon: <ShieldCheck className="w-8 h-8 text-[#0E8299]" />,
     },
     {
       title: "Enhanced CX",
       desc: "Improve customer satisfaction with AI-driven engagement tools.",
-      icon: <Smile className="w-8 h-8 text-[#d60000]" />,
+      icon: <Smile className="w-8 h-8 text-[#0E8299]" />,
     },
     {
       title: "Data Insights",
       desc: "Access real-time analytics to optimize lending decisions.",
-      icon: <BarChart3 className="w-8 h-8 text-[#d60000]" />,
+      icon: <BarChart3 className="w-8 h-8 text-[#0E8299]" />,
     },
   ];
 
@@ -113,7 +113,7 @@ export default function PartnerWithUs() {
           viewport={{ once: true }}
           className="text-3xl md:text-4xl font-extrabold text-center"
         >
-          Partner <span className="text-[#d60000]">With Us</span>
+          Partner <span className="text-[#0E8299]">With Us</span>
         </motion.h2>
         <motion.p
           variants={fadeUp}
@@ -142,7 +142,7 @@ export default function PartnerWithUs() {
                 placeholder="Company Name *"
                 value={formData.companyName}
                 onChange={(e) => setFormData({ ...formData, companyName: e.target.value })}
-                className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#d60000]"
+                className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0E8299]"
                 required
               />
               <input
@@ -150,7 +150,7 @@ export default function PartnerWithUs() {
                 placeholder="Contact Name *"
                 value={formData.contactName}
                 onChange={(e) => setFormData({ ...formData, contactName: e.target.value })}
-                className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#d60000]"
+                className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0E8299]"
                 required
               />
               <input
@@ -158,7 +158,7 @@ export default function PartnerWithUs() {
                 placeholder="Email Address *"
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#d60000]"
+                className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0E8299]"
                 required
               />
               <input
@@ -166,13 +166,13 @@ export default function PartnerWithUs() {
                 placeholder="Phone Number *"
                 value={formData.phone}
                 onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#d60000]"
+                className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0E8299]"
                 required
               />
               <select
                 value={formData.partnershipType}
                 onChange={(e) => setFormData({ ...formData, partnershipType: e.target.value })}
-                className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#d60000]"
+                className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0E8299]"
               >
                 {partnershipTypes.map((type, i) => (
                   <option key={i} value={type}>
@@ -184,12 +184,12 @@ export default function PartnerWithUs() {
                 placeholder="Tell us about your partnership goals (Optional)"
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#d60000]"
+                className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0E8299]"
                 rows="4"
               />
               <button
                 onClick={handleFormSubmit}
-                className="w-full px-6 py-3 bg-[#d60000] text-white rounded-lg font-semibold hover:bg-[#b50000] transition"
+                className="w-full px-6 py-3 bg-[#0E8299] text-white rounded-lg font-semibold  transition"
               >
                 Submit Inquiry
               </button>
@@ -225,7 +225,7 @@ export default function PartnerWithUs() {
                 className="p-6 bg-white rounded-xl shadow-lg text-center"
               >
                 <div className="flex justify-center mb-4">{b.icon}</div>
-                <h4 className="font-semibold text-[#d60000] mb-2">{b.title}</h4>
+                <h4 className="font-semibold text-[#0E8299] mb-2">{b.title}</h4>
                 <p className="text-sm text-gray-600">{b.desc}</p>
               </motion.div>
             ))}
@@ -244,7 +244,7 @@ export default function PartnerWithUs() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {successStories.map((s, i) => (
               <div key={i} className="p-6 bg-white rounded-xl shadow-lg">
-                <h4 className="font-semibold text-[#d60000] mb-2">{s.title}</h4>
+                <h4 className="font-semibold text-[#0E8299] mb-2">{s.title}</h4>
                 <p className="text-gray-600 mb-2">{s.desc}</p>
                 <p className="text-sm text-gray-500">Impact: {s.impact}</p>
               </div>
@@ -297,7 +297,7 @@ export default function PartnerWithUs() {
                 className="bg-white p-8 rounded-xl shadow-lg"
               >
                 <p className="italic text-gray-700">“{testimonials[testIndex].quote}”</p>
-                <div className="mt-4 font-semibold text-[#d60000]">{testimonials[testIndex].author}</div>
+                <div className="mt-4 font-semibold text-[#0E8299]">{testimonials[testIndex].author}</div>
               </motion.div>
             </AnimatePresence>
             <div className="flex justify-between items-center mt-4">
@@ -330,13 +330,13 @@ export default function PartnerWithUs() {
           <div className="flex justify-center gap-4 flex-wrap">
             <Link
               to="/partner-with-us"
-              className="px-6 py-3 bg-[#d60000] text-white rounded-full font-semibold shadow hover:bg-[#b50000] transition"
+              className="px-6 py-3 bg-[#0E8299] text-white rounded-full font-semibold shadow  transition"
             >
               Become a Partner
             </Link>
             <Link
               to="/contact"
-              className="px-6 py-3 border border-[#d60000] text-[#d60000] rounded-full font-semibold hover:bg-[#d60000]/10 transition"
+              className="px-6 py-3 border border-[#0E8299] text-[#0E8299] rounded-full font-semibold hover:bg-[#0E8299]/10 transition"
             >
               Contact Us
             </Link>
