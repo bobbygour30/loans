@@ -1,6 +1,8 @@
 import React, { useEffect, useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
+// import WheelSpinner from "../components/WheelSpinner";
+import ArcRings from "../components/ArcRings";
 import assets from "../assets/assets";
 import {
   ShieldCheck,
@@ -417,24 +419,9 @@ export default function Homepage() {
             </div>
           </div>
 
-          <div className="p-4 md:p-10 bg-gray-50 w-full flex flex-col justify-center">
-            <div className="flex flex-row justify-between items-center  sm:grid sm:grid-cols-2 gap-0 sm:gap-4">
-              <div className="bg-white p-2 rounded-md shadow flex-1 text-center">
-                <StatCounter end={120} suffix="+" label="Banks & NBFCs" />
-              </div>
-              <div className="bg-white p-2 rounded-md shadow flex-1 text-center">
-                <StatCounter end={5000} suffix="+" label="Loans Processed" />
-              </div>
-              <div className="bg-white p-2 rounded-md shadow flex-1 text-center">
-                <StatCounter end={85} suffix="%" label="Avg NPS" />
-              </div>
-              <div className="bg-white p-2 rounded-md shadow flex-1 text-center">
-                <StatCounter end={24} suffix="h" label="Avg Disbursal Time" />
-              </div>
-            </div>
-          </div>
+          <ArcRings />
 
-          <div className="p-8 md:p-10 bg-white/95">
+          <div className="p-8 md:p-10 bg-white/95 mt-16 sm:mt-0">
             <h4 className="font-extrabold text-gray-900 text-2xl">
               What we deliver
             </h4>
