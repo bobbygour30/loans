@@ -49,7 +49,7 @@ export default function ArcRings({
   const cy = cx;
 
   return (
-    <div className="flex justify-center items-center py-10">
+    <div className="flex justify-center items-center py-10 sm:-mt-30">
       <div className="relative">
         <svg
           width={centerSize}
