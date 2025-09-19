@@ -51,7 +51,7 @@ function StatCounter({ end, suffix = "", label, duration = 1400 }) {
         {value}
         <span className="text-xl font-medium ml-1">{suffix}</span>
       </div>
-      <div className="text-[9px] sm:text-xs text-gray-600 mt-1">{label}</div>
+      <div className="text-[7px] sm:text-xs text-gray-600 mt-1">{label}</div>
     </div>
   );
 }
@@ -418,7 +418,7 @@ export default function Homepage() {
           </div>
 
           <div className="p-4 md:p-10 bg-gray-50 w-full flex flex-col justify-center">
-            <div className="flex flex-row justify-between items-center  sm:grid sm:grid-cols-2 gap-4">
+            <div className="flex flex-row justify-between items-center  sm:grid sm:grid-cols-2 gap-0 sm:gap-4">
               <div className="bg-white p-2 rounded-md shadow flex-1 text-center">
                 <StatCounter end={120} suffix="+" label="Banks & NBFCs" />
               </div>
