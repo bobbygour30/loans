@@ -109,7 +109,7 @@ export default function ResponsiveNavbar() {
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link to="/">
-              <img src={assets.logo} alt="Logo" className="h-16 sm:h-24 w-auto object-contain ml-0 sm:ml-0 md:ml-0 lg:ml-64" />
+              <img src={assets.logo} alt="Logo" className="h-28 sm:h-30 w-auto object-contain ml-0 sm:ml-0 md:ml-0 lg:ml-64" />
             </Link>
           </div>
 

@@ -47,11 +47,11 @@ function StatCounter({ end, suffix = "", label, duration = 1400 }) {
 
   return (
     <div className="text-center">
-      <div className="text-3xl md:text-4xl font-extrabold text-gray-900">
+      <div className="text-xl sm:text-4xl font-extrabold text-gray-900">
         {value}
-        <span className="text-2xl font-medium ml-1">{suffix}</span>
+        <span className="text-xl font-medium ml-1">{suffix}</span>
       </div>
-      <div className="text-sm text-gray-600 mt-1">{label}</div>
+      <div className="text-[9px] sm:text-xs text-gray-600 mt-1">{label}</div>
     </div>
   );
 }
@@ -189,7 +189,7 @@ export default function Homepage() {
   return (
     <div className="bg-white text-gray-900 min-h-screen mt-20">
       <header className="relative overflow-hidden">
-        <div className="bg-gradient-to-r from-[#001935] to-[#0E8299] text-white py-28 px-6 md:px-12">
+        <div className="bg-gradient-to-r from-[#0E8299] to-[#001935] text-white py-28 px-6 md:px-12">
           <div className="max-w-6xl mx-auto relative z-10">
             <motion.div
               initial={{ opacity: 0, y: 18 }}
@@ -240,55 +240,55 @@ export default function Homepage() {
                 aria-hidden
               >
                 <style jsx>{`
-    input[type="range"] {
-      -webkit-appearance: none; /* Remove default WebKit styles */
-      width: 100%;
-      height: 8px;
-      background: transparent;
-      outline: none;
-    }
+                  input[type="range"] {
+                    -webkit-appearance: none; /* Remove default WebKit styles */
+                    width: 100%;
+                    height: 8px;
+                    background: transparent;
+                    outline: none;
+                  }
 
-    /* WebKit (Chrome, Safari) */
-    input[type="range"]::-webkit-slider-runnable-track {
-      height: 8px;
-      background: #e5e7eb; /* Light gray track */
-      border-radius: 4px;
-    }
+                  /* WebKit (Chrome, Safari) */
+                  input[type="range"]::-webkit-slider-runnable-track {
+                    height: 8px;
+                    background: #e5e7eb; /* Light gray track */
+                    border-radius: 4px;
+                  }
 
-    input[type="range"]::-webkit-slider-thumb {
-      -webkit-appearance: none;
-      width: 16px;
-      height: 16px;
-      background: #0E8299; /* Your desired color */
-      border-radius: 50%;
-      cursor: pointer;
-      margin-top: -4px; /* Center thumb on track */
-    }
+                  input[type="range"]::-webkit-slider-thumb {
+                    -webkit-appearance: none;
+                    width: 16px;
+                    height: 16px;
+                    background: #0e8299; /* Your desired color */
+                    border-radius: 50%;
+                    cursor: pointer;
+                    margin-top: -4px; /* Center thumb on track */
+                  }
 
-    input[type="range"]:focus::-webkit-slider-runnable-track {
-      background: #d1d5db; /* Slightly darker track on focus */
-    }
+                  input[type="range"]:focus::-webkit-slider-runnable-track {
+                    background: #d1d5db; /* Slightly darker track on focus */
+                  }
 
-    /* Mozilla (Firefox) */
-    input[type="range"]::-moz-range-track {
-      height: 8px;
-      background: #e5e7eb;
-      border-radius: 4px;
-    }
+                  /* Mozilla (Firefox) */
+                  input[type="range"]::-moz-range-track {
+                    height: 8px;
+                    background: #e5e7eb;
+                    border-radius: 4px;
+                  }
 
-    input[type="range"]::-moz-range-thumb {
-      width: 16px;
-      height: 16px;
-      background: #0E8299; /* Your desired color */
-      border: none;
-      border-radius: 50%;
-      cursor: pointer;
-    }
+                  input[type="range"]::-moz-range-thumb {
+                    width: 16px;
+                    height: 16px;
+                    background: #0e8299; /* Your desired color */
+                    border: none;
+                    border-radius: 50%;
+                    cursor: pointer;
+                  }
 
-    input[type="range"]:focus::-moz-range-track {
-      background: #d1d5db;
-    }
-  `}</style>
+                  input[type="range"]:focus::-moz-range-track {
+                    background: #d1d5db;
+                  }
+                `}</style>
                 <div className="text-left">
                   <div className="text-xl text-white">Quick EMI Preview</div>
                   <div className="mt-3">
@@ -417,18 +417,18 @@ export default function Homepage() {
             </div>
           </div>
 
-          <div className="p-6 md:p-10 bg-gray-50 flex flex-col gap-6 justify-center w-[106%]">
-            <div className="grid grid-cols-2 gap-6">
-              <div className="bg-white p-4 rounded-xl shadow">
+          <div className="p-4 md:p-10 bg-gray-50 w-full flex flex-col justify-center">
+            <div className="flex flex-row justify-between items-center  sm:grid sm:grid-cols-2 gap-4">
+              <div className="bg-white p-2 rounded-md shadow flex-1 text-center">
                 <StatCounter end={120} suffix="+" label="Banks & NBFCs" />
               </div>
-              <div className="bg-white p-4 rounded-xl shadow">
+              <div className="bg-white p-2 rounded-md shadow flex-1 text-center">
                 <StatCounter end={5000} suffix="+" label="Loans Processed" />
               </div>
-              <div className="bg-white p-4 rounded-xl shadow">
+              <div className="bg-white p-2 rounded-md shadow flex-1 text-center">
                 <StatCounter end={85} suffix="%" label="Avg NPS" />
               </div>
-              <div className="bg-white p-4 rounded-xl shadow">
+              <div className="bg-white p-2 rounded-md shadow flex-1 text-center">
                 <StatCounter end={24} suffix="h" label="Avg Disbursal Time" />
               </div>
             </div>
@@ -932,9 +932,7 @@ export default function Homepage() {
             ))}
           </div>
           <Link to="/platform">
-            <button
-              className="inline-block px-6 py-3 bg-[#0E8299] text-white rounded-full cursor-pointer"
-            >
+            <button className="inline-block px-6 py-3 bg-[#0E8299] text-white rounded-full cursor-pointer">
               Explore Platform
             </button>
           </Link>
