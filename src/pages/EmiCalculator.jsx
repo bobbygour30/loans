@@ -54,16 +54,16 @@ export default function EmiCalculator() {
   };
 
   return (
-    <section id="emi" className="py-20 px-6 bg-gray-50 mt-20">
+    <section id="emi" className="py-20 px-6 bg-white mt-20">
       <div className="max-w-6xl mx-auto">
         <motion.h2
           variants={fadeUp}
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className="text-3xl md:text-4xl font-extrabold text-center"
+          className="text-3xl md:text-4xl font-extrabold text-center text-black"
         >
-          EMI <span className="text-[#0E8299]">Calculator</span>
+          EMI <span className="text-red-600">Calculator</span>
         </motion.h2>
         <motion.p
           variants={fadeUp}
@@ -71,7 +71,7 @@ export default function EmiCalculator() {
           whileInView="show"
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
-          className="mt-4 text-gray-600 max-w-3xl mx-auto text-center"
+          className="mt-4 text-gray-600 max-w-3xl mx-auto text-center leading-relaxed"
         >
           Plan your loan repayments with our easy-to-use EMI calculator. Adjust the loan amount, interest rate, and tenure to see your monthly payments and total costs.
         </motion.p>
@@ -82,65 +82,58 @@ export default function EmiCalculator() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className="mt-10 max-w-4xl mx-auto bg-white p-8 rounded-2xl shadow-lg"
+          className="mt-10 max-w-4xl mx-auto bg-white p-8 rounded-2xl shadow-lg border border-gray-100"
         >
           <style jsx>{`
-    input[type="range"] {
-      -webkit-appearance: none; /* Remove default WebKit styles */
-      width: 100%;
-      height: 8px;
-      background: transparent;
-      outline: none;
-    }
+            input[type="range"] {
+              -webkit-appearance: none;
+              width: 100%;
+              height: 8px;
+              background: transparent;
+              outline: none;
+            }
 
-    /* WebKit (Chrome, Safari) */
-    input[type="range"]::-webkit-slider-runnable-track {
-      height: 8px;
-      background: #e5e7eb; /* Light gray track */
-      border-radius: 4px;
-    }
+            input[type="range"]::-webkit-slider-runnable-track {
+              height: 8px;
+              background: #e5e7eb;
+              border-radius: 4px;
+            }
 
-    input[type="range"]::-webkit-slider-thumb {
-      -webkit-appearance: none;
-      width: 16px;
-      height: 16px;
-      background: #0E8299; /* Your desired color */
-      border-radius: 50%;
-      cursor: pointer;
-      margin-top: -4px; /* Center thumb on track */
-    }
+            input[type="range"]::-webkit-slider-thumb {
+              -webkit-appearance: none;
+              width: 20px;
+              height: 20px;
+              background: #dc2626;
+              border-radius: 50%;
+              cursor: pointer;
+              margin-top: -6px;
+              box-shadow: 0 2px 6px rgba(220, 38, 38, 0.3);
+            }
 
-    input[type="range"]:focus::-webkit-slider-runnable-track {
-      background: #d1d5db; /* Slightly darker track on focus */
-    }
+            input[type="range"]::-moz-range-track {
+              height: 8px;
+              background: #e5e7eb;
+              border-radius: 4px;
+            }
 
-    /* Mozilla (Firefox) */
-    input[type="range"]::-moz-range-track {
-      height: 8px;
-      background: #e5e7eb;
-      border-radius: 4px;
-    }
+            input[type="range"]::-moz-range-thumb {
+              width: 20px;
+              height: 20px;
+              background: #dc2626;
+              border: none;
+              border-radius: 50%;
+              cursor: pointer;
+              box-shadow: 0 2px 6px rgba(220, 38, 38, 0.3);
+            }
+          `}</style>
 
-    input[type="range"]::-moz-range-thumb {
-      width: 16px;
-      height: 16px;
-      background: #0E8299; /* Your desired color */
-      border: none;
-      border-radius: 50%;
-      cursor: pointer;
-    }
-
-    input[type="range"]:focus::-moz-range-track {
-      background: #d1d5db;
-    }
-  `}</style>
-          <div className="space-y-6">
+          <div className="space-y-8">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">Loan Type</label>
               <select
                 value={loanType}
                 onChange={(e) => setLoanType(e.target.value)}
-                className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0E8299]"
+                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-red-600 transition"
               >
                 {loanTypes.map((type, i) => (
                   <option key={i} value={type}>
@@ -149,17 +142,18 @@ export default function EmiCalculator() {
                 ))}
               </select>
             </div>
+
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
                 Loan Amount: ₹{amount.toLocaleString()}
               </label>
-              <div className="flex gap-4">
+              <div className="flex gap-4 items-center">
                 <input
                   type="text"
                   value={amount}
                   onChange={handleAmountChange}
                   placeholder="Enter amount"
-                  className="w-1/2 p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0E8299]"
+                  className="w-1/2 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600"
                 />
                 <input
                   type="range"
@@ -167,21 +161,22 @@ export default function EmiCalculator() {
                   max="1000000"
                   value={amount}
                   onChange={(e) => setAmount(parseInt(e.target.value))}
-                  className="w-1/2 h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"
+                  className="w-1/2"
                 />
               </div>
             </div>
+
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
                 Interest Rate: {rate}%
               </label>
-              <div className="flex gap-4">
+              <div className="flex gap-4 items-center">
                 <input
                   type="text"
                   value={rate}
                   onChange={handleRateChange}
                   placeholder="Enter rate"
-                  className="w-1/2 p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0E8299]"
+                  className="w-1/2 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600"
                 />
                 <input
                   type="range"
@@ -190,21 +185,22 @@ export default function EmiCalculator() {
                   step="0.1"
                   value={rate}
                   onChange={(e) => setRate(parseFloat(e.target.value))}
-                  className="w-1/2 h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"
+                  className="w-1/2"
                 />
               </div>
             </div>
+
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
                 Tenure: {tenure} months
               </label>
-              <div className="flex gap-4">
+              <div className="flex gap-4 items-center">
                 <input
                   type="text"
                   value={tenure}
                   onChange={handleTenureChange}
                   placeholder="Enter tenure"
-                  className="w-1/2 p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0E8299]"
+                  className="w-1/2 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600"
                 />
                 <input
                   type="range"
@@ -212,26 +208,31 @@ export default function EmiCalculator() {
                   max="60"
                   value={tenure}
                   onChange={(e) => setTenure(parseInt(e.target.value))}
-                  className="w-1/2 h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"
+                  className="w-1/2"
                 />
               </div>
             </div>
           </div>
+
+          {/* Results */}
           <motion.div
-            whileHover={{ scale: 1.05 }}
-            className="mt-8 p-6 bg-gradient-to-r from-[#2e2e2e] to-[#0E8299] rounded-xl text-white"
+            whileHover={{ scale: 1.02 }}
+            className="mt-10 p-8 bg-gradient-to-r from-black to-red-900 rounded-2xl text-white shadow-2xl"
           >
-            <h3 className="text-xl font-semibold">Estimated Results</h3>
-            <div className="mt-4 space-y-2">
-              <p>
-                <span className="font-medium">Monthly EMI:</span> ₹{emi.toFixed(0).toLocaleString()}
-              </p>
-              <p>
-                <span className="font-medium">Total Interest:</span> ₹{totalInterest.toFixed(0).toLocaleString()}
-              </p>
-              <p>
-                <span className="font-medium">Total Payment:</span> ₹{totalPayment.toFixed(0).toLocaleString()}
-              </p>
+            <h3 className="text-2xl font-bold mb-6">Estimated Results</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+              <div>
+                <p className="text-sm opacity-90">Monthly EMI</p>
+                <p className="text-3xl font-bold mt-2">₹{emi.toFixed(0).toLocaleString()}</p>
+              </div>
+              <div>
+                <p className="text-sm opacity-90">Total Interest</p>
+                <p className="text-3xl font-bold mt-2">₹{totalInterest.toFixed(0).toLocaleString()}</p>
+              </div>
+              <div>
+                <p className="text-sm opacity-90">Total Payment</p>
+                <p className="text-3xl font-bold mt-2">₹{totalPayment.toFixed(0).toLocaleString()}</p>
+              </div>
             </div>
           </motion.div>
         </motion.div>
@@ -244,24 +245,33 @@ export default function EmiCalculator() {
           viewport={{ once: true }}
           className="mt-16 max-w-4xl mx-auto"
         >
-          <h3 className="text-2xl font-semibold text-center mb-6">Frequently Asked Questions</h3>
+          <h3 className="text-2xl font-semibold text-center mb-6 text-black">
+            Frequently Asked Questions
+          </h3>
           <div className="space-y-4">
             {faqs.map((f, i) => (
-              <div key={i} className="bg-white p-4 rounded-lg shadow-sm">
+              <div
+                key={i}
+                className="bg-white p-4 rounded-lg shadow-sm border border-gray-100 hover:border-red-200 transition"
+              >
                 <button
                   onClick={() => setOpenFaq(openFaq === i ? null : i)}
                   className="w-full flex justify-between items-center text-left"
                 >
-                  <div className="font-medium text-gray-900">{f.q}</div>
-                  <div className="text-gray-500">{openFaq === i ? "−" : "+"}</div>
+                  <div className="font-medium text-black">{f.q}</div>
+                  <div className="text-gray-500 text-xl">
+                    {openFaq === i ? "−" : "+"}
+                  </div>
                 </button>
-                {openFaq === i && <div className="mt-3 text-sm text-gray-600">{f.a}</div>}
+                {openFaq === i && (
+                  <div className="mt-3 text-sm text-gray-600 pl-1">{f.a}</div>
+                )}
               </div>
             ))}
           </div>
         </motion.div>
 
-        {/* Tips for Borrowers */}
+        {/* Tips */}
         <motion.div
           variants={fadeUp}
           initial="hidden"
@@ -269,20 +279,23 @@ export default function EmiCalculator() {
           viewport={{ once: true }}
           className="mt-16 max-w-4xl mx-auto"
         >
-          <h3 className="text-2xl font-semibold text-center mb-6">Tips for Smart Borrowing</h3>
+          <h3 className="text-2xl font-semibold text-center mb-6 text-black">
+            Tips for Smart Borrowing
+          </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="p-6 bg-white rounded-xl shadow-lg">
-              <h4 className="font-semibold text-[#0E8299] mb-2">Assess Your Needs</h4>
-              <p className="text-sm text-gray-600">Borrow only what you need to avoid unnecessary interest costs.</p>
-            </div>
-            <div className="p-6 bg-white rounded-xl shadow-lg">
-              <h4 className="font-semibold text-[#0E8299] mb-2">Check Your Credit</h4>
-              <p className="text-sm text-gray-600">A good credit score can secure lower interest rates.</p>
-            </div>
-            <div className="p-6 bg-white rounded-xl shadow-lg">
-              <h4 className="font-semibold text-[#0E8299] mb-2">Plan Repayments</h4>
-              <p className="text-sm text-gray-600">Choose a tenure that aligns with your financial capacity.</p>
-            </div>
+            {[
+              { title: "Assess Your Needs", desc: "Borrow only what you need to avoid unnecessary interest costs." },
+              { title: "Check Your Credit", desc: "A good credit score can secure lower interest rates." },
+              { title: "Plan Repayments", desc: "Choose a tenure that aligns with your financial capacity." },
+            ].map((tip, i) => (
+              <div
+                key={i}
+                className="p-6 bg-white rounded-xl shadow-md border border-gray-100 hover:shadow-xl hover:border-red-200 transition"
+              >
+                <h4 className="font-semibold text-red-600 mb-2">{tip.title}</h4>
+                <p className="text-sm text-gray-600">{tip.desc}</p>
+              </div>
+            ))}
           </div>
         </motion.div>
 
@@ -294,17 +307,19 @@ export default function EmiCalculator() {
           viewport={{ once: true }}
           className="mt-16 text-center"
         >
-          <h3 className="text-2xl font-semibold mb-4">Ready to Apply?</h3>
+          <h3 className="text-2xl font-semibold mb-4 text-black">
+            Ready to Apply?
+          </h3>
           <div className="flex justify-center gap-4 flex-wrap">
             <Link
               to="/"
-              className="px-6 py-3 bg-[#0E8299] text-white rounded-full font-semibold shadow  transition"
+              className="px-8 py-4 bg-red-600 text-white rounded-full font-semibold shadow-lg hover:bg-red-700 hover:shadow-xl transition-all duration-300 transform hover:scale-105"
             >
               Start Your Application
             </Link>
             <Link
               to="/contact"
-              className="px-6 py-3 border border-[#0E8299] text-[#0E8299] rounded-full font-semibold hover:bg-[#0E8299]/10 transition"
+              className="px-8 py-4 border-2 border-red-600 text-red-600 rounded-full font-semibold hover:bg-red-50 transition-all duration-300"
             >
               Contact Us
             </Link>

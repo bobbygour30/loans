@@ -40,7 +40,7 @@ export default function Grievance() {
   ];
 
   return (
-    <section className="py-20 px-6 bg-gray-50 mt-20">
+    <section className="py-20 px-6 bg-white mt-20">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <motion.h1
@@ -48,10 +48,10 @@ export default function Grievance() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className="text-3xl md:text-4xl font-extrabold text-center"
+          className="text-3xl md:text-4xl font-extrabold text-center text-black"
         >
           Grievance Redressal & Regulatory{" "}
-          <span className="text-[#0E8299]">Disclosures</span>
+          <span className="text-red-600">Disclosures</span>
         </motion.h1>
         <motion.p
           variants={fadeUp}
@@ -59,7 +59,7 @@ export default function Grievance() {
           whileInView="show"
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
-          className="mt-4 text-gray-600 text-center max-w-3xl mx-auto"
+          className="mt-4 text-gray-600 text-center max-w-3xl mx-auto leading-relaxed"
         >
           Fyntegra is committed to transparent governance and regulatory
           compliance. Below are our Grievance Officer details, escalation
@@ -73,26 +73,26 @@ export default function Grievance() {
           whileInView="show"
           viewport={{ once: true }}
           transition={{ delay: 0.3 }}
-          className="mt-12 bg-white p-8 rounded-xl shadow-lg"
+          className="mt-12 bg-white p-8 rounded-xl shadow-md border border-gray-100"
         >
-          <h2 className="text-2xl font-semibold text-center mb-6">
+          <h2 className="text-2xl font-semibold text-center mb-6 text-black">
             Grievance Redressal Officer (GRO)
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-gray-700">
             <div className="flex items-center gap-3">
-              <Mail className="text-[#0E8299]" />
+              <Mail className="w-5 h-5 text-red-600" />
               <span>Email: grievance@fyntegra.in</span>
             </div>
             <div className="flex items-center gap-3">
-              <Phone className="text-[#0E8299]" />
+              <Phone className="w-5 h-5 text-red-600" />
               <span>Phone: +91-XXXXXXXXXX</span>
             </div>
             <div className="flex items-center gap-3">
-              <MapPin className="text-[#0E8299]" />
+              <MapPin className="w-5 h-5 text-red-600" />
               <span>Address: [To be added]</span>
             </div>
             <div className="flex items-center gap-3">
-              <ShieldCheck className="text-[#0E8299]" />
+              <ShieldCheck className="w-5 h-5 text-red-600" />
               <span>Name: [To be added]</span>
             </div>
           </div>
@@ -107,20 +107,20 @@ export default function Grievance() {
           transition={{ delay: 0.4 }}
           className="mt-16"
         >
-          <h2 className="text-2xl font-semibold text-center mb-6">
+          <h2 className="text-2xl font-semibold text-center mb-6 text-black">
             Escalation Flow
           </h2>
           <div className="flex flex-col md:flex-row items-center justify-center gap-6">
             {escalationFlow.map((step, i) => (
               <div
                 key={i}
-                className="flex flex-col items-center bg-white p-6 rounded-xl shadow w-72 text-center"
+                className="flex flex-col items-center bg-white p-6 rounded-xl shadow-md border border-gray-100 w-72 text-center hover:shadow-xl hover:border-red-200 transition"
               >
-                <div className="text-[#0E8299] font-bold">{step.level}</div>
-                <div className="text-gray-800 mt-2">{step.contact}</div>
+                <div className="text-red-600 font-bold">{step.level}</div>
+                <div className="text-black mt-2 font-medium">{step.contact}</div>
                 <a
                   href={`mailto:${step.email}`}
-                  className="text-sm text-[#0E8299] mt-2"
+                  className="text-sm text-red-600 mt-2 hover:underline"
                 >
                   {step.email}
                 </a>
@@ -138,12 +138,12 @@ export default function Grievance() {
           transition={{ delay: 0.5 }}
           className="mt-16 text-center"
         >
-          <h2 className="text-2xl font-semibold mb-4">Resolution Timelines</h2>
+          <h2 className="text-2xl font-semibold mb-4 text-black">Resolution Timelines</h2>
           <p className="text-gray-600">
             Acknowledgement within{" "}
-            <span className="font-semibold text-[#0E8299]">48 hours</span> & full
+            <span className="font-semibold text-red-600">48 hours</span> & full
             resolution within{" "}
-            <span className="font-semibold text-[#0E8299]">30 days</span>.
+            <span className="font-semibold text-red-600">30 days</span>.
           </p>
         </motion.div>
 
@@ -154,10 +154,10 @@ export default function Grievance() {
           whileInView="show"
           viewport={{ once: true }}
           transition={{ delay: 0.6 }}
-          className="mt-16 bg-white p-8 rounded-xl shadow-lg text-center"
+          className="mt-16 bg-white p-8 rounded-xl shadow-md border border-gray-100 text-center"
         >
-          <p className="text-gray-700 max-w-3xl mx-auto">
-            <ShieldCheck className="inline w-6 h-6 text-[#0E8299] mr-2" />
+          <p className="text-gray-700 max-w-3xl mx-auto leading-relaxed">
+            <ShieldCheck className="inline w-6 h-6 text-red-600 mr-2" />
             Fyntegra operates as a Lending Service Provider (LSP) under RBI
             guidelines, partnering with NBFCs & Banks to deliver compliant and
             customer-centric services.
@@ -173,15 +173,15 @@ export default function Grievance() {
           transition={{ delay: 0.7 }}
           className="mt-12 text-center"
         >
-          <h2 className="text-2xl font-semibold mb-4">Policies</h2>
+          <h2 className="text-2xl font-semibold mb-4 text-black">Policies</h2>
           <div className="flex flex-wrap justify-center gap-6">
             {policies.map((p, i) => (
               <a
                 key={i}
                 href={p.link}
-                className="flex items-center gap-2 text-gray-700 hover:text-[#0E8299] transition"
+                className="flex items-center gap-2 text-gray-700 hover:text-red-600 transition"
               >
-                <FileText className="w-5 h-5 text-[#0E8299]" />
+                <FileText className="w-5 h-5 text-red-600" />
                 {p.name}
               </a>
             ))}

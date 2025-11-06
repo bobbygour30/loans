@@ -16,9 +16,9 @@ const fadeUp = {
 
 export default function AboutUs() {
   return (
-    <div className="bg-white text-gray-900 min-h-screen mt-20">
+    <div className="bg-white text-black min-h-screen mt-20">
       {/* HERO */}
-      <header className="relative bg-gradient-to-r from-[#001935] to-[#0E8299] text-white py-28 px-6 md:px-12 overflow-hidden">
+      <header className="relative bg-gradient-to-r from-black to-red-600 text-white py-28 px-6 md:px-12 overflow-hidden">
         <div className="max-w-6xl mx-auto text-center relative z-10">
           <motion.h1
             variants={fadeUp}
@@ -33,7 +33,7 @@ export default function AboutUs() {
             initial="hidden"
             animate="show"
             transition={{ delay: 0.3 }}
-            className="mt-4 text-gray-100 max-w-2xl mx-auto"
+            className="mt-4 text-gray-200 max-w-2xl mx-auto"
           >
             Transforming financial services by integrating cutting-edge AI, robust compliance, and empathetic human expertise to empower lenders and borrowers alike.
           </motion.p>
@@ -46,13 +46,13 @@ export default function AboutUs() {
           >
             <Link
               to="/contact"
-              className="px-6 py-3 bg-white text-[#0E8299] rounded-full font-semibold shadow hover:scale-105 transition"
+              className="px-6 py-3 bg-white text-red-600 rounded-full font-semibold shadow hover:scale-105 transition-all duration-300"
             >
               Get in Touch
             </Link>
             <Link
               to="/partner-with-us"
-              className="px-6 py-3 border border-white/50 text-white rounded-full font-semibold hover:bg-white/10 transition"
+              className="px-6 py-3 border border-white/50 text-white rounded-full font-semibold hover:bg-white/10 transition-all duration-300"
             >
               Request a Demo
             </Link>
@@ -70,7 +70,7 @@ export default function AboutUs() {
       >
         <div className="max-w-6xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-extrabold text-center mb-6">Our Story</h2>
-          <p className="text-center text-gray-600 max-w-3xl mx-auto mb-10">
+          <p className="text-center text-gray-600 max-w-3xl mx-auto mb-10 leading-relaxed">
             Fyntegra was born to revolutionize lending by bridging technology and trust. Our journey combines innovation, compliance, and customer focus to redefine financial experiences.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
@@ -107,7 +107,7 @@ export default function AboutUs() {
                   viewport={{ once: true }}
                   className="flex items-center gap-4"
                 >
-                  <div className="flex-shrink-0 w-12 h-12 bg-[#0E8299] text-white rounded-full flex items-center justify-center font-semibold">
+                  <div className="flex-shrink-0 w-12 h-12 bg-red-600 text-white rounded-full flex items-center justify-center font-semibold">
                     {item.year}
                   </div>
                   <div className="text-gray-600">{item.milestone}</div>
@@ -127,14 +127,14 @@ export default function AboutUs() {
         className="py-16 px-6 bg-gray-50"
       >
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
-          <div className="p-8 bg-white rounded-2xl shadow-lg">
-            <h3 className="text-xl font-semibold mb-3 text-[#0E8299]">Our Mission</h3>
+          <div className="p-8 bg-white rounded-2xl shadow-md border border-gray-100 hover:shadow-xl hover:border-red-200 transition">
+            <h3 className="text-xl font-semibold mb-3 text-red-600">Our Mission</h3>
             <p className="text-gray-600">
               To empower financial institutions with compliant, technology-driven solutions that streamline lending, enhance customer experiences, and ensure trust and transparency.
             </p>
           </div>
-          <div className="p-8 bg-white rounded-2xl shadow-lg">
-            <h3 className="text-xl font-semibold mb-3 text-[#0E8299]">Our Vision</h3>
+          <div className="p-8 bg-white rounded-2xl shadow-md border border-gray-100 hover:shadow-xl hover:border-red-200 transition">
+            <h3 className="text-xl font-semibold mb-3 text-red-600">Our Vision</h3>
             <p className="text-gray-600">
               To become India’s leading lending solutions partner, delivering AI-powered, human-centric platforms that redefine speed, compliance, and empathy in financial services.
             </p>
@@ -163,31 +163,31 @@ export default function AboutUs() {
               {
                 title: "Integrity",
                 desc: "Upholding the highest standards of compliance and transparency in all operations.",
-                icon: <ShieldCheck className="w-8 h-8 text-[#0E8299]" />,
+                icon: <ShieldCheck className="w-8 h-8 text-red-600" />,
               },
               {
                 title: "Innovation",
                 desc: "Pioneering AI-driven solutions while maintaining human oversight for precision.",
-                icon: <Lightbulb className="w-8 h-8 text-[#0E8299]" />,
+                icon: <Lightbulb className="w-8 h-8 text-red-600" />,
               },
               {
                 title: "Customer Centricity",
                 desc: "Prioritizing the needs of lenders and borrowers to create seamless experiences.",
-                icon: <Users className="w-8 h-8 text-[#0E8299]" />,
+                icon: <Users className="w-8 h-8 text-red-600" />,
               },
               {
                 title: "Collaboration",
                 desc: "Fostering partnerships to drive mutual success and innovation in lending.",
-                icon: <HeartHandshake className="w-8 h-8 text-[#0E8299]" />,
+                icon: <HeartHandshake className="w-8 h-8 text-red-600" />,
               },
             ].map((v, i) => (
               <motion.div
                 key={i}
-                whileHover={{ y: -6 }}
-                className="p-6 rounded-xl bg-gradient-to-tr from-white to-gray-100 shadow-lg"
+                whileHover={{ y: -6, scale: 1.02 }}
+                className="p-6 rounded-xl bg-gradient-to-tr from-white to-red-50 shadow-md border border-gray-100 hover:shadow-xl hover:border-red-200 transition-all duration-300"
               >
                 <div className="flex justify-center mb-3">{v.icon}</div>
-                <h3 className="text-lg font-semibold mb-2">{v.title}</h3>
+                <h3 className="text-lg font-semibold text-black mb-2">{v.title}</h3>
                 <p className="text-gray-600 text-sm">{v.desc}</p>
               </motion.div>
             ))}
@@ -205,7 +205,7 @@ export default function AboutUs() {
       >
         <div className="max-w-6xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-extrabold text-center mb-6">Our Leadership</h2>
-          <p className="text-gray-600 text-center mb-10 max-w-3xl mx-auto">
+          <p className="text-gray-600 text-center mb-10 max-w-3xl mx-auto leading-relaxed">
             Meet the visionaries driving Fyntegra’s mission to transform lending with technology and trust.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
@@ -232,14 +232,14 @@ export default function AboutUs() {
               <motion.div
                 key={i}
                 whileHover={{ scale: 1.03 }}
-                className="bg-white rounded-xl shadow-lg p-6 text-center"
+                className="bg-white rounded-xl shadow-md border border-gray-100 p-6 text-center hover:shadow-xl hover:border-red-200 transition-all duration-300"
               >
                 <img
                   src={member.image}
                   alt={member.name}
-                  className="w-24 h-24 rounded-full mx-auto object-cover mb-4"
+                  className="w-24 h-24 rounded-full mx-auto object-cover mb-4 border-4 border-red-100"
                 />
-                <h4 className="font-semibold text-[#0E8299]">{member.name}</h4>
+                <h4 className="font-semibold text-red-600">{member.name}</h4>
                 <p className="text-sm text-gray-600 mb-2">{member.role}</p>
                 <p className="text-sm text-gray-500">{member.desc}</p>
               </motion.div>
@@ -262,16 +262,16 @@ export default function AboutUs() {
             We’re proud to make a difference in the financial ecosystem through innovation and partnerships.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="p-6 bg-white rounded-xl shadow-lg">
-              <div className="text-3xl font-bold text-[#0E8299]">120+</div>
+            <div className="p-6 bg-white rounded-xl shadow-md border border-gray-100 hover:shadow-xl hover:border-red-200 transition">
+              <div className="text-3xl font-bold text-red-600">120+</div>
               <p className="text-gray-600 mt-2">Banks & NBFCs partnered</p>
             </div>
-            <div className="p-6 bg-white rounded-xl shadow-lg">
-              <div className="text-3xl font-bold text-[#0E8299]">5000+</div>
+            <div className="p-6 bg-white rounded-xl shadow-md border border-gray-100 hover:shadow-xl hover:border-red-200 transition">
+              <div className="text-3xl font-bold text-red-600">5000+</div>
               <p className="text-gray-600 mt-2">Loans processed monthly</p>
             </div>
-            <div className="p-6 bg-white rounded-xl shadow-lg">
-              <div className="text-3xl font-bold text-[#0E8299]">85%</div>
+            <div className="p-6 bg-white rounded-xl shadow-md border border-gray-100 hover:shadow-xl hover:border-red-200 transition">
+              <div className="text-3xl font-bold text-red-600">85%</div>
               <p className="text-gray-600 mt-2">Average NPS score</p>
             </div>
           </div>
@@ -286,25 +286,24 @@ export default function AboutUs() {
         viewport={{ once: true }}
         className="py-16 px-6"
       >
-        <div className="max-w-4xl mx-auto bg-gradient-to-r from-[#001935] to-[#0E8299] text-white p-10 rounded-2xl shadow-xl text-center">
+        <div className="max-w-4xl mx-auto bg-gradient-to-r from-black to-red-600 text-white p-10 rounded-2xl shadow-xl text-center">
           <h2 className="text-2xl md:text-3xl font-extrabold">Partner with Fyntegra</h2>
           <p className="mt-3 text-white/90 max-w-2xl mx-auto">
             Join us to deliver lending solutions that combine compliance, speed, and customer-centric innovation. Let’s shape the future of finance together.
           </p>
           <div className="mt-6 flex justify-center gap-4 flex-wrap">
-            <Link to="/contact">
-            <button
-              className="px-6 py-3 bg-white text-[#0E8299] rounded-full font-semibold shadow hover:scale-105 transition"
+            <Link
+              to="/contact"
+              className="px-6 py-3 bg-white text-red-600 rounded-full font-semibold shadow hover:scale-105 transition-all duration-300"
             >
               Contact Us
-            </button></Link>
-            <Link to="/partner-with-us">
-            <button
-              
-              className="px-6 py-3 border border-white/50 text-white rounded-full font-semibold hover:bg-white/10 transition"
+            </Link>
+            <Link
+              to="/partner-with-us"
+              className="px-6 py-3 border border-white/50 text-white rounded-full font-semibold hover:bg-white/10 transition-all duration-300"
             >
               Request Demo
-            </button></Link>
+            </Link>
           </div>
         </div>
       </motion.section>

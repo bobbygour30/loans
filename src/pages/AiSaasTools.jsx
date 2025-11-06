@@ -1,7 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
 import {
-  Bot,
   MessageCircle,
   BrainCircuit,
   Share2,
@@ -16,10 +15,7 @@ const fadeUp = (delay = 0) => ({
 
 export default function AiSaasTools() {
   return (
-    <div className="relative overflow-hidden  py-24 px-6 md:px-16 lg:px-28 mt-20">
-      {/* Decorative background */}
-      
-
+    <div className="relative overflow-hidden py-24 px-6 md:px-16 lg:px-28 mt-20 bg-white">
       {/* Header */}
       <motion.div
         initial="hidden"
@@ -28,10 +24,10 @@ export default function AiSaasTools() {
         variants={fadeUp()}
         className="relative max-w-5xl mx-auto text-center"
       >
-        <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6">
+        <h2 className="text-4xl md:text-5xl font-extrabold text-black mb-6">
           AI + SaaS Tools
         </h2>
-        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+        <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
           AI-driven SaaS tools that can be bundled with or without BPO delivery — 
           designed to automate, scale, and delight.
         </p>
@@ -68,12 +64,12 @@ export default function AiSaasTools() {
             viewport={{ once: true }}
             variants={fadeUp(idx * 0.2)}
             whileHover={{ scale: 1.05, translateY: -6 }}
-            className="bg-white/80 backdrop-blur-xl border border-gray-200 shadow-xl rounded-2xl p-8 flex flex-col items-center text-center transition-all"
+            className="bg-white border border-gray-100 shadow-xl rounded-2xl p-8 flex flex-col items-center text-center transition-all hover:shadow-2xl hover:border-red-200"
           >
-            <div className="mb-4 flex items-center justify-center w-14 h-14 rounded-full bg-gradient-to-br from-[#0E8299] to-[#ff4d4d] shadow-md">
+            <div className="mb-4 flex items-center justify-center w-14 h-14 rounded-full bg-red-600 shadow-md">
               {item.icon}
             </div>
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">
+            <h3 className="text-lg font-semibold text-black mb-2">
               {item.title}
             </h3>
             <p className="text-sm text-gray-600">{item.text}</p>
@@ -89,7 +85,7 @@ export default function AiSaasTools() {
         variants={fadeUp()}
         className="mt-24 max-w-4xl mx-auto text-center"
       >
-        <h3 className="text-2xl font-bold text-gray-900 mb-6">
+        <h3 className="text-2xl font-bold text-black mb-6">
           Outcomes Delivered
         </h3>
         <div className="flex flex-wrap justify-center gap-4">
@@ -101,7 +97,7 @@ export default function AiSaasTools() {
             <motion.div
               key={idx}
               variants={fadeUp(idx * 0.2)}
-              className="px-6 py-3 bg-gradient-to-r from-gray-100 to-gray-200 rounded-full text-gray-800 font-medium shadow-sm"
+              className="px-6 py-3 bg-gradient-to-r from-red-50 to-red-100 rounded-full text-red-700 font-medium shadow-sm hover:shadow-md transition"
             >
               {point}
             </motion.div>
@@ -117,7 +113,7 @@ export default function AiSaasTools() {
         variants={fadeUp()}
         className="mt-20 max-w-4xl mx-auto text-center"
       >
-        <h3 className="text-2xl font-bold text-gray-900 mb-6">Ideal For</h3>
+        <h3 className="text-2xl font-bold text-black mb-6">Ideal For</h3>
         <div className="grid md:grid-cols-3 gap-6">
           {[
             "Fintechs scaling fast without adding agents",
@@ -127,7 +123,7 @@ export default function AiSaasTools() {
             <motion.div
               key={idx}
               variants={fadeUp(idx * 0.2)}
-              className="p-6 bg-white rounded-xl shadow-lg border text-gray-700 font-medium hover:shadow-xl transition"
+              className="p-6 bg-white rounded-xl shadow-lg border border-gray-100 text-gray-700 font-medium hover:shadow-xl hover:border-red-200 transition"
             >
               {item}
             </motion.div>
@@ -145,7 +141,7 @@ export default function AiSaasTools() {
       >
         <Link
           to="/solutions/ai-saas"
-          className="inline-block px-10 py-4 text-lg font-semibold text-white bg-gradient-to-r from-[#0E8299] to-[#ff4d4d] rounded-full shadow-lg hover:shadow-2xl hover:scale-105 transition transform"
+          className="inline-block px-10 py-4 text-lg font-semibold text-white bg-red-600 rounded-full shadow-lg hover:bg-red-700 hover:shadow-2xl hover:scale-105 transition transform"
         >
           See it in Action
         </Link>

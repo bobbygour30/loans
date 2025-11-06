@@ -3,7 +3,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
 
-
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
   show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
@@ -13,14 +12,15 @@ export default function Contact() {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [formStatus, setFormStatus] = useState(null);
   const [testIndex, setTestIndex] = useState(0);
+  const [openFaq, setOpenFaq] = useState(null);
 
   const contactDetails = [
     {
       title: "Email Us",
       desc: "support@fyntegra.in",
-      icon: <Mail className="w-8 h-8 text-[#0E8299]" />,
+      icon: <Mail className="w-8 h-8 text-red-600" />,
       action: (
-        <a href="mailto:support@fyntegra.com" className="mt-4 inline-block text-sm text-[#0E8299] hover:underline">
+        <a href="mailto:support@fyntegra.com" className="mt-4 inline-block text-sm text-red-600 hover:underline">
           Send Email
         </a>
       ),
@@ -28,9 +28,9 @@ export default function Contact() {
     {
       title: "Call Us",
       desc: "+91-123-456-7890",
-      icon: <Phone className="w-8 h-8 text-[#0E8299]" />,
+      icon: <Phone className="w-8 h-8 text-red-600" />,
       action: (
-        <a href="tel:+911234567890" className="mt-4 inline-block text-sm text-[#0E8299] hover:underline">
+        <a href="tel:+911234567890" className="mt-4 inline-block text-sm text-red-600 hover:underline">
           Call Now
         </a>
       ),
@@ -38,9 +38,9 @@ export default function Contact() {
     {
       title: "Visit Us",
       desc: "123 Fintech Hub, Mumbai, MH 400001",
-      icon: <MapPin className="w-8 h-8 text-[#0E8299]" />,
+      icon: <MapPin className="w-8 h-8 text-red-600" />,
       action: (
-        <a href="#map" className="mt-4 inline-block text-sm text-[#0E8299] hover:underline">
+        <a href="#map" className="mt-4 inline-block text-sm text-red-600 hover:underline">
           View on Map
         </a>
       ),
@@ -73,8 +73,6 @@ export default function Contact() {
     },
   ];
 
-  const [openFaq, setOpenFaq] = useState(null);
-
   useEffect(() => {
     const t = setInterval(() => {
       setTestIndex((i) => (i + 1) % testimonials.length);
@@ -94,16 +92,17 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-20 px-6 bg-gray-50 mt-20">
+    <section id="contact" className="py-20 px-6 bg-white mt-20">
       <div className="max-w-6xl mx-auto">
+        {/* Header */}
         <motion.h2
           variants={fadeUp}
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className="text-3xl md:text-4xl font-extrabold text-center"
+          className="text-3xl md:text-4xl font-extrabold text-center text-black"
         >
-          Get in <span className="text-[#0E8299]">Touch</span>
+          Get in <span className="text-red-600">Touch</span>
         </motion.h2>
         <motion.p
           variants={fadeUp}
@@ -111,7 +110,7 @@ export default function Contact() {
           whileInView="show"
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
-          className="mt-4 text-gray-600 max-w-3xl mx-auto text-center"
+          className="mt-4 text-gray-600 max-w-3xl mx-auto text-center leading-relaxed"
         >
           Have questions or need assistance? Our team is here to help you with all your lending needs, 24/7.
         </motion.p>
@@ -124,33 +123,33 @@ export default function Contact() {
           viewport={{ once: true }}
           className="mt-12 max-w-2xl mx-auto"
         >
-          <div className="bg-white p-8 rounded-xl shadow-lg">
-            <h3 className="text-xl font-semibold text-center mb-6">Send Us a Message</h3>
+          <div className="bg-white p-8 rounded-xl shadow-md border border-gray-100">
+            <h3 className="text-xl font-semibold text-center mb-6 text-black">Send Us a Message</h3>
             <div className="space-y-4">
               <input
                 type="text"
                 placeholder="Your Name"
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0E8299]"
+                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-red-600 transition"
               />
               <input
                 type="email"
                 placeholder="Your Email"
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0E8299]"
+                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-red-600 transition"
               />
               <textarea
                 placeholder="Your Message"
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0E8299]"
+                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-red-600 transition"
                 rows="4"
               />
               <button
                 onClick={handleFormSubmit}
-                className="w-full px-6 py-3 bg-[#0E8299] text-white rounded-lg font-semibold  transition"
+                className="w-full px-6 py-3 bg-red-600 text-white rounded-lg font-semibold hover:bg-red-700 transition-all duration-300 transform hover:scale-105"
               >
                 Send Message
               </button>
@@ -158,7 +157,7 @@ export default function Contact() {
                 <motion.p
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  className={`mt-4 text-center ${
+                  className={`mt-4 text-center font-medium ${
                     formStatus.includes("successfully") ? "text-green-600" : "text-red-600"
                   }`}
                 >
@@ -180,11 +179,11 @@ export default function Contact() {
           {contactDetails.map((c, i) => (
             <motion.div
               key={i}
-              whileHover={{ y: -6 }}
-              className="p-6 bg-white rounded-xl shadow-lg text-center"
+              whileHover={{ y: -6, scale: 1.02 }}
+              className="p-6 bg-white rounded-xl shadow-md border border-gray-100 text-center hover:shadow-xl hover:border-red-200 transition-all duration-300"
             >
               <div className="flex justify-center mb-4">{c.icon}</div>
-              <h3 className="font-semibold text-[#0E8299] mb-2">{c.title}</h3>
+              <h3 className="font-semibold text-black mb-2">{c.title}</h3>
               <p className="text-sm text-gray-600 mb-4">{c.desc}</p>
               {c.action}
             </motion.div>
@@ -199,18 +198,23 @@ export default function Contact() {
           viewport={{ once: true }}
           className="mt-16 max-w-4xl mx-auto"
         >
-          <h3 className="text-2xl font-semibold text-center mb-6">Frequently Asked Questions</h3>
+          <h3 className="text-2xl font-semibold text-center mb-6 text-black">Frequently Asked Questions</h3>
           <div className="space-y-4">
             {faqs.map((f, i) => (
-              <div key={i} className="bg-white p-4 rounded-lg shadow-sm">
+              <div
+                key={i}
+                className="bg-white p-4 rounded-lg shadow-sm border border-gray-100 hover:border-red-200 transition"
+              >
                 <button
                   onClick={() => setOpenFaq(openFaq === i ? null : i)}
                   className="w-full flex justify-between items-center text-left"
                 >
-                  <div className="font-medium text-gray-900">{f.q}</div>
-                  <div className="text-gray-500">{openFaq === i ? "−" : "+"}</div>
+                  <div className="font-medium text-black">{f.q}</div>
+                  <div className="text-gray-500 text-xl">{openFaq === i ? "−" : "+"}</div>
                 </button>
-                {openFaq === i && <div className="mt-3 text-sm text-gray-600">{f.a}</div>}
+                {openFaq === i && (
+                  <div className="mt-3 text-sm text-gray-600 pl-1">{f.a}</div>
+                )}
               </div>
             ))}
           </div>
@@ -224,7 +228,7 @@ export default function Contact() {
           viewport={{ once: true }}
           className="mt-16 max-w-4xl mx-auto"
         >
-          <h3 className="text-2xl font-semibold text-center mb-6">What Our Customers Say</h3>
+          <h3 className="text-2xl font-semibold text-center mb-6 text-black">What Our Customers Say</h3>
           <div className="relative">
             <AnimatePresence mode="wait">
               <motion.div
@@ -233,23 +237,35 @@ export default function Contact() {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -20 }}
                 transition={{ duration: 0.5 }}
-                className="bg-white p-8 rounded-xl shadow-lg"
+                className="bg-white p-8 rounded-xl shadow-lg border border-gray-100"
               >
-                <p className="italic text-gray-700">“{testimonials[testIndex].quote}”</p>
-                <div className="mt-4 font-semibold text-[#0E8299]">{testimonials[testIndex].author}</div>
+                <p className="italic text-gray-700 text-lg leading-relaxed">
+                  “{testimonials[testIndex].quote}”
+                </p>
+                <div className="mt-4 font-semibold text-red-600">
+                  {testimonials[testIndex].author}
+                </div>
               </motion.div>
             </AnimatePresence>
             <div className="flex justify-between items-center mt-4">
               <button
-                onClick={() => setTestIndex((t) => (t - 1 + testimonials.length) % testimonials.length)}
-                className="px-3 py-2 bg-white rounded-lg shadow hover:bg-gray-100"
+                onClick={() =>
+                  setTestIndex(
+                    (t) => (t - 1 + testimonials.length) % testimonials.length
+                  )
+                }
+                className="px-3 py-2 bg-white rounded-lg shadow hover:bg-gray-50 transition"
               >
                 Prev
               </button>
-              <div className="text-sm text-gray-500">{testIndex + 1}/{testimonials.length}</div>
+              <div className="text-sm text-gray-500">
+                {testIndex + 1}/{testimonials.length}
+              </div>
               <button
-                onClick={() => setTestIndex((t) => (t + 1) % testimonials.length)}
-                className="px-3 py-2 bg-white rounded-lg shadow hover:bg-gray-100"
+                onClick={() =>
+                  setTestIndex((t) => (t + 1) % testimonials.length)
+                }
+                className="px-3 py-2 bg-white rounded-lg shadow hover:bg-gray-50 transition"
               >
                 Next
               </button>
@@ -265,9 +281,9 @@ export default function Contact() {
           viewport={{ once: true }}
           className="mt-16"
         >
-          <h3 className="text-2xl font-semibold text-center mb-6">Our Location</h3>
-          <div className="bg-gray-200 h-64 rounded-xl flex items-center justify-center">
-            <p className="text-gray-600">Interactive Map Placeholder (123 Fintech Hub, Mumbai, MH 400001)</p>
+          <h3 className="text-2xl font-semibold text-center mb-6 text-black">Our Location</h3>
+          <div className="bg-gray-50 h-64 rounded-xl flex items-center justify-center border border-gray-200">
+            <p className="text-gray-600 font-medium">Interactive Map Placeholder (123 Fintech Hub, Mumbai, MH 400001)</p>
           </div>
         </motion.div>
 
@@ -279,17 +295,17 @@ export default function Contact() {
           viewport={{ once: true }}
           className="mt-16 text-center"
         >
-          <h3 className="text-2xl font-semibold mb-4">Let’s Connect!</h3>
+          <h3 className="text-2xl font-semibold mb-4 text-black">Let’s Connect!</h3>
           <div className="flex justify-center gap-4 flex-wrap">
             <Link
               to="/contact"
-              className="px-6 py-3 bg-[#0E8299] text-white rounded-full font-semibold shadow  transition"
+              className="px-8 py-4 bg-red-600 text-white rounded-full font-semibold shadow-lg hover:bg-red-700 hover:shadow-xl transition-all duration-300 transform hover:scale-105"
             >
               Send a Message
             </Link>
             <Link
               to="/support"
-              className="px-6 py-3 border border-[#0E8299] text-[#0E8299] rounded-full font-semibold hover:bg-[#0E8299]/10 transition"
+              className="px-8 py-4 border-2 border-red-600 text-red-600 rounded-full font-semibold hover:bg-red-50 transition-all duration-300"
             >
               Visit Support Center
             </Link>
