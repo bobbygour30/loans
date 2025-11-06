@@ -46,7 +46,7 @@ export default function RingCarousel({
   }, [n]);
 
   return (
-    <div className="flex justify-center py-10">
+    <div className="flex justify-center py-10 bg-white">
       <style>{`@keyframes ring-rot { to { transform: rotateY(360deg); } }`}</style>
       <div
         className="relative w-[420px] h-[260px] perspective-[1000px]"
@@ -63,7 +63,7 @@ export default function RingCarousel({
           {stats.map((s, i) => {
             const angle = (360 / n) * i;
             const transform = `rotateY(${angle}deg) translateZ(${radius}px)`;
-            const frontness = Math.abs(((angle + rotation + 540) % 360) - 180); // heuristic for emphasis
+            const frontness = Math.abs(((angle + rotation + 540) % 360) - 180);
             return (
               <motion.div
                 key={i}
@@ -78,14 +78,16 @@ export default function RingCarousel({
                 whileHover={{ scale: 1.06 }}
               >
                 <div
-                  className={`bg-white rounded-2xl p-5 shadow-xl min-w-[170px] text-center ${
-                    frontness < 40 ? "ring-4 ring-[#0E8299]/10 scale-105" : ""
+                  className={`bg-white rounded-2xl p-5 shadow-xl min-w-[170px] text-center border border-gray-100 transition-all ${
+                    frontness < 40
+                      ? "ring-4 ring-red-600/10 scale-105 shadow-2xl"
+                      : "shadow-md"
                   }`}
                 >
-                  <div className="text-xs text-gray-500">{s.label}</div>
-                  <div className="text-2xl font-extrabold mt-2 text-gray-900">
+                  <div className="text-xs text-gray-600 font-medium">{s.label}</div>
+                  <div className="text-2xl font-extrabold mt-2 text-black">
                     {useCount(s.end, 1400)}
-                    <span className="ml-1 text-base font-medium text-gray-600">{s.suffix}</span>
+                    <span className="ml-1 text-base font-medium text-red-600">{s.suffix}</span>
                   </div>
                 </div>
               </motion.div>

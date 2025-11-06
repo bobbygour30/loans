@@ -31,7 +31,6 @@ export default function ArcRings({
     { end: 120, label: "Banks & NBFCs", suffix: "+" },
     { end: 5000, label: "Loans Processed", suffix: "+" },
     { end: 85, label: "Avg NPS", suffix: "%" },
-    // removed the last one (outer circle)
   ],
 }) {
   const max = useMemo(() => Math.max(...stats.map((s) => s.end)), [stats]);
@@ -49,15 +48,15 @@ export default function ArcRings({
   const cy = cx;
 
   return (
-    <div className="flex justify-center items-center py-10 sm:-mt-30">
+    <div className="flex justify-center items-center py-10 sm:-mt-30 bg-white">
       <div className="relative">
         <svg
           width={centerSize}
           height={centerSize}
           viewBox={`0 0 ${centerSize} ${centerSize}`}
+          className="drop-shadow-sm"
         >
           {stats.map((s, i) => {
-            // only 3 rings: radii 70, 98, 126
             const r = 70 + i * 28;
             const circumference = 2 * Math.PI * r;
             const fraction = Math.min(s.end / max, 1);
@@ -71,16 +70,16 @@ export default function ArcRings({
                 animate={{ rotate: 270 }}
                 transition={{ duration: 1, ease: "easeOut" }}
               >
-                {/* gray background circle */}
+                {/* Background circle */}
                 <circle
                   cx={cx}
                   cy={cy}
                   r={r}
-                  stroke="#eef3f7"
+                  stroke="#f3f4f6"
                   strokeWidth="12"
                   fill="none"
                 />
-                {/* animated progress arc */}
+                {/* Animated progress arc */}
                 <motion.circle
                   cx={cx}
                   cy={cy}
@@ -102,8 +101,8 @@ export default function ArcRings({
                     x2="100%"
                     y2="0%"
                   >
-                    <stop offset="0%" stopColor="#0E8299" />
-                    <stop offset="100%" stopColor="#FFD35B" />
+                    <stop offset="0%" stopColor="#dc2626" />   {/* red-600 */}
+                    <stop offset="100%" stopColor="#991b1b" /> {/* red-800 */}
                   </linearGradient>
                 </defs>
               </motion.g>
@@ -111,43 +110,45 @@ export default function ArcRings({
           })}
         </svg>
 
-        {/* center collapsing text */}
+        {/* Center collapsing text */}
         <motion.div
           key={active}
           initial={{ opacity: 0, scale: 0.8, y: 10 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.8, y: -10 }}
           transition={{ duration: 0.5 }}
-          className="absolute inset-0 flex flex-col items-center justify-center text-center"
+          className="absolute inset-0 flex flex-col items-center justify-center text-center pointer-events-none"
         >
           <motion.div
             initial={{ opacity: 0, y: 5 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-sm text-gray-500"
+            className="text-sm font-medium text-gray-600"
           >
             Live Metric
           </motion.div>
-          <div className="text-3xl md:text-4xl font-extrabold text-gray-900 mt-1">
+          <div className="text-3xl md:text-4xl font-extrabold text-black mt-1">
             {activeValue}
-            <span className="ml-1 text-base text-gray-600">
+            <span className="ml-1 text-base font-medium text-red-600">
               {stats[active].suffix || ""}
             </span>
           </div>
-          <div className="text-xs md:text-sm text-gray-500 mt-1">
+          <div className="text-xs md:text-sm text-gray-600 font-medium mt-1 max-w-[180px]">
             {stats[active].label}
           </div>
         </motion.div>
 
-        {/* clickable labels */}
+        {/* Clickable labels */}
         <div className="absolute -bottom-14 left-1/2 transform -translate-x-1/2 flex gap-3 flex-wrap justify-center">
           {stats.map((s, i) => (
             <button
               key={i}
               onClick={() => setActive(i)}
-              className={`px-3 py-1 rounded-full text-xs font-medium ${
-                i === active ? "bg-[#0E8299] text-white" : "bg-white border"
-              } shadow-sm`}
+              className={`px-3 py-1 rounded-full text-xs font-semibold transition-all ${
+                i === active
+                  ? "bg-red-600 text-white shadow-md"
+                  : "bg-white text-gray-700 border border-gray-300 hover:border-red-600 hover:text-red-600"
+              }`}
             >
               {s.label.split(" ")[0]}
             </button>
