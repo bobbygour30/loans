@@ -4,36 +4,36 @@ import { Link } from "react-router-dom";
 // import WheelSpinner from "../components/WheelSpinner";
 import ArcRings from "../components/ArcRings";
 import assets from "../assets/assets";
-import { 
-  LockClosedIcon, 
-  RocketLaunchIcon, 
-  GlobeAltIcon, 
-  UserGroupIcon, 
+import {
+  LockClosedIcon,
+  RocketLaunchIcon,
+  GlobeAltIcon,
+  UserGroupIcon,
   CpuChipIcon,
-  BoltIcon 
-} from '@heroicons/react/24/solid';
-import { 
-  CheckCircle2,  
-  TrendingUp, 
-  Users, 
-  Lock, 
+  BoltIcon,
+} from "@heroicons/react/24/solid";
+import {
+  CheckCircle2,
+  TrendingUp,
+  Users,
+  Lock,
   Rocket,
   ArrowRight,
   Mail,
   Phone,
   MapPin,
-  Clock
+  Clock,
 } from "lucide-react";
-import { 
-  FileText, 
-  Building, 
-  Headphones, 
-  BarChart3, 
-  Shield, 
-  Smartphone, 
-  PhoneCall, 
-  Plane, 
-  Heart, 
+import {
+  FileText,
+  Building,
+  Headphones,
+  BarChart3,
+  Shield,
+  Smartphone,
+  PhoneCall,
+  Plane,
+  Heart,
   Package,
 } from "lucide-react";
 import {
@@ -218,140 +218,219 @@ export default function Homepage() {
   return (
     <div className="bg-white text-gray-900 min-h-screen mt-20">
       <header className="relative overflow-hidden">
-  <div className="bg-gradient-to-r from-red-700 to-black text-white py-28 px-6 md:px-12">
-    <div className="max-w-6xl mx-auto relative z-10">
-      <motion.div
-        initial={{ opacity: 0, y: 18 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7 }}
-        className="flex flex-col md:flex-row items-center md:items-start gap-8"
-      >
-        {/* LEFT SECTION */}
-        <div className="flex-1 text-center md:text-left">
-          {/* Launching Now Badge */}
-          <motion.span
-            animate={{ scale: [1, 1.05, 1] }}
-            transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-            className="inline-flex items-center text-sm bg-yellow-400 text-black px-4 py-1.5 rounded-full mb-4 font-bold shadow-lg uppercase tracking-wider"
-          >
-            <BoltIcon className="w-5 h-5 mr-1.5" />
-            Launching Now
-          </motion.span>
-
-          {/* Main Heading with Underline */}
-          <h1 className="text-3xl md:text-5xl font-extrabold leading-tight drop-shadow-sm relative inline-block">
-  AI-Driven International BPO for{" "}
-  <span className="text-red-300">CX, Collections & Sales</span>
-
-  {/* Full-Width Gradient Underline */}
-  <span
-    className="absolute left-0 -bottom-1 w-full h-1.5 bg-gradient-to-r from-yellow-400 via-orange-500 to-red-600 rounded-full opacity-90"
-    style={{
-      backgroundImage: 'linear-gradient(to right, #facc15, #fb923c, #dc2626)',
-      filter: 'blur(0.4px)',
-    }}
-  ></span>
-</h1>
-
-          <p className="mt-4 text-lg text-gray-100 max-w-2xl">
-            Recover more. Sell more. Combine human expertise with
-            voicebots, speech analytics, and playbook-driven operations to
-            increase resolution rates and conversion without exploding
-            cost.
-          </p>
-
-          <div className="mt-6 flex justify-center md:justify-start gap-6 flex-wrap">
-            <motion.a
-              whileHover={{ scale: 1.05 }}
-              className="px-6 py-3 bg-black text-white rounded-full font-semibold shadow-lg border border-white/30 hover:bg-white hover:text-black transition-all"
-              href="#"
+        <div className="bg-gradient-to-r from-red-700 to-black text-white py-28 px-6 md:px-12">
+          <div className="max-w-6xl mx-auto relative z-10">
+            <motion.div
+              initial={{ opacity: 0, y: 18 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7 }}
+              className="flex flex-col md:flex-row items-center md:items-start gap-8"
             >
-              Book a 20-min discovery call
-            </motion.a>
-            <motion.a
-              whileHover={{ scale: 1.05 }}
-              className="px-6 py-3 bg-white text-black rounded-full font-semibold shadow-lg hover:bg-yellow-400 transition-all"
-              href="#"
-            >
-              Explore services
-            </motion.a>
-          </div>
+              {/* LEFT SECTION */}
+              <div className="flex-1 text-center md:text-left">
+                {/* Launching Now + Logo + Powered by */}
+                <div className="flex flex-col sm:flex-row items-center gap-3 mb-4">
+                  {/* Launching Now Badge */}
+                  <motion.span
+                    animate={{ scale: [1, 1.05, 1] }}
+                    transition={{
+                      repeat: Infinity,
+                      duration: 2,
+                      ease: "easeInOut",
+                    }}
+                    className="inline-flex items-center text-sm bg-yellow-400 text-black px-4 py-1.5 rounded-full font-bold shadow-lg uppercase tracking-wider"
+                  >
+                    <BoltIcon className="w-5 h-5 mr-1.5" />
+                    Launching Now
+                  </motion.span>
 
-          {/* Feature Checkmarks */}
-          <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-2 text-left text-sm text-gray-200">
-            <p className="flex items-center gap-2">
-              <span className="text-green-400">Check</span> DRA-certified agents (collections)
-            </p>
-            <p className="flex items-center gap-2">
-              <span className="text-green-400">Check</span> Realtime call transfer to experts
-            </p>
-            <p className="flex items-center gap-2">
-              <span className="text-green-400">Check</span> 4-week bot go-live playbook
-            </p>
-            <p className="flex items-center gap-2">
-              <span className="text-green-400">Check</span> Secure, compliant, auditable
-            </p>
+                  {/* Fyntegra Logo – Fade In/Out */}
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: [0.7, 1, 0.7] }}
+                    transition={{
+                      duration: 3,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                    }}
+                    className="flex items-center"
+                  >
+                    <img
+                      src={assets.logo2}
+                      alt="Fyntegra Logo"
+                      className="w-25 object-contain"
+                    />
+                  </motion.div>
+
+                  {/* Powered by Konexions – Subtle Pulse */}
+                  <motion.span
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: [0.6, 0.9, 0.6] }}
+                    transition={{
+                      duration: 4,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                      delay: 0.5,
+                    }}
+                    className="text-xs text-gray-300 font-medium tracking-wide"
+                  >
+                    Powered by Konexions
+                  </motion.span>
+                </div>
+
+                {/* Main Heading with Underline */}
+                <h1 className="text-3xl md:text-5xl font-extrabold leading-tight drop-shadow-sm relative inline-block">
+                  AI-Driven International BPO for{" "}
+                  <span className="text-red-300">CX, Collections & Sales</span>
+                  {/* Full-Width Gradient Underline */}
+                  <span
+                    className="absolute left-0 -bottom-1 w-full h-1.5 bg-gradient-to-r from-yellow-400 via-orange-500 to-red-600 rounded-full opacity-90"
+                    style={{
+                      backgroundImage:
+                        "linear-gradient(to right, #facc15, #fb923c, #dc2626)",
+                      filter: "blur(0.4px)",
+                    }}
+                  ></span>
+                </h1>
+
+                <p className="mt-4 text-lg text-gray-100 max-w-2xl">
+                  Recover more. Sell more. Combine human expertise with
+                  voicebots, speech analytics, and playbook-driven operations to
+                  increase resolution rates and conversion without exploding
+                  cost.
+                </p>
+
+                <div className="mt-6 flex justify-center md:justify-start gap-6 flex-wrap">
+                  <motion.a
+                    whileHover={{ scale: 1.05 }}
+                    className="px-6 py-3 bg-black text-white rounded-full font-semibold shadow-lg border border-white/30 hover:bg-white hover:text-black transition-all"
+                    href="#"
+                  >
+                    Book a 20-min discovery call
+                  </motion.a>
+                  <motion.a
+                    whileHover={{ scale: 1.05 }}
+                    className="px-6 py-3 bg-white text-black rounded-full font-semibold shadow-lg hover:bg-yellow-400 transition-all"
+                    href="#"
+                  >
+                    Explore services
+                  </motion.a>
+                </div>
+
+                {/* Feature Checkmarks */}
+                <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-2 text-sm text-gray-200">
+  <p className="flex items-center justify-center md:justify-start gap-2">
+    <span className="text-green-400">Check</span> DRA-certified agents (collections)
+  </p>
+  <p className="flex items-center justify-center md:justify-start gap-2">
+    <span className="text-green-400">Check</span> Realtime call transfer to experts
+  </p>
+  <p className="flex items-center justify-center md:justify-start gap-2">
+    <span className="text-green-400">Check</span> 4-week bot go-live playbook
+  </p>
+  <p className="flex items-center justify-center md:justify-start gap-2">
+    <span className="text-green-400">Check</span> Secure, compliant, auditable
+  </p>
+</div>
+              </div>
+
+              {/* RIGHT SECTION - Stats */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6 }}
+                className="w-full md:w-2/5 bg-white/10 backdrop-blur-md rounded-xl p-6 shadow-xl border border-white/20"
+              >
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="bg-white/10 p-4 rounded-lg text-left backdrop-blur">
+                    <div className="text-white/80 mb-1 font-medium">
+                      Connectivity
+                    </div>
+                    <div className="text-2xl font-bold text-white">60–80%</div>
+                    <div className="text-xs text-gray-300">
+                      with smart retry windows
+                    </div>
+                  </div>
+                  <div className="bg-white/10 p-4 rounded-lg text-left backdrop-blur">
+                    <div className="text-white/80 mb-1 font-medium">
+                      RPC Uplift
+                    </div>
+                    <div className="text-2xl font-bold text-white">15–30%</div>
+                    <div className="text-xs text-gray-300">
+                      pilot vs baseline*
+                    </div>
+                  </div>
+                  <div className="bg-white/10 p-4 rounded-lg text-left backdrop-blur">
+                    <div className="text-white/80 mb-1 font-medium">
+                      Cost/Contact
+                    </div>
+                    <div className="text-2xl font-bold text-white">
+                      ↓ 20–35%
+                    </div>
+                    <div className="text-xs text-gray-300">bot + assist</div>
+                  </div>
+                  <div className="bg-white/10 p-4 rounded-lg text-left backdrop-blur">
+                    <div className="text-white/80 mb-1 font-medium">
+                      Compliance
+                    </div>
+                    <div className="text-xl font-bold text-white">
+                      Audit-ready
+                    </div>
+                    <div className="text-xs text-gray-300">
+                      DPDP & RBI aligned
+                    </div>
+                  </div>
+                </div>
+                <p className="text-xs text-gray-400 mt-4 italic">
+                  *Uplift ranges are indicative; actual results depend on
+                  portfolio and use-case.
+                </p>
+              </motion.div>
+            </motion.div>
+
+            {/* PREMIUM FEATURE TAGS */}
+            <div className="mt-12 flex flex-wrap gap-5 justify-center md:justify-start">
+              {[
+                {
+                  text: "DPDP-aware",
+                  Icon: LockClosedIcon,
+                  color: "text-green-400",
+                },
+                {
+                  text: "4-week bot pilot",
+                  Icon: RocketLaunchIcon,
+                  color: "text-blue-400",
+                },
+                {
+                  text: "Pan-India & remote",
+                  Icon: GlobeAltIcon,
+                  color: "text-purple-400",
+                },
+                {
+                  text: "Dedicated pods",
+                  Icon: UserGroupIcon,
+                  color: "text-yellow-400",
+                },
+                {
+                  text: "LLM + ASR stack",
+                  Icon: CpuChipIcon,
+                  color: "text-cyan-400",
+                },
+              ].map(({ text, Icon, color }, i) => (
+                <motion.div
+                  key={i}
+                  whileHover={{ scale: 1.1, y: -2 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="flex items-center gap-2.5 bg-white/10 backdrop-blur-md px-5 py-2.5 rounded-full font-medium text-white shadow-lg border border-white/30 hover:bg-white/20 transition-all"
+                >
+                  <Icon className={`w-5 h-5 ${color}`} />
+                  <span className="text-base tracking-wide">{text}</span>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
-
-        {/* RIGHT SECTION - Stats */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6 }}
-          className="w-full md:w-2/5 bg-white/10 backdrop-blur-md rounded-xl p-6 shadow-xl border border-white/20"
-        >
-          <div className="grid grid-cols-2 gap-4">
-            <div className="bg-white/10 p-4 rounded-lg text-left backdrop-blur">
-              <div className="text-white/80 mb-1 font-medium">Connectivity</div>
-              <div className="text-2xl font-bold text-white">60–80%</div>
-              <div className="text-xs text-gray-300">with smart retry windows</div>
-            </div>
-            <div className="bg-white/10 p-4 rounded-lg text-left backdrop-blur">
-              <div className="text-white/80 mb-1 font-medium">RPC Uplift</div>
-              <div className="text-2xl font-bold text-white">15–30%</div>
-              <div className="text-xs text-gray-300">pilot vs baseline*</div>
-            </div>
-            <div className="bg-white/10 p-4 rounded-lg text-left backdrop-blur">
-              <div className="text-white/80 mb-1 font-medium">Cost/Contact</div>
-              <div className="text-2xl font-bold text-white">↓ 20–35%</div>
-              <div className="text-xs text-gray-300">bot + assist</div>
-            </div>
-            <div className="bg-white/10 p-4 rounded-lg text-left backdrop-blur">
-              <div className="text-white/80 mb-1 font-medium">Compliance</div>
-              <div className="text-xl font-bold text-white">Audit-ready</div>
-              <div className="text-xs text-gray-300">DPDP & RBI aligned</div>
-            </div>
-          </div>
-          <p className="text-xs text-gray-400 mt-4 italic">
-            *Uplift ranges are indicative; actual results depend on portfolio and use-case.
-          </p>
-        </motion.div>
-      </motion.div>
-
-      {/* PREMIUM FEATURE TAGS */}
-      <div className="mt-12 flex flex-wrap gap-5 justify-center md:justify-start">
-        {[
-          { text: "DPDP-aware", Icon: LockClosedIcon, color: "text-green-400" },
-          { text: "4-week bot pilot", Icon: RocketLaunchIcon, color: "text-blue-400" },
-          { text: "Pan-India & remote", Icon: GlobeAltIcon, color: "text-purple-400" },
-          { text: "Dedicated pods", Icon: UserGroupIcon, color: "text-yellow-400" },
-          { text: "LLM + ASR stack", Icon: CpuChipIcon, color: "text-cyan-400" },
-        ].map(({ text, Icon, color }, i) => (
-          <motion.div
-            key={i}
-            whileHover={{ scale: 1.1, y: -2 }}
-            whileTap={{ scale: 0.98 }}
-            className="flex items-center gap-2.5 bg-white/10 backdrop-blur-md px-5 py-2.5 rounded-full font-medium text-white shadow-lg border border-white/30 hover:bg-white/20 transition-all"
-          >
-            <Icon className={`w-5 h-5 ${color}`} />
-            <span className="text-base tracking-wide">{text}</span>
-          </motion.div>
-        ))}
-      </div>
-    </div>
-  </div>
-</header>
+      </header>
       <motion.section
         variants={fadeUp}
         initial="hidden"
@@ -445,167 +524,171 @@ export default function Homepage() {
       </motion.section>
 
       <motion.div
-  variants={fadeUp}
-  initial="hidden"
-  whileInView="show"
-  viewport={{ once: true }}
-  className="py-20 px-6 bg-white"
->
-  <div className="max-w-7xl mx-auto">
-    <div className="text-left mb-12">
-      <span className="text-sm font-medium text-red-600 tracking-wider uppercase flex items-center gap-2">
-        <Lock className="w-4 h-4" />
-        Transparent
-      </span>
-      <h2 className="text-4xl md:text-5xl font-bold mt-2 text-black">
-        Simple, scalable pricing
-      </h2>
-      <p className="text-lg text-gray-600 mt-4">
-        Start with a pilot, scale with confidence.
-      </p>
-    </div>
-    <div className="grid md:grid-cols-3 gap-8">
-      {/* Voicebot */}
-      <motion.div
-        whileHover={{ scale: 1.02 }}
-        className="bg-white p-10 rounded-3xl shadow-md border border-gray-100 hover:border-red-200 flex flex-col justify-between transition"
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+        className="py-20 px-6 bg-white"
       >
-        <div>
-          <h3 className="text-xl font-bold mb-1 text-black flex items-center gap-2">
-            <Headphones className="w-6 h-6 text-red-600" />
-            Voicebot
-          </h3>
-          <p className="text-gray-500 mb-3">Indicative</p>
-          <p className="text-3xl font-bold mb-6 text-black">₹3.5–4.5 / minute</p>
-          <ul className="space-y-3 text-gray-700">
-            {[
-              "IVR/TVR, reminders, callbacks",
-              "Realtime transfer to agent",
-              "Outcome CSV/JSON export",
-            ].map((item, i) => (
-              <li key={i} className="flex items-start gap-3">
-                <CheckCircle2 className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <button className="mt-8 inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-red-600 text-white font-medium hover:bg-red-700 transition-all duration-300 transform hover:scale-105">
-          Request proposal
-          <ArrowRight className="w-4 h-4" />
-        </button>
-      </motion.div>
+        <div className="max-w-7xl mx-auto">
+          <div className="text-left mb-12">
+            <span className="text-sm font-medium text-red-600 tracking-wider uppercase flex items-center gap-2">
+              <Lock className="w-4 h-4" />
+              Transparent
+            </span>
+            <h2 className="text-4xl md:text-5xl font-bold mt-2 text-black">
+              Simple, scalable pricing
+            </h2>
+            <p className="text-lg text-gray-600 mt-4">
+              Start with a pilot, scale with confidence.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Voicebot */}
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              className="bg-white p-10 rounded-3xl shadow-md border border-gray-100 hover:border-red-200 flex flex-col justify-between transition"
+            >
+              <div>
+                <h3 className="text-xl font-bold mb-1 text-black flex items-center gap-2">
+                  <Headphones className="w-6 h-6 text-red-600" />
+                  Voicebot
+                </h3>
+                <p className="text-gray-500 mb-3">Indicative</p>
+                <p className="text-3xl font-bold mb-6 text-black">
+                  ₹3.5–4.5 / minute
+                </p>
+                <ul className="space-y-3 text-gray-700">
+                  {[
+                    "IVR/TVR, reminders, callbacks",
+                    "Realtime transfer to agent",
+                    "Outcome CSV/JSON export",
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-start gap-3">
+                      <CheckCircle2 className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <button className="mt-8 inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-red-600 text-white font-medium hover:bg-red-700 transition-all duration-300 transform hover:scale-105">
+                Request proposal
+                <ArrowRight className="w-4 h-4" />
+              </button>
+            </motion.div>
 
-      {/* BPO Seat */}
-      <motion.div
-        whileHover={{ scale: 1.02 }}
-        className="bg-white p-10 rounded-3xl shadow-md border border-gray-100 hover:border-red-200 flex flex-col justify-between transition"
-      >
-        <div>
-          <h3 className="text-xl font-bold mb-1 text-black flex items-center gap-2">
-            <Users className="w-6 h-6 text-red-600" />
-            BPO Seat (Dedicated)
-          </h3>
-          <p className="text-gray-500 mb-3">Indicative</p>
-          <p className="text-3xl font-bold mb-6 text-black">
-            ₹40K–45K / seat / month
-          </p>
-          <ul className="space-y-3 text-gray-700">
-            {[
-              "DRA-certified agents for collections",
-              "Sales/renewals pods",
-              "QA, MIS, supervisor included",
-            ].map((item, i) => (
-              <li key={i} className="flex items-start gap-3">
-                <CheckCircle2 className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <button className="mt-8 inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-red-600 text-white font-medium hover:bg-red-700 transition-all duration-300 transform hover:scale-105">
-          Request proposal
-          <ArrowRight className="w-4 h-4" />
-        </button>
-      </motion.div>
+            {/* BPO Seat */}
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              className="bg-white p-10 rounded-3xl shadow-md border border-gray-100 hover:border-red-200 flex flex-col justify-between transition"
+            >
+              <div>
+                <h3 className="text-xl font-bold mb-1 text-black flex items-center gap-2">
+                  <Users className="w-6 h-6 text-red-600" />
+                  BPO Seat (Dedicated)
+                </h3>
+                <p className="text-gray-500 mb-3">Indicative</p>
+                <p className="text-3xl font-bold mb-6 text-black">
+                  ₹40K–45K / seat / month
+                </p>
+                <ul className="space-y-3 text-gray-700">
+                  {[
+                    "DRA-certified agents for collections",
+                    "Sales/renewals pods",
+                    "QA, MIS, supervisor included",
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-start gap-3">
+                      <CheckCircle2 className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <button className="mt-8 inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-red-600 text-white font-medium hover:bg-red-700 transition-all duration-300 transform hover:scale-105">
+                Request proposal
+                <ArrowRight className="w-4 h-4" />
+              </button>
+            </motion.div>
 
-      {/* Speech Analytics */}
-      <motion.div
-        whileHover={{ scale: 1.02 }}
-        className="bg-white p-10 rounded-3xl shadow-md border border-gray-100 hover:border-red-200 flex flex-col justify-between transition"
-      >
-        <div>
-          <h3 className="text-xl font-bold mb-1 text-black flex items-center gap-2">
-            <BarChart3 className="w-6 h-6 text-red-600" />
-            Speech Analytics
-          </h3>
-          <p className="text-gray-500 mb-3">Indicative</p>
-          <p className="text-3xl font-bold mb-6 text-black">Custom (volume-based)</p>
-          <ul className="space-y-3 text-gray-700">
-            {[
-              "Auto-scorecards & sentiment",
-              "100% call coverage",
-              "Coaching insights",
-            ].map((item, i) => (
-              <li key={i} className="flex items-start gap-3">
-                <CheckCircle2 className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
+            {/* Speech Analytics */}
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              className="bg-white p-10 rounded-3xl shadow-md border border-gray-100 hover:border-red-200 flex flex-col justify-between transition"
+            >
+              <div>
+                <h3 className="text-xl font-bold mb-1 text-black flex items-center gap-2">
+                  <BarChart3 className="w-6 h-6 text-red-600" />
+                  Speech Analytics
+                </h3>
+                <p className="text-gray-500 mb-3">Indicative</p>
+                <p className="text-3xl font-bold mb-6 text-black">
+                  Custom (volume-based)
+                </p>
+                <ul className="space-y-3 text-gray-700">
+                  {[
+                    "Auto-scorecards & sentiment",
+                    "100% call coverage",
+                    "Coaching insights",
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-start gap-3">
+                      <CheckCircle2 className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <button className="mt-8 inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-red-600 text-white font-medium hover:bg-red-700 transition-all duration-300 transform hover:scale-105">
+                Request proposal
+                <ArrowRight className="w-4 h-4" />
+              </button>
+            </motion.div>
+          </div>
         </div>
-        <button className="mt-8 inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-red-600 text-white font-medium hover:bg-red-700 transition-all duration-300 transform hover:scale-105">
-          Request proposal
-          <ArrowRight className="w-4 h-4" />
-        </button>
       </motion.div>
-    </div>
-  </div>
-</motion.div>
 
       <motion.section
-  variants={fadeUp}
-  initial="hidden"
-  whileInView="show"
-  className="py-20 px-6 bg-gray-50"
-  viewport={{ once: true }}
->
-  <div className="max-w-6xl mx-auto text-center">
-    <h2 className="text-4xl md:text-5xl font-extrabold text-black mb-4 inline-flex items-center flex-wrap justify-center gap-2">
-      Lightning-fast upgrades with{" "}
-      <span className="text-red-600 inline-flex items-center">
-        Instant Cash
-        <span className="ml-2 inline-block px-3 py-1 text-xs font-semibold text-orange-800 bg-orange-100 rounded-full animate-pulse">
-          Launching soon
-        </span>
-      </span>
-    </h2>
-    <p className="text-lg text-gray-600 mb-6">
-      Fyntegra — empowering your financial freedom like never before!
-    </p>
-    <div className="text-sm text-gray-500 mb-8 flex justify-center gap-4 flex-wrap">
-      <span>Funds in your account within hours</span>
-      <span>Swift loan approvals</span>
-      <span>Flexible repayment options</span>
-      <span>Single application for multiple loans</span>
-    </div>
-    <div className="flex justify-center items-center gap-4 max-w-md mx-auto">
-      <input
-        type="tel"
-        value={mobileNumber}
-        onChange={(e) => setMobileNumber(e.target.value)}
-        placeholder="Enter your mobile number"
-        className="w-full p-3 border border-gray-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-red-600 text-gray-700 placeholder-gray-400"
-      />
-      <button
-        onClick={handleGetLoanClick}
-        className="px-6 py-1 bg-red-600 text-white rounded-lg hover:bg-red-700 transition duration-300 shadow-lg"
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="show"
+        className="py-20 px-6 bg-gray-50"
+        viewport={{ once: true }}
       >
-        Get your loan now
-      </button>
-    </div>
-  </div>
-</motion.section>
+        <div className="max-w-6xl mx-auto text-center">
+          <h2 className="text-4xl md:text-5xl font-extrabold text-black mb-4 inline-flex items-center flex-wrap justify-center gap-2">
+            Lightning-fast upgrades with{" "}
+            <span className="text-red-600 inline-flex items-center">
+              Instant Cash
+              <span className="ml-2 inline-block px-3 py-1 text-xs font-semibold text-orange-800 bg-orange-100 rounded-full animate-pulse">
+                Launching soon
+              </span>
+            </span>
+          </h2>
+          <p className="text-lg text-gray-600 mb-6">
+            Fyntegra — empowering your financial freedom like never before!
+          </p>
+          <div className="text-sm text-gray-500 mb-8 flex justify-center gap-4 flex-wrap">
+            <span>Funds in your account within hours</span>
+            <span>Swift loan approvals</span>
+            <span>Flexible repayment options</span>
+            <span>Single application for multiple loans</span>
+          </div>
+          <div className="flex justify-center items-center gap-4 max-w-md mx-auto">
+            <input
+              type="tel"
+              value={mobileNumber}
+              onChange={(e) => setMobileNumber(e.target.value)}
+              placeholder="Enter your mobile number"
+              className="w-full p-3 border border-gray-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-red-600 text-gray-700 placeholder-gray-400"
+            />
+            <button
+              onClick={handleGetLoanClick}
+              className="px-6 py-1 bg-red-600 text-white rounded-lg hover:bg-red-700 transition duration-300 shadow-lg"
+            >
+              Get your loan now
+            </button>
+          </div>
+        </div>
+      </motion.section>
 
       <motion.section
         variants={fadeUp}
@@ -845,633 +928,669 @@ export default function Homepage() {
         </div>
       </motion.section>
 
-      
-
-{/* Document Checklist */}
-<motion.section
-  variants={fadeUp}
-  initial="hidden"
-  whileInView="show"
-  className="py-12 px-6 bg-gray-50"
-  viewport={{ once: true }}
->
-  <div className="max-w-3xl mx-auto">
-    <div className="flex items-center justify-center mb-2">
-      <FileText className="w-6 h-6 text-red-600 mr-2" />
-      <h3 className="text-lg font-semibold text-center text-black">
-        Document Checklist
-      </h3>
-    </div>
-    <p className="text-center text-gray-600 mb-6">
-      Keep these handy for a smooth application.
-    </p>
-    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-      <div className="bg-white p-4 rounded-lg shadow-md border border-gray-100 hover:border-red-200 transition">
-        <div className="flex items-center">
-          <FileCheck className="w-5 h-5 text-red-600 mr-2" />
-          <div className="font-semibold text-black">KYC Documents</div>
-        </div>
-        <div className="text-sm text-gray-600 mt-2">
-          Aadhaar, PAN, Passport (if applicable)
-        </div>
-      </div>
-      <div className="bg-white p-4 rounded-lg shadow-md border border-gray-100 hover:border-red-200 transition">
-        <div className="flex items-center">
-          <BarChart3 className="w-5 h-5 text-red-600 mr-2" />
-          <div className="font-semibold text-black">Income Proof</div>
-        </div>
-        <div className="text-sm text-gray-600 mt-2">
-          Salary slips, ITR, Bank statements
-        </div>
-      </div>
-      <div className="bg-white p-4 rounded-lg shadow-md border border-gray-100 hover:border-red-200 transition">
-        <div className="flex items-center">
-          <Building className="w-5 h-5 text-red-600 mr-2" />
-          <div className="font-semibold text-black">
-            Property / Collateral Documents
+      {/* Document Checklist */}
+      <motion.section
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="show"
+        className="py-12 px-6 bg-gray-50"
+        viewport={{ once: true }}
+      >
+        <div className="max-w-3xl mx-auto">
+          <div className="flex items-center justify-center mb-2">
+            <FileText className="w-6 h-6 text-red-600 mr-2" />
+            <h3 className="text-lg font-semibold text-center text-black">
+              Document Checklist
+            </h3>
+          </div>
+          <p className="text-center text-gray-600 mb-6">
+            Keep these handy for a smooth application.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="bg-white p-4 rounded-lg shadow-md border border-gray-100 hover:border-red-200 transition">
+              <div className="flex items-center">
+                <FileCheck className="w-5 h-5 text-red-600 mr-2" />
+                <div className="font-semibold text-black">KYC Documents</div>
+              </div>
+              <div className="text-sm text-gray-600 mt-2">
+                Aadhaar, PAN, Passport (if applicable)
+              </div>
+            </div>
+            <div className="bg-white p-4 rounded-lg shadow-md border border-gray-100 hover:border-red-200 transition">
+              <div className="flex items-center">
+                <BarChart3 className="w-5 h-5 text-red-600 mr-2" />
+                <div className="font-semibold text-black">Income Proof</div>
+              </div>
+              <div className="text-sm text-gray-600 mt-2">
+                Salary slips, ITR, Bank statements
+              </div>
+            </div>
+            <div className="bg-white p-4 rounded-lg shadow-md border border-gray-100 hover:border-red-200 transition">
+              <div className="flex items-center">
+                <Building className="w-5 h-5 text-red-600 mr-2" />
+                <div className="font-semibold text-black">
+                  Property / Collateral Documents
+                </div>
+              </div>
+              <div className="text-sm text-gray-600 mt-2">
+                If taking secured loans
+              </div>
+            </div>
+            <div className="bg-white p-4 rounded-lg shadow-md border border-gray-100 hover:border-red-200 transition">
+              <div className="flex items-center">
+                <FileText className="w-5 h-5 text-red-600 mr-2" />
+                <div className="font-semibold text-black">Other</div>
+              </div>
+              <div className="text-sm text-gray-600 mt-2">
+                Signed application, recent photographs
+              </div>
+            </div>
           </div>
         </div>
-        <div className="text-sm text-gray-600 mt-2">
-          If taking secured loans
-        </div>
-      </div>
-      <div className="bg-white p-4 rounded-lg shadow-md border border-gray-100 hover:border-red-200 transition">
-        <div className="flex items-center">
-          <FileText className="w-5 h-5 text-red-600 mr-2" />
-          <div className="font-semibold text-black">Other</div>
-        </div>
-        <div className="text-sm text-gray-600 mt-2">
-          Signed application, recent photographs
-        </div>
-      </div>
-    </div>
-  </div>
-</motion.section>
+      </motion.section>
 
-{/* Services Section */}
-<motion.section
-  variants={fadeUp}
-  initial="hidden"
-  whileInView="show"
-  className="py-12 px-6 bg-white"
-  viewport={{ once: true }}
->
-  <div className="max-w-6xl mx-auto">
-    <h2 className="text-2xl font-extrabold text-center mb-6 text-black">
-      Services that move the needle
-    </h2>
-    <p className="text-center text-gray-600 mb-8">
-      Engineered for outcomes, not headcount.
-    </p>
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-      {/* Card 1 */}
-      <div className="p-6 rounded-xl bg-gradient-to-tr from-white to-red-50 shadow-md border border-gray-100 hover:shadow-xl hover:border-red-200 transition">
-        <div className="flex items-center mb-3">
-          <Headphones className="w-6 h-6 text-red-600 mr-2" />
-          <div className="text-lg font-semibold text-black">
-            BPO Pods (Collections & Sales)
+      {/* Services Section */}
+      <motion.section
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="show"
+        className="py-12 px-6 bg-white"
+        viewport={{ once: true }}
+      >
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-2xl font-extrabold text-center mb-6 text-black">
+            Services that move the needle
+          </h2>
+          <p className="text-center text-gray-600 mb-8">
+            Engineered for outcomes, not headcount.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Card 1 */}
+            <div className="p-6 rounded-xl bg-gradient-to-tr from-white to-red-50 shadow-md border border-gray-100 hover:shadow-xl hover:border-red-200 transition">
+              <div className="flex items-center mb-3">
+                <Headphones className="w-6 h-6 text-red-600 mr-2" />
+                <div className="text-lg font-semibold text-black">
+                  BPO Pods (Collections & Sales)
+                </div>
+              </div>
+              <ul className="mt-3 text-sm text-gray-600 list-disc ml-5 space-y-1">
+                <li>Early + late bucket recoveries (DRA)</li>
+                <li>Pre-sales, inside sales, renewals</li>
+                <li>Playbooks, RC codes, QA at scale</li>
+              </ul>
+            </div>
+            {/* Card 2 */}
+            <div className="p-6 rounded-xl bg-gradient-to-tr from-white to-gray-50 shadow-md border border-gray-100 hover:shadow-xl hover:border-red-200 transition">
+              <div className="flex items-center mb-3">
+                <PhoneCall className="w-6 h-6 text-red-600 mr-2" />
+                <div className="text-lg font-semibold text-black">
+                  Voicebots & Agent Assist
+                </div>
+              </div>
+              <ul className="mt-3 text-sm text-gray-600 list-disc ml-5 space-y-1">
+                <li>Tele-verification, reminders, callbacks</li>
+                <li>Live transfer to human with context</li>
+                <li>Minutes-based pricing, fast integration</li>
+              </ul>
+            </div>
+            {/* Card 3 */}
+            <div className="p-6 rounded-xl bg-gradient-to-tr from-white to-gray-50 shadow-md border border-gray-100 hover:shadow-xl hover:border-red-200 transition">
+              <div className="flex items-center mb-3">
+                <BarChart3 className="w-6 h-6 text-red-600 mr-2" />
+                <div className="text-lg font-semibold text-black">
+                  Speech Analytics & QA Automation
+                </div>
+              </div>
+              <ul className="mt-3 text-sm text-gray-600 list-disc ml-5 space-y-1">
+                <li>Auto-scorecards, sentiment, keyword flags</li>
+                <li>Root-cause on churn & non-contact</li>
+                <li>Coaching insights, 100% coverage</li>
+              </ul>
+            </div>
           </div>
         </div>
-        <ul className="mt-3 text-sm text-gray-600 list-disc ml-5 space-y-1">
-          <li>Early + late bucket recoveries (DRA)</li>
-          <li>Pre-sales, inside sales, renewals</li>
-          <li>Playbooks, RC codes, QA at scale</li>
-        </ul>
-      </div>
-      {/* Card 2 */}
-      <div className="p-6 rounded-xl bg-gradient-to-tr from-white to-gray-50 shadow-md border border-gray-100 hover:shadow-xl hover:border-red-200 transition">
-        <div className="flex items-center mb-3">
-          <PhoneCall className="w-6 h-6 text-red-600 mr-2" />
-          <div className="text-lg font-semibold text-black">
-            Voicebots & Agent Assist
+      </motion.section>
+
+      {/* AI Operations Stack */}
+      <motion.section
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="show"
+        className="py-12 px-6 bg-gray-50"
+        viewport={{ once: true }}
+      >
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-2xl font-bold text-center mb-6 text-black">
+            Our AI operations stack
+          </h2>
+          <p className="text-center text-gray-600 mb-8">
+            Plug-and-play modules that fit your tools.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+            {[
+              {
+                title: "ASR/TTS",
+                desc: "High-accuracy speech in Indian languages with barge-in and latency-tuned flows.",
+                icon: <PhoneCall className="w-6 h-6 text-red-600" />,
+              },
+              {
+                title: "Dialog Orchestration",
+                desc: "LLM-guardrailed flows, business rules, and dynamic slot-filling for KYC/TVR.",
+                icon: <Brain className="w-6 h-6 text-red-600" />,
+              },
+              {
+                title: "Analytics",
+                desc: "Call reason codes, talk-time, sentiment, auto-QA and coaching insights.",
+                icon: <BarChart3 className="w-6 h-6 text-red-600" />,
+              },
+              {
+                title: "Security",
+                desc: "PII redaction, consent capture, encrypted storage, auditable trails.",
+                icon: <Shield className="w-6 h-6 text-red-600" />,
+              },
+            ].map((s, i) => (
+              <motion.div
+                key={i}
+                whileHover={{ y: -6, scale: 1.02 }}
+                className="p-5 rounded-xl bg-white shadow-md border border-gray-100 hover:shadow-xl hover:border-red-200 transition"
+              >
+                <div className="flex items-center mb-3">
+                  {s.icon}
+                  <div className="font-semibold text-black ml-2">{s.title}</div>
+                </div>
+                <div className="text-sm text-gray-600">{s.desc}</div>
+                <Link
+                  className="mt-4 inline-block text-sm text-red-600 font-medium hover:underline"
+                  to="/platform"
+                >
+                  Learn more
+                </Link>
+              </motion.div>
+            ))}
           </div>
         </div>
-        <ul className="mt-3 text-sm text-gray-600 list-disc ml-5 space-y-1">
-          <li>Tele-verification, reminders, callbacks</li>
-          <li>Live transfer to human with context</li>
-          <li>Minutes-based pricing, fast integration</li>
-        </ul>
-      </div>
-      {/* Card 3 */}
-      <div className="p-6 rounded-xl bg-gradient-to-tr from-white to-gray-50 shadow-md border border-gray-100 hover:shadow-xl hover:border-red-200 transition">
-        <div className="flex items-center mb-3">
-          <BarChart3 className="w-6 h-6 text-red-600 mr-2" />
-          <div className="text-lg font-semibold text-black">
-            Speech Analytics & QA Automation
+      </motion.section>
+
+      {/* Industries */}
+      <motion.section
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="show"
+        className="py-12 px-6 bg-white"
+        viewport={{ once: true }}
+      >
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-2xl font-bold text-center mb-6 text-black">
+            Industries we serve
+          </h2>
+          <p className="text-center text-gray-600 mb-8">
+            Playbooks tailored for each vertical.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              {
+                title: "Banks & NBFCs",
+                desc: "Retail lending, cards, gold, PL, LAS, MSME.",
+                icon: <Landmark className="w-6 h-6 text-red-600" />,
+              },
+              {
+                title: "Fintech & BNPL",
+                desc: "Scale with predictable CX cost and better RPC.",
+                icon: <Smartphone className="w-6 h-6 text-red-600" />,
+              },
+              {
+                title: "Telco & ISP",
+                desc: "Churn saves, ARPU upgrades, collections.",
+                icon: <PhoneCall className="w-6 h-6 text-red-600" />,
+              },
+              {
+                title: "Airlines & Travel",
+                desc: "Disruption calls, refunds, cross-sell.",
+                icon: <Plane className="w-6 h-6 text-red-600" />,
+              },
+              {
+                title: "Health & EdTech",
+                desc: "Admissions and renewals at higher SLAs.",
+                icon: <Heart className="w-6 h-6 text-red-600" />,
+              },
+              {
+                title: "eCom & Logistics",
+                desc: "NDR reduction, delivery confirmations.",
+                icon: <Package className="w-6 h-6 text-red-600" />,
+              },
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                whileHover={{ y: -6, scale: 1.02 }}
+                className="p-5 rounded-xl bg-gradient-to-tr from-white to-red-50 shadow-md border border-gray-100 hover:shadow-xl hover:border-red-200 transition"
+              >
+                <div className="flex items-center mb-3">
+                  {item.icon}
+                  <div className="font-semibold text-black ml-2">
+                    {item.title}
+                  </div>
+                </div>
+                <div className="text-sm text-gray-600">{item.desc}</div>
+              </motion.div>
+            ))}
           </div>
         </div>
-        <ul className="mt-3 text-sm text-gray-600 list-disc ml-5 space-y-1">
-          <li>Auto-scorecards, sentiment, keyword flags</li>
-          <li>Root-cause on churn & non-contact</li>
-          <li>Coaching insights, 100% coverage</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</motion.section>
+      </motion.section>
 
-{/* AI Operations Stack */}
-<motion.section
-  variants={fadeUp}
-  initial="hidden"
-  whileInView="show"
-  className="py-12 px-6 bg-gray-50"
-  viewport={{ once: true }}
->
-  <div className="max-w-6xl mx-auto">
-    <h2 className="text-2xl font-bold text-center mb-6 text-black">
-      Our AI operations stack
-    </h2>
-    <p className="text-center text-gray-600 mb-8">
-      Plug-and-play modules that fit your tools.
-    </p>
-    <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-      {[
-        {
-          title: "ASR/TTS",
-          desc: "High-accuracy speech in Indian languages with barge-in and latency-tuned flows.",
-          icon: <PhoneCall className="w-6 h-6 text-red-600" />,
-        },
-        {
-          title: "Dialog Orchestration",
-          desc: "LLM-guardrailed flows, business rules, and dynamic slot-filling for KYC/TVR.",
-          icon: <Brain className="w-6 h-6 text-red-600" />,
-        },
-        {
-          title: "Analytics",
-          desc: "Call reason codes, talk-time, sentiment, auto-QA and coaching insights.",
-          icon: <BarChart3 className="w-6 h-6 text-red-600" />,
-        },
-        {
-          title: "Security",
-          desc: "PII redaction, consent capture, encrypted storage, auditable trails.",
-          icon: <Shield className="w-6 h-6 text-red-600" />,
-        },
-      ].map((s, i) => (
-        <motion.div
-          key={i}
-          whileHover={{ y: -6, scale: 1.02 }}
-          className="p-5 rounded-xl bg-white shadow-md border border-gray-100 hover:shadow-xl hover:border-red-200 transition"
-        >
-          <div className="flex items-center mb-3">
-            {s.icon}
-            <div className="font-semibold text-black ml-2">{s.title}</div>
-          </div>
-          <div className="text-sm text-gray-600">{s.desc}</div>
-          <Link
-            className="mt-4 inline-block text-sm text-red-600 font-medium hover:underline"
-            to="/platform"
-          >
-            Learn more
-          </Link>
-        </motion.div>
-      ))}
-    </div>
-  </div>
-</motion.section>
-
-{/* Industries */}
-<motion.section
-  variants={fadeUp}
-  initial="hidden"
-  whileInView="show"
-  className="py-12 px-6 bg-white"
-  viewport={{ once: true }}
->
-  <div className="max-w-6xl mx-auto">
-    <h2 className="text-2xl font-bold text-center mb-6 text-black">
-      Industries we serve
-    </h2>
-    <p className="text-center text-gray-600 mb-8">
-      Playbooks tailored for each vertical.
-    </p>
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-      {[
-        {
-          title: "Banks & NBFCs",
-          desc: "Retail lending, cards, gold, PL, LAS, MSME.",
-          icon: <Landmark className="w-6 h-6 text-red-600" />,
-        },
-        {
-          title: "Fintech & BNPL",
-          desc: "Scale with predictable CX cost and better RPC.",
-          icon: <Smartphone className="w-6 h-6 text-red-600" />,
-        },
-        {
-          title: "Telco & ISP",
-          desc: "Churn saves, ARPU upgrades, collections.",
-          icon: <PhoneCall className="w-6 h-6 text-red-600" />,
-        },
-        {
-          title: "Airlines & Travel",
-          desc: "Disruption calls, refunds, cross-sell.",
-          icon: <Plane className="w-6 h-6 text-red-600" />,
-        },
-        {
-          title: "Health & EdTech",
-          desc: "Admissions and renewals at higher SLAs.",
-          icon: <Heart className="w-6 h-6 text-red-600" />,
-        },
-        {
-          title: "eCom & Logistics",
-          desc: "NDR reduction, delivery confirmations.",
-          icon: <Package className="w-6 h-6 text-red-600" />,
-        },
-      ].map((item, i) => (
-        <motion.div
-          key={i}
-          whileHover={{ y: -6, scale: 1.02 }}
-          className="p-5 rounded-xl bg-gradient-to-tr from-white to-red-50 shadow-md border border-gray-100 hover:shadow-xl hover:border-red-200 transition"
-        >
-          <div className="flex items-center mb-3">
-            {item.icon}
-            <div className="font-semibold text-black ml-2">{item.title}</div>
-          </div>
-          <div className="text-sm text-gray-600">{item.desc}</div>
-        </motion.div>
-      ))}
-    </div>
-  </div>
-</motion.section>
-
-      
-
-
-{/* WHY US Section */}
-<motion.section
-  variants={fadeUp}
-  initial="hidden"
-  whileInView="show"
-  viewport={{ once: true }}
-  className="py-24 px-6 bg-white"
->
-  <div className="max-w-7xl mx-auto">
-    {/* Header */}
-    <div className="text-left mb-12">
-      <span className="text-sm font-medium text-red-600 tracking-wider uppercase flex items-center gap-2">
-        <TrendingUp className="w-4 h-4" />
-        WHY US
-      </span>
-      <h2 className="text-4xl md:text-5xl font-bold mt-2 text-black">
-        Outcomes over headcount
-      </h2>
-      <p className="text-lg text-gray-600 mt-4">
-        Pay for results, not chaos.
-      </p>
-    </div>
-
-    {/* Grid with equal height cards */}
-    <div className="grid lg:grid-cols-2 gap-12 items-stretch">
-      {/* Left column – Benefits */}
-      <motion.div
-        whileHover={{ scale: 1.02 }}
-        className="bg-gradient-to-br from-red-50 to-white p-10 rounded-3xl shadow-md border border-gray-100 hover:border-red-200 transition flex flex-col justify-between min-h-0"
+      {/* WHY US Section */}
+      <motion.section
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+        className="py-24 px-6 bg-white"
       >
-        <ul className="space-y-6 flex-1">
-          {[
-            "Higher contact rates with precision retry windows",
-            "Better RPC via scripted + AI assist",
-            "QA automation with 100% coverage",
-            "Fewer escalations with clear playbooks",
-          ].map((item, i) => (
-            <li key={i} className="flex items-start gap-4">
-              <CheckCircle2 className="w-6 h-6 text-red-600 flex-shrink-0 mt-0.5" />
-              <span className="text-black font-medium">{item}</span>
-            </li>
-          ))}
-        </ul>
-      </motion.div>
-
-      {/* Right column – Go-live Playbook */}
-      <motion.div
-        whileHover={{ scale: 1.02 }}
-        className="bg-white p-10 rounded-3xl shadow-md border border-gray-100 hover:border-red-200 transition flex flex-col justify-between min-h-0"
-      >
-        <div>
-          <h3 className="text-2xl font-bold mb-8 text-black flex items-center gap-3">
-            <Rocket className="w-7 h-7 text-red-600" />
-            Go-live Playbook (First 4 Weeks)
-          </h3>
-          <ol className="space-y-6 text-gray-700">
-            <li className="flex gap-4">
-              <span className="flex-shrink-0 w-8 h-8 bg-red-600 text-white rounded-full flex items-center justify-center font-semibold">
-                1
-              </span>
-              <span>Use-case & data mapping, consent flows</span>
-            </li>
-            <li className="flex gap-4">
-              <span className="flex-shrink-0 w-8 h-8 bg-red-600 text-white rounded-full flex items-center justify-center font-semibold">
-                2
-              </span>
-              <span>Bot script & RC codes; QA rubric</span>
-            </li>
-            <li className="flex gap-4">
-              <span className="flex-shrink-0 w-8 h-8 bg-red-600 text-white rounded-full flex items-center justify-center font-semibold">
-                3
-              </span>
-              <span>Pilot run (A/B) + live transfer setup</span>
-            </li>
-            <li className="flex gap-4">
-              <span className="flex-shrink-0 w-8 h-8 bg-red-600 text-white rounded-full flex items-center justify-center font-semibold">
-                4
-              </span>
-              <span>Scale seats/bot minutes with weekly reviews</span>
-            </li>
-          </ol>
-        </div>
-      </motion.div>
-    </div>
-  </div>
-</motion.section>
-
-
-
-
-{/* Proof of Execution */}
-<motion.div
-  variants={fadeUp}
-  initial="hidden"
-  whileInView="show"
-  viewport={{ once: true }}
-  className="py-20 px-6 bg-white"
->
-  <div className="max-w-7xl mx-auto">
-    <div className="text-left mb-12">
-      <span className="text-sm font-medium text-red-600 tracking-wider uppercase flex items-center gap-2">
-        <Shield className="w-4 h-4" />
-        Credibility
-      </span>
-      <h2 className="text-4xl md:text-5xl font-bold mt-2 text-black">
-        Proof of execution
-      </h2>
-      <p className="text-lg text-gray-600 mt-4">
-        Built by operators who’ve scaled CX for high-growth brands.
-      </p>
-    </div>
-    <div className="grid md:grid-cols-3 gap-8">
-      <motion.div
-        whileHover={{ scale: 1.02 }}
-        className="bg-white p-8 rounded-2xl shadow-md border border-gray-100 hover:border-red-200 transition"
-      >
-        <FileText className="w-8 h-8 text-red-600 mb-3" />
-        <h3 className="text-lg font-semibold mb-2 text-black">Playbooks & SOPs</h3>
-        <p className="text-gray-600 leading-relaxed">
-          Documented SOPs, scripts, RC codes, and QA rubrics for fast onboarding.
-        </p>
-      </motion.div>
-      <motion.div
-        whileHover={{ scale: 1.02 }}
-        className="bg-white p-8 rounded-2xl shadow-md border border-gray-100 hover:border-red-200 transition"
-      >
-        <Lock className="w-8 h-8 text-red-600 mb-3" />
-        <h3 className="text-lg font-semibold mb-2 text-black">
-          Security & Compliance
-        </h3>
-        <p className="text-gray-600 leading-relaxed">
-          DPDP-aware data handling, encryption at rest & transit, consent capture.
-        </p>
-      </motion.div>
-      <motion.div
-        whileHover={{ scale: 1.02 }}
-        className="bg-white p-8 rounded-2xl shadow-md border border-gray-100 hover:border-red-200 transition"
-      >
-        <Rocket className="w-8 h-8 text-red-600 mb-3" />
-        <h3 className="text-lg font-semibold mb-2 text-black">Scale Ready</h3>
-        <p className="text-gray-600 leading-relaxed">
-          Start with a pilot. Add seats/minutes as outcomes prove out.
-        </p>
-      </motion.div>
-    </div>
-  </div>
-</motion.div>
-
-{/* Leadership Section */}
-<motion.div
-  initial={{ opacity: 0, y: 30 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.6, ease: "easeOut" }}
-  viewport={{ once: true }}
-  className="py-20 px-6 bg-white"
->
-  <div className="max-w-7xl mx-auto">
-    <div className="mb-12 text-center md:text-left">
-      <p className="text-sm font-medium text-gray-500 uppercase tracking-wider flex items-center justify-center md:justify-start gap-2">
-        <Users className="w-4 h-4 text-red-600" />
-        People
-      </p>
-      <h2 className="text-4xl md:text-5xl font-bold mt-2 text-black">Leadership</h2>
-      <p className="text-lg text-gray-600 mt-3 max-w-2xl">
-        Operators with lending, CX, and BPO scale-up DNA.
-      </p>
-    </div>
-
-    <div className="grid md:grid-cols-2 gap-10">
-      {/* Nitin Chopra */}
-      <motion.div
-        whileHover={{ scale: 1.02 }}
-        className="p-8 bg-white rounded-2xl border border-gray-100 shadow-md hover:shadow-xl hover:border-red-200 transition"
-      >
-        <div className="flex items-center gap-5 mb-6">
-          <img className="w-20 h-20 bg-gray-200 border-2 border-dashed rounded-xl"
-          src={assets.nitin} alt="Nitin Chopra" />
-          <div>
-            <h3 className="text-2xl font-bold text-black">Nitin Chopra</h3>
-            <p className="text-gray-600 font-medium">
-              Chairman, Konexions • Strategic Advisor, Fyntegra
+        <div className="max-w-7xl mx-auto">
+          {/* Header */}
+          <div className="text-left mb-12">
+            <span className="text-sm font-medium text-red-600 tracking-wider uppercase flex items-center gap-2">
+              <TrendingUp className="w-4 h-4" />
+              WHY US
+            </span>
+            <h2 className="text-4xl md:text-5xl font-bold mt-2 text-black">
+              Outcomes over headcount
+            </h2>
+            <p className="text-lg text-gray-600 mt-4">
+              Pay for results, not chaos.
             </p>
           </div>
+
+          {/* Grid with equal height cards */}
+          <div className="grid lg:grid-cols-2 gap-12 items-stretch">
+            {/* Left column – Benefits */}
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              className="bg-gradient-to-br from-red-50 to-white p-10 rounded-3xl shadow-md border border-gray-100 hover:border-red-200 transition flex flex-col justify-between min-h-0"
+            >
+              <ul className="space-y-6 flex-1">
+                {[
+                  "Higher contact rates with precision retry windows",
+                  "Better RPC via scripted + AI assist",
+                  "QA automation with 100% coverage",
+                  "Fewer escalations with clear playbooks",
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-4">
+                    <CheckCircle2 className="w-6 h-6 text-red-600 flex-shrink-0 mt-0.5" />
+                    <span className="text-black font-medium">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+
+            {/* Right column – Go-live Playbook */}
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              className="bg-white p-10 rounded-3xl shadow-md border border-gray-100 hover:border-red-200 transition flex flex-col justify-between min-h-0"
+            >
+              <div>
+                <h3 className="text-2xl font-bold mb-8 text-black flex items-center gap-3">
+                  <Rocket className="w-7 h-7 text-red-600" />
+                  Go-live Playbook (First 4 Weeks)
+                </h3>
+                <ol className="space-y-6 text-gray-700">
+                  <li className="flex gap-4">
+                    <span className="flex-shrink-0 w-8 h-8 bg-red-600 text-white rounded-full flex items-center justify-center font-semibold">
+                      1
+                    </span>
+                    <span>Use-case & data mapping, consent flows</span>
+                  </li>
+                  <li className="flex gap-4">
+                    <span className="flex-shrink-0 w-8 h-8 bg-red-600 text-white rounded-full flex items-center justify-center font-semibold">
+                      2
+                    </span>
+                    <span>Bot script & RC codes; QA rubric</span>
+                  </li>
+                  <li className="flex gap-4">
+                    <span className="flex-shrink-0 w-8 h-8 bg-red-600 text-white rounded-full flex items-center justify-center font-semibold">
+                      3
+                    </span>
+                    <span>Pilot run (A/B) + live transfer setup</span>
+                  </li>
+                  <li className="flex gap-4">
+                    <span className="flex-shrink-0 w-8 h-8 bg-red-600 text-white rounded-full flex items-center justify-center font-semibold">
+                      4
+                    </span>
+                    <span>Scale seats/bot minutes with weekly reviews</span>
+                  </li>
+                </ol>
+              </div>
+            </motion.div>
+          </div>
         </div>
-        <p className="text-gray-700 leading-relaxed mb-6">
-          Nitin Chopra is the Founder & Chairman of <strong>Konexions</strong>, one of India’s most established BPM
-          networks — now clocking <strong>₹500 Cr+ in annual revenue</strong> with a clear roadmap
-          to <strong>₹2,500 Cr</strong> through its strategic merger with Fyntegra.
-        </p>
-        <p className="text-gray-700 leading-relaxed mb-6">
-          With over two decades of leadership experience across customer lifecycle management, collections, and digital transformation,
-          he has scaled Konexions into a trusted partner for India’s top banks, NBFCs, and fintechs.
-        </p>
-        <p className="text-gray-700 leading-relaxed">
-          At <strong>Fyntegra</strong>, he serves as Strategic Advisor & Chairman, guiding enterprise governance,
-          multi-site delivery, and compliance frameworks that blend traditional operational depth with AI-driven automation.
-        </p>
-        <div className="mt-8">
-          <a
-            href="https://www.linkedin.com/in/nitin-chopra-7b60a380/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-5 py-3 bg-red-600 text-white rounded-full font-medium hover:bg-red-700 transition-all duration-300 transform hover:scale-105"
-          >
-            Connect on LinkedIn
-            <ArrowRight className="w-4 h-4" />
-          </a>
-        </div>
-      </motion.div>
-      {/* Farooq Patel */}
+      </motion.section>
+
+      {/* Proof of Execution */}
       <motion.div
-        whileHover={{ scale: 1.02 }}
-        className="p-8 bg-white rounded-2xl border border-gray-100 shadow-md hover:shadow-xl hover:border-red-200 transition"
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+        className="py-20 px-6 bg-white"
       >
-        <div className="flex items-center gap-5 mb-6">
-          <img className="w-20 h-20 bg-gray-200 border-2 border-dashed rounded-xl" 
-          src={assets.farooq} alt="Farooq Patel"/>
-          <div>
-            <h3 className="text-2xl font-bold text-black">Farooq Patel</h3>
-            <p className="text-gray-600 font-medium">
-              Founder & CEO, Fyntegra (Backed by Konexions)
+        <div className="max-w-7xl mx-auto">
+          <div className="text-left mb-12">
+            <span className="text-sm font-medium text-red-600 tracking-wider uppercase flex items-center gap-2">
+              <Shield className="w-4 h-4" />
+              Credibility
+            </span>
+            <h2 className="text-4xl md:text-5xl font-bold mt-2 text-black">
+              Proof of execution
+            </h2>
+            <p className="text-lg text-gray-600 mt-4">
+              Built by operators who’ve scaled CX for high-growth brands.
             </p>
           </div>
-        </div>
-        <p className="text-gray-700 leading-relaxed mb-6">
-          Farooq Patel is the Founder & CEO of <strong>Fyntegra</strong>,
-          an AI-driven BPO platform backed by Konexions. Fyntegra is redefining how banks, NBFCs, and fintechs scale collections,
-          sales, and customer experience through a seamless blend of human expertise and intelligent automation.
-        </p>
-        <p className="text-gray-700 leading-relaxed mb-6">
-          Before founding Fyntegra, Farooq held leadership roles at <strong>Fibe (EarlySalary)</strong>,
-          where he led CX, Sales, BNPL, and Cards — helping the business achieve <strong>2x to 10x growth</strong>
-          through operational efficiency, automation, and people excellence.
-        </p>
-        <p className="text-gray-700 leading-relaxed">
-          Earlier at <strong>JP Morgan</strong>, he played multiple roles across customer experience,
-          recruiting, and operations, gaining deep exposure to global banking processes and large-scale execution.
-        </p>
-        <div className="mt-8">
-          <a
-            href="https://www.linkedin.com/in/farooq-patel-b2182524a/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-5 py-3 bg-red-600 text-white rounded-full font-medium hover:bg-red-700 transition-all duration-300 transform hover:scale-105"
-          >
-            Connect on LinkedIn
-            <ArrowRight className="w-4 h-4" />
-          </a>
+          <div className="grid md:grid-cols-3 gap-8">
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              className="bg-white p-8 rounded-2xl shadow-md border border-gray-100 hover:border-red-200 transition"
+            >
+              <FileText className="w-8 h-8 text-red-600 mb-3" />
+              <h3 className="text-lg font-semibold mb-2 text-black">
+                Playbooks & SOPs
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                Documented SOPs, scripts, RC codes, and QA rubrics for fast
+                onboarding.
+              </p>
+            </motion.div>
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              className="bg-white p-8 rounded-2xl shadow-md border border-gray-100 hover:border-red-200 transition"
+            >
+              <Lock className="w-8 h-8 text-red-600 mb-3" />
+              <h3 className="text-lg font-semibold mb-2 text-black">
+                Security & Compliance
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                DPDP-aware data handling, encryption at rest & transit, consent
+                capture.
+              </p>
+            </motion.div>
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              className="bg-white p-8 rounded-2xl shadow-md border border-gray-100 hover:border-red-200 transition"
+            >
+              <Rocket className="w-8 h-8 text-red-600 mb-3" />
+              <h3 className="text-lg font-semibold mb-2 text-black">
+                Scale Ready
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                Start with a pilot. Add seats/minutes as outcomes prove out.
+              </p>
+            </motion.div>
+          </div>
         </div>
       </motion.div>
-      
 
-    </div>
-  </div>
-</motion.div>
+      {/* Leadership Section */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        viewport={{ once: true }}
+        className="py-20 px-6 bg-white"
+      >
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-12 text-center md:text-left">
+            <p className="text-sm font-medium text-gray-500 uppercase tracking-wider flex items-center justify-center md:justify-start gap-2">
+              <Users className="w-4 h-4 text-red-600" />
+              People
+            </p>
+            <h2 className="text-4xl md:text-5xl font-bold mt-2 text-black">
+              Leadership
+            </h2>
+            <p className="text-lg text-gray-600 mt-3 max-w-2xl">
+              Operators with lending, CX, and BPO scale-up DNA.
+            </p>
+          </div>
 
-{/* Contact Form Section */}
-<motion.div
-  initial={{ opacity: 0, y: 30 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.6, ease: "easeOut" }}
-  viewport={{ once: true }}
-  className="py-20 px-6 bg-white"
->
-  <div className="max-w-7xl mx-auto">
-    <div className="mb-12 text-center md:text-left">
-      <p className="text-sm font-medium text-gray-500 uppercase tracking-wider flex items-center justify-center md:justify-start gap-2">
-        <Clock className="w-4 h-4 text-red-600" />
-        Next Step
-      </p>
-      <h2 className="text-4xl font-bold mt-2 text-black">Tell us your use-case</h2>
-      <p className="text-lg text-gray-600 mt-2">
-        We’ll reply within 1 business day.
-      </p>
-    </div>
-    <div className="grid md:grid-cols-2 gap-8">
-      {/* Left Form */}
-      <motion.div
-        whileHover={{ scale: 1.02 }}
-        className="p-8 bg-white rounded-2xl border border-gray-100 shadow-md hover:border-red-200 transition"
-      >
-        <form className="space-y-6">
-          <div className="grid md:grid-cols-2 gap-4">
-            <div>
-              <label className="block text-sm font-medium mb-1 text-black">Full name</label>
-              <input
-                type="text"
-                placeholder="Your name"
-                className="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-black placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-red-600 transition"
-              />
-            </div>
-            <div>
-              <label className="block text-sm font-medium mb-1 text-black">Work email</label>
-              <input
-                type="email"
-                placeholder="name@company.com"
-                className="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-black placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-red-600 transition"
-              />
-            </div>
-          </div>
-          <div className="grid md:grid-cols-2 gap-4">
-            <div>
-              <label className="block text-sm font-medium mb-1 text-black">Company</label>
-              <input
-                type="text"
-                placeholder="Company Pvt Ltd"
-                className="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-black placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-red-600 transition"
-              />
-            </div>
-            <div>
-              <label className="block text-sm font-medium mb-1 text-black">Phone</label>
-              <input
-                type="text"
-                placeholder="+91-"
-                className="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-black placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-red-600 transition"
-              />
-            </div>
-          </div>
-          <div>
-            <label className="block text-sm font-medium mb-1 text-black">
-              What do you want to launch?
-            </label>
-            <textarea
-              placeholder="Eg. 25 collections seats + TVR bot for 10k calls/week"
-              className="w-full border border-gray-300 rounded-lg px-4 py-3 text-black h-28 resize-none focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-red-600 transition placeholder-gray-400"
-            ></textarea>
-          </div>
-          <button
-            type="submit"
-            className="mt-4 w-full md:w-auto px-8 py-3 bg-red-600 text-white rounded-full font-semibold flex items-center justify-center gap-2 hover:bg-red-700 transition-all duration-300 transform hover:scale-105"
-          >
-            Get a proposal
-            <ArrowRight className="w-4 h-4" />
-          </button>
-          <p className="text-sm text-gray-500">
-            By submitting, you agree to our Terms and acknowledge our Privacy Policy.
-          </p>
-        </form>
-      </motion.div>
-      {/* Right Contact Info */}
-      <motion.div
-        whileHover={{ scale: 1.02 }}
-        className="p-8 bg-gradient-to-br from-red-50 to-white rounded-2xl border border-gray-100 shadow-md hover:border-red-200 transition"
-      >
-        <h3 className="text-lg font-semibold mb-4 text-black flex items-center gap-2">
-          <Phone className="w-5 h-5 text-red-600" />
-          Contact
-        </h3>
-        <div className="space-y-4 text-gray-700 mb-6">
-          <div className="flex items-center gap-3">
-            <Mail className="w-5 h-5 text-red-600" />
-            <span>hello@fyntegra.com</span>
-          </div>
-          <div className="flex items-center gap-3">
-            <Phone className="w-5 h-5 text-red-600" />
-            <span>+91-XXXXXXXXXX</span>
-          </div>
-          <div className="flex items-center gap-3">
-            <MapPin className="w-5 h-5 text-red-600" />
-            <span>Pune • Delhi NCR • Bengaluru</span>
+          <div className="grid md:grid-cols-2 gap-10">
+            {/* Nitin Chopra */}
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              className="p-8 bg-white rounded-2xl border border-gray-100 shadow-md hover:shadow-xl hover:border-red-200 transition"
+            >
+              <div className="flex items-center gap-5 mb-6">
+                <img
+                  className="w-20 h-20 bg-gray-200 border-2 border-dashed rounded-xl"
+                  src={assets.nitin}
+                  alt="Nitin Chopra"
+                />
+                <div>
+                  <h3 className="text-2xl font-bold text-black">
+                    Nitin Chopra
+                  </h3>
+                  <p className="text-gray-600 font-medium">
+                    Chairman, Konexions • Strategic Advisor, Fyntegra
+                  </p>
+                </div>
+              </div>
+              <p className="text-gray-700 leading-relaxed mb-6">
+                Nitin Chopra is the Founder & Chairman of{" "}
+                <strong>Konexions</strong>, one of India’s most established BPM
+                networks — now clocking{" "}
+                <strong>₹500 Cr+ in annual revenue</strong> with a clear roadmap
+                to <strong>₹2,500 Cr</strong> through its strategic merger with
+                Fyntegra.
+              </p>
+              <p className="text-gray-700 leading-relaxed mb-6">
+                With over two decades of leadership experience across customer
+                lifecycle management, collections, and digital transformation,
+                he has scaled Konexions into a trusted partner for India’s top
+                banks, NBFCs, and fintechs.
+              </p>
+              <p className="text-gray-700 leading-relaxed">
+                At <strong>Fyntegra</strong>, he serves as Strategic Advisor &
+                Chairman, guiding enterprise governance, multi-site delivery,
+                and compliance frameworks that blend traditional operational
+                depth with AI-driven automation.
+              </p>
+              <div className="mt-8">
+                <a
+                  href="https://www.linkedin.com/in/nitin-chopra-7b60a380/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-5 py-3 bg-red-600 text-white rounded-full font-medium hover:bg-red-700 transition-all duration-300 transform hover:scale-105"
+                >
+                  Connect on LinkedIn
+                  <ArrowRight className="w-4 h-4" />
+                </a>
+              </div>
+            </motion.div>
+            {/* Farooq Patel */}
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              className="p-8 bg-white rounded-2xl border border-gray-100 shadow-md hover:shadow-xl hover:border-red-200 transition"
+            >
+              <div className="flex items-center gap-5 mb-6">
+                <img
+                  className="w-20 h-20 bg-gray-200 border-2 border-dashed rounded-xl"
+                  src={assets.farooq}
+                  alt="Farooq Patel"
+                />
+                <div>
+                  <h3 className="text-2xl font-bold text-black">
+                    Farooq Patel
+                  </h3>
+                  <p className="text-gray-600 font-medium">
+                    Founder & CEO, Fyntegra (Backed by Konexions)
+                  </p>
+                </div>
+              </div>
+              <p className="text-gray-700 leading-relaxed mb-6">
+                Farooq Patel is the Founder & CEO of <strong>Fyntegra</strong>,
+                an AI-driven BPO platform backed by Konexions. Fyntegra is
+                redefining how banks, NBFCs, and fintechs scale collections,
+                sales, and customer experience through a seamless blend of human
+                expertise and intelligent automation.
+              </p>
+              <p className="text-gray-700 leading-relaxed mb-6">
+                Before founding Fyntegra, Farooq held leadership roles at{" "}
+                <strong>Fibe (EarlySalary)</strong>, where he led CX, Sales,
+                BNPL, and Cards — helping the business achieve{" "}
+                <strong>2x to 10x growth</strong>
+                through operational efficiency, automation, and people
+                excellence.
+              </p>
+              <p className="text-gray-700 leading-relaxed">
+                Earlier at <strong>JP Morgan</strong>, he played multiple roles
+                across customer experience, recruiting, and operations, gaining
+                deep exposure to global banking processes and large-scale
+                execution.
+              </p>
+              <div className="mt-8">
+                <a
+                  href="https://www.linkedin.com/in/farooq-patel-b2182524a/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-5 py-3 bg-red-600 text-white rounded-full font-medium hover:bg-red-700 transition-all duration-300 transform hover:scale-105"
+                >
+                  Connect on LinkedIn
+                  <ArrowRight className="w-4 h-4" />
+                </a>
+              </div>
+            </motion.div>
           </div>
         </div>
-        <div className="bg-white p-5 rounded-xl border border-gray-100">
-          <h4 className="font-semibold mb-2 text-black flex items-center gap-2">
-            <Clock className="w-5 h-5 text-red-600" />
-            Fast POC Offer
-          </h4>
-          <p className="text-gray-600 text-sm leading-relaxed">
-            Pilot a TVR/Reminder bot in 4 weeks. Includes scripting, QA rubric, outcome export, and live-transfer setup.
-          </p>
+      </motion.div>
+
+      {/* Contact Form Section */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        viewport={{ once: true }}
+        className="py-20 px-6 bg-white"
+      >
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-12 text-center md:text-left">
+            <p className="text-sm font-medium text-gray-500 uppercase tracking-wider flex items-center justify-center md:justify-start gap-2">
+              <Clock className="w-4 h-4 text-red-600" />
+              Next Step
+            </p>
+            <h2 className="text-4xl font-bold mt-2 text-black">
+              Tell us your use-case
+            </h2>
+            <p className="text-lg text-gray-600 mt-2">
+              We’ll reply within 1 business day.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Left Form */}
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              className="p-8 bg-white rounded-2xl border border-gray-100 shadow-md hover:border-red-200 transition"
+            >
+              <form className="space-y-6">
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-sm font-medium mb-1 text-black">
+                      Full name
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="Your name"
+                      className="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-black placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-red-600 transition"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium mb-1 text-black">
+                      Work email
+                    </label>
+                    <input
+                      type="email"
+                      placeholder="name@company.com"
+                      className="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-black placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-red-600 transition"
+                    />
+                  </div>
+                </div>
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-sm font-medium mb-1 text-black">
+                      Company
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="Company Pvt Ltd"
+                      className="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-black placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-red-600 transition"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium mb-1 text-black">
+                      Phone
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="+91-"
+                      className="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-black placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-red-600 transition"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <label className="block text-sm font-medium mb-1 text-black">
+                    What do you want to launch?
+                  </label>
+                  <textarea
+                    placeholder="Eg. 25 collections seats + TVR bot for 10k calls/week"
+                    className="w-full border border-gray-300 rounded-lg px-4 py-3 text-black h-28 resize-none focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-red-600 transition placeholder-gray-400"
+                  ></textarea>
+                </div>
+                <button
+                  type="submit"
+                  className="mt-4 w-full md:w-auto px-8 py-3 bg-red-600 text-white rounded-full font-semibold flex items-center justify-center gap-2 hover:bg-red-700 transition-all duration-300 transform hover:scale-105"
+                >
+                  Get a proposal
+                  <ArrowRight className="w-4 h-4" />
+                </button>
+                <p className="text-sm text-gray-500">
+                  By submitting, you agree to our Terms and acknowledge our
+                  Privacy Policy.
+                </p>
+              </form>
+            </motion.div>
+            {/* Right Contact Info */}
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              className="p-8 bg-gradient-to-br from-red-50 to-white rounded-2xl border border-gray-100 shadow-md hover:border-red-200 transition"
+            >
+              <h3 className="text-lg font-semibold mb-4 text-black flex items-center gap-2">
+                <Phone className="w-5 h-5 text-red-600" />
+                Contact
+              </h3>
+              <div className="space-y-4 text-gray-700 mb-6">
+                <div className="flex items-center gap-3">
+                  <Mail className="w-5 h-5 text-red-600" />
+                  <span>hello@fyntegra.com</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Phone className="w-5 h-5 text-red-600" />
+                  <span>+91-XXXXXXXXXX</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <MapPin className="w-5 h-5 text-red-600" />
+                  <span>Pune • Delhi NCR • Bengaluru</span>
+                </div>
+              </div>
+              <div className="bg-white p-5 rounded-xl border border-gray-100">
+                <h4 className="font-semibold mb-2 text-black flex items-center gap-2">
+                  <Clock className="w-5 h-5 text-red-600" />
+                  Fast POC Offer
+                </h4>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Pilot a TVR/Reminder bot in 4 weeks. Includes scripting, QA
+                  rubric, outcome export, and live-transfer setup.
+                </p>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </motion.div>
-    </div>
-  </div>
-</motion.div>
 
       <motion.section
         variants={fadeUp}
