@@ -2,7 +2,7 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
 
-/** same hook for counting */
+/** counting hook */
 function useCount(end = 0, duration = 1200) {
   const [value, setValue] = React.useState(0);
   const rafRef = React.useRef(null);
@@ -28,36 +28,46 @@ function useCount(end = 0, duration = 1200) {
 
 export default function ArcRings({
   stats = [
-    { end: 120, label: "Banks & NBFCs", suffix: "+" },
-    { end: 5000, label: "Loans Processed", suffix: "+" },
-    { end: 85, label: "Avg NPS", suffix: "%" },
+    { end: 720, label: "Phone Calls", suffix: "M" },
+    { end: 54,  label: "Social Media Interactions", suffix: "M" },
+    { end: 200, label: "Visits Annually", suffix: "M" },
   ],
 }) {
-  const max = useMemo(() => Math.max(...stats.map((s) => s.end)), [stats]);
+  const max = useMemo(() => Math.max(...stats.map(s => s.end)), [stats]);
   const [active, setActive] = useState(0);
 
+  // auto-rotate every 3 s
   useEffect(() => {
-    const t = setInterval(() => setActive((a) => (a + 1) % stats.length), 3000);
+    const t = setInterval(() => setActive(a => (a + 1) % stats.length), 3000);
     return () => clearInterval(t);
   }, [stats.length]);
 
   const activeValue = useCount(stats[active].end, 1300);
 
-  const centerSize = 300;
+  // -------------------------------------------------
+  //  Larger canvas & ring radii
+  // -------------------------------------------------
+  const centerSize = 460;               // was 300
   const cx = centerSize / 2;
   const cy = cx;
 
+  // start radius + gap between rings
+  const baseRadius = 100;               // was 70
+  const ringGap    = 36;                // was 28
+
   return (
-    <div className="flex justify-center items-center py-10 sm:-mt-30 bg-white">
-      <div className="relative">
+    <div className="flex justify-center items-center  bg-white">
+      <div className="relative -mt-20">
+
+        {/* SVG with bigger viewBox */}
         <svg
           width={centerSize}
           height={centerSize}
           viewBox={`0 0 ${centerSize} ${centerSize}`}
-          className="drop-shadow-sm"
+          className="drop-shadow-md"
         >
           {stats.map((s, i) => {
-            const r = 70 + i * 28;
+            const r = baseRadius + i * ringGap;
             const circumference = 2 * Math.PI * r;
             const fraction = Math.min(s.end / max, 1);
             const finalOffset = circumference * (1 - fraction);
@@ -70,21 +80,21 @@ export default function ArcRings({
                 animate={{ rotate: 270 }}
                 transition={{ duration: 1, ease: "easeOut" }}
               >
-                {/* Background circle */}
+                {/* background circle */}
                 <circle
                   cx={cx}
                   cy={cy}
                   r={r}
                   stroke="#f3f4f6"
-                  strokeWidth="12"
+                  strokeWidth="14"
                   fill="none"
                 />
-                {/* Animated progress arc */}
+                {/* progress arc */}
                 <motion.circle
                   cx={cx}
                   cy={cy}
                   r={r}
-                  strokeWidth="12"
+                  strokeWidth="14"
                   strokeLinecap="round"
                   fill="none"
                   stroke={`url(#grad${i})`}
@@ -94,15 +104,9 @@ export default function ArcRings({
                   style={{ strokeDasharray: circumference }}
                 />
                 <defs>
-                  <linearGradient
-                    id={`grad${i}`}
-                    x1="0%"
-                    y1="0%"
-                    x2="100%"
-                    y2="0%"
-                  >
-                    <stop offset="0%" stopColor="#dc2626" />   {/* red-600 */}
-                    <stop offset="100%" stopColor="#991b1b" /> {/* red-800 */}
+                  <linearGradient id={`grad${i}`} x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stopColor="#dc2626" />
+                    <stop offset="100%" stopColor="#991b1b" />
                   </linearGradient>
                 </defs>
               </motion.g>
@@ -110,50 +114,70 @@ export default function ArcRings({
           })}
         </svg>
 
-        {/* Center collapsing text */}
+        {/* -------------------------------------------------
+            Centre text – scaled down for the larger rings
+        ------------------------------------------------- */}
         <motion.div
           key={active}
           initial={{ opacity: 0, scale: 0.8, y: 10 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.8, y: -10 }}
           transition={{ duration: 0.5 }}
-          className="absolute inset-0 flex flex-col items-center justify-center text-center pointer-events-none"
+          className="absolute inset-0 flex flex-col items-center justify-center text-center pointer-events-none px-8"
         >
           <motion.div
             initial={{ opacity: 0, y: 5 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-sm font-medium text-gray-600"
+            className="text-xs font-medium text-gray-500 leading-tight"
           >
-            Live Metric
+            Live Metric Across Major
           </motion.div>
-          <div className="text-3xl md:text-4xl font-extrabold text-black mt-1">
+          <motion.div
+            initial={{ opacity: 0, y: 5 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-xs font-bold text-gray-800"
+          >
+            NBFCs, Telcos & Banks
+          </motion.div>
+
+          <div className="text-4xl md:text-5xl font-extrabold text-black mt-3">
             {activeValue}
-            <span className="ml-1 text-base font-medium text-red-600">
+            <span className="ml-1 text-lg font-medium text-red-600">
               {stats[active].suffix || ""}
             </span>
           </div>
-          <div className="text-xs md:text-sm text-gray-600 font-medium mt-1 max-w-[180px]">
+
+          <div className="text-xs md:text-sm text-gray-600 font-medium mt-1 max-w-[220px] leading-tight">
             {stats[active].label}
           </div>
         </motion.div>
 
-        {/* Clickable labels */}
-        <div className="absolute -bottom-14 left-1/2 transform -translate-x-1/2 flex gap-3 flex-wrap justify-center">
-          {stats.map((s, i) => (
-            <button
-              key={i}
-              onClick={() => setActive(i)}
-              className={`px-3 py-1 rounded-full text-xs font-semibold transition-all ${
-                i === active
-                  ? "bg-red-600 text-white shadow-md"
-                  : "bg-white text-gray-700 border border-gray-300 hover:border-red-600 hover:text-red-600"
-              }`}
-            >
-              {s.label.split(" ")[0]}
-            </button>
-          ))}
+        {/* -------------------------------------------------
+            Clickable labels – moved further down
+        ------------------------------------------------- */}
+        <div className="absolute -bottom-20 left-1/2 -translate-x-1/2 flex gap-4 flex-wrap justify-center">
+          {stats.map((s, i) => {
+  const firstWord = s.label.split(" ")[0];
+  const isVisits = s.label.includes("Annually");
+
+  return (
+    <button
+      key={i}
+      onClick={() => setActive(i)}
+      className={`px-4 py-2 rounded-full text-sm font-semibold transition-all whitespace-nowrap ${
+        i === active
+          ? "bg-red-600 text-white shadow-md"
+          : "bg-white text-gray-700 border border-gray-300 hover:border-red-600 hover:text-red-600"
+      }`}
+    >
+      {isVisits ? "Visits" : firstWord}
+    </button>
+  );
+})}
         </div>
+
       </div>
     </div>
   );
